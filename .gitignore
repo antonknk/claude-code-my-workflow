@@ -82,6 +82,17 @@ quality_reports/diagnoses/*
 # R analysis outputs (generated artifacts; keep scripts, ignore outputs)
 scripts/R/_outputs/
 
+# Raw / restricted experiment data — never commit (canvassing records, survey
+# responses, recruitment-mailer address lists). GDPR + IRB/ethics constraint;
+# see .claude/rules/confidential-data.md (scoped to data/**).
+data/raw/
+data/restricted/
+data/*.csv
+data/*.dta
+data/*.rds
+data/*.sav
+!data/.gitkeep
+
 # Output artifacts — uncomment lines below based on your preference
 # *.rds
 # output/**/*.rds

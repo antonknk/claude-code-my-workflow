@@ -1,0 +1,747 @@
+---
+title: "Campaign Contacts and Political Efficacy"
+subtitle: "Pre-Analysis Plan"
+author:
+    - name: Anton Könneke
+      orcid: 0009-0005-8444-4198
+      email: a.konneke@lse.ac.uk
+      phone: +49 157 88122549
+      url: https://www.antonkoenneke.de
+      affiliations:
+        - name: London School of Economics and Political Science
+          department: Government
+          address: Houghton Street
+          city: London
+          postal-code: WC2A 2AE
+          url: https://www.lse.ac.uk
+format:
+  pdf:
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1.25in
+      - right=1.25in
+    latex-max-runs: 4
+    template-partials:
+      - before-body.tex
+    fig-pos: 'H'
+    tbl-pos: 'H'
+    include-in-header:
+      - text: |
+          \usepackage{float}
+          \usepackage{multicol}
+          \usepackage{caption}
+toc: true
+toc-depth: 2
+bibliography: ../../phd.bib
+# global chunk options
+execute:
+  echo: false
+  warning: false
+  message: false
+abstract: |
+    This pre-analysis plan outlines the design and analysis strategy for a field experiment testing the effects of reciprocal face-to-face canvassing on political efficacy and related outcomes. The study will be conducted in Berlin Mitte's state electoral district 7 during the 2026 state election campaign. Participants will be recruited into a three wave panel via mailers sent to households in the district, inviting them to join a panel survey. The main treatment involves a high-quality listening canvassing visit from party activists or candidates, with outcomes measured in a follow-up surveys. **Sample:** I plan to invite 20,000 German nationals to the panel, which should result in a wave 2 sample of 1000-2000 participants. **Power:** All tests are one-sided in the hypothesised direction, and I treat a CACE of 0.2 SDs — roughly the observational canvassing–efficacy gap — as the largest realistic per-contact effect. Assuming baseline predictiveness of the main outcomes of $\rho = 0.6$, baseline N = 1500 (response rate = 7.5%), wave 1 to wave 2 attrition = 30%, and a 50% contact rate ($\text{ITT} \approx 0.10$), the two-arm design reaches only 63% power for this effect at wave 2, and clears the conventional 80% threshold only in its most optimistic corner (about 86% at baseline N = 2,300, $\rho = 0.7$, 50% contact). A placebo-controlled variant — which also visits the control arm and compares non-attriting compliers across arms — is better powered across the realistic range: even though visiting both arms caps its contact rate at 33%, it reaches roughly 78–88% power for the same effect at baseline N = 1,500–2,300 and still surpasses the two-arm design at the latter's boosted 50% contact rate, at the cost of roughly doubling the canvassing effort. **Cost:** Costs are primarily driven by the recruitment mailers, which  come in at between £8900 and £9900 (€10,400 and €11,600). Additional costs may arise from an encouragement  raffle.
+---
+```{r setup}
+#| message: false
+pacman::p_load(sf, tidyverse, here, leaflet, DeclareDesign, kableExtra)
+here::i_am("pap_agh/pap_agh26_exp.qmd")
+options(scipen = 999)
+```
+
+\vspace{2em}
+
+:::{.callout-note}
+## Questions for Florian & Mathias
+
+I am in the priviledged position that the previous experiments in Berlin have left me with very good priors about the relevant parameters for the power calculations. However, as you can see, the picture that emerges is sobering. In essence, only if the treatment effect is relatively large and I manage to increase contact rate from 33% to 50% via multiple visits, can we really expect to detect an effect.
+
+I really want to avoid expending my research funding and the party's resources on a study that is not well powered. Hence, my main questions at this point are 1) do you have any design ideas to increase power further, 2) whether to proceed or not given the current power estimates.
+:::
+
+\clearpage
+
+# Introduction
+
+Representative democracy derives its legitimacy from citizens' ability to affect political decisions [@eastonApproachAnalysisPolitical1957; @eastonChildsAcquisitionRegime1967]. Yet, citizens can hardly observe the extent to which they influence political outcomes as the likelihood of any such influence is minute in liberal mass democracies. The resulting perception of liberal democracy as incapable to align political decisions with citizens' inputs is in turn often weaponised by anti-pluralists who blame the "corrupt elite" and their detachment from "the normal people" [@muddePopulistZeitgeist2004; cf. @schmittCrisisParliamentaryDemocracy1992; @mussoliniDoctrineFascism2016]. 
+
+This study explores whether political parties can improve citizens' view towards the representative system by creating *reflexive* interactions. Reflexivity is characterised by ongoing, mutually educative communication between voters and representatives [@mansbridgeRethinkingRepresentation2003; @dischMobilizationConceptionDemocratic2011; @urbinatiRepresentationAdvocacyStudy2000]. 
+
+I operationalise an increase in reflexivity as a politically meaningful face-to-face exchange between a voter and a party representative that provides a mutual learning opportunity. Similar to high-quality non-judgemental listening interventions [cf. @itzchakovCanHighQuality2020; @itzchakovHighQualityListeningSupports2021; @kallaWhichNarrativeStrategies2023], canvassers will mainly focus on eliciting voters perspectives and demonstrate genuine interest in those. In addition to that, canvassers will raise an issue important to their political party and ask voters to state and explain their position on that issue (this is somewhat similar to the "mutual exchange of narratives" in @kallaReducingExclusionaryAttitudes2020). The treatment is delivered in cooperation with a political party conducting doorstep canvassing in the run-up to the 2026 Berlin state election by both candidates and party activists. 
+
+This study contributes to the literature on political representation and political behaviour in several ways. It engages the normative political theory literature on reflexive representation and derives testable hypotheses about the consequences of reflexivity [@dischMobilizationConceptionDemocratic2011]. It also adds to the growing literature on democratic innovation that recognise the central role political parties play in scaling and sustaining low-stakes deliberative interventions [@farrellDemocraticInnovationPolitical2025; @suiterScalingDeliberationTesting2020; @germannScalingUnpackingEffect2024]. Relatedly, the study helps gauge the impact of party membership outreach and grassroots politics on political legitimacy. 
+
+
+# Field
+
+State electoral district 7 (*Wahlkreis 7*) is situated in central Berlin Mitte and is one of the Greens' most reliable constituencies in the capital. In the 2023 *Abgeordnetenhauswahl*, Green candidate Laura Neugebauer won the direct mandate with 30.1% of first votes (Greens: 28.5% of second votes); in 2021 she had won 28.1% (Greens: 25%). The main opposition comes from the CDU (Daniela Fritz, 19.3% in 2023) and the SPD (Maja Lasić, 18.4%), with the Linke further back. For 2026, the Greens are fielding Tarek Massalme, a local architect and BVV speaker focusing on urban development and energy policy.
+
+WK 7 is well-suited for this study for two reasons. First, the Greens' established organisational presence and active voter base make it feasible to mount a canvassing operation at the required scale within a single district. Second, the party has run extensive doorstep campaigns in the district during recent federal elections, providing realistic priors for contact rates and canvassing capacity — a precondition for delivering the listening intervention reliably across the rolling weekly schedule described in the design.
+
+```{r}
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "100%"
+wahlkreise <- read_sf(here("data/geo/agh26_wahlkreise/RBS_OD_Wahlkreise_AH2026.shp"))
+wahlkreise <- wahlkreise |>
+    st_transform("WGS84")
+wahlkreise_mitte <- wahlkreise |>
+    filter(BEZ == "01")
+wk7 <- wahlkreise_mitte |> filter(AWK2 == "07")
+bbox <- sf::st_bbox(wk7)
+
+m <- leaflet() |>
+    addProviderTiles(providers$OpenStreetMap.DE) |>
+    fitBounds(
+        lng1 = bbox[["xmin"]], lat1 = bbox[["ymin"]],
+        lng2 = bbox[["xmax"]], lat2 = bbox[["ymax"]]
+    ) |>
+    addPolygons(
+        data = wahlkreise_mitte,
+        fillColor = "grey", fillOpacity = 0.05,
+        color = "#888888", weight = 1
+    ) |>
+    addPolygons(
+        data = wk7,
+        fillColor = "#3b11f4", fillOpacity = 0.15,
+        color = "#3b11f4", weight = 2
+    ) |>
+    leaflet::addLegend(
+        position = "bottomright",
+        colors = c("#3b11f4"),
+        labels = c("WK 7")
+    )
+
+if (knitr::is_latex_output()) {
+    # webshot captures the browser viewport, not the fig dimensions —
+    # take the screenshot explicitly at a landscape 3:2 viewport.
+    # Use plain relative paths: tempfile absolute paths break \includegraphics in LaTeX.
+    htmlwidgets::saveWidget(m, "map_wk7.html", selfcontained = TRUE)
+    webshot2::webshot("map_wk7.html", file = "map_wk7.png", vwidth = 900, vheight = 600, zoom = 2)
+    invisible(file.remove("map_wk7.html"))
+    knitr::include_graphics("map_wk7.png")
+} else {
+    m
+}
+```
+
+# Hypotheses
+
+| Hypothesis | Description |
+|----|-------------|
+|H1|High quality listening by any canvasser increases external political efficacy|
+|H2|High quality listening by any canvasser reduces populist attitudes|
+|H3|High quality listening by any canvasser improves voters' attitudes towards party members.|
+: Primary Hypotheses
+
+| Hypothesis | Description |
+|----|-------------|
+|H4a|High quality listening increases external political efficacy more, when implemented by a candidate rather than an activist.|
+|H4a|High quality listening reduces populist attitudes more, when implemented by a candidate rather than an activist.|
+: Secondary Hypotheses
+
+
+
+# Research Design
+
+## Treatment
+
+The treatment is a high-quality listening canvassing visit, drawing directly on the reciprocal script developed and tested in a companion randomised field experiment on conversational reciprocity in partisan doorstep canvassing. In that experiment, canvassers were randomly assigned at each doorstep to either a reciprocal or a unidirectional script; the present study delivers the reciprocal condition uniformly — all canvassing conversations follow the same listening protocol, with no script randomisation.
+
+The interaction unfolds in two phases. In the first, the canvasser asks the resident to share what they consider their most important political issue and engages in non-judgemental active listening — acknowledging the voter's concerns without immediately steering the conversation toward party priorities. In the second phase, the canvasser transitions to a topic of importance to the party, introduces it briefly, and invites the voter to share their view, again listening actively without debating or dismissing.
+
+Canvassers are trained on this protocol before the campaign and provided with written guidance and topic postcards summarising the party's positions. The script is designed to feel like a genuine exchange: the listening phase signals to the voter that their concerns have been heard before any persuasive element is introduced. The high quality listening approach is inspired by the persuasion experiments implemented in @kallaReducingExclusionaryAttitudes2020, @broockmanDurablyReducingTransphobia2016, and @santoroListenChangeLongitudinal2025.
+
+
+
+:::{.callout-note}
+## Secondary Treatment 
+In principle, all power estimations in this PAP would generalise to running a 2x2 design with a secondary treatment. While I have some ideas for secondary treatments, my main interest lies with the main treatment and a second treatment would add further complexity to the design and implementation. 
+
+Including a second treatment in a 2x2 would require:
+
+- The each of the treatments can be delivered both independently and together.
+- Delivering the second treatment doesn't add cost.
+- Delivering the second treatment doesn't increase the amount of time canvassers would have to invest (beyond possibly longer scripts.)
+
+Especially the first point is a challenge, as the party strongly believes that the listening intervention is the most effective way to mobilise voters. It is also the script that most canvassers have come to know and like and there has been some indication of canvasser non-compliance when asked to deviate from the script already.
+
+I discuss some potential secondary treatments in @sec-appendix-secondary-treatment, but at this stage, would prefer to focus on the main treatment and run a clean two-arm design.
+:::
+
+
+## Sampling and Data
+
+### Recruitment and Legal Challenges
+
+To recruit participants, I obtain address data from the municipal population register (Melderegister) via group information requests (Gruppenauskunft, § 46 BMG), which are permissible when serving the public interest, including academic research. These data are used exclusively to send personalized survey invitations. Under § 47 BMG, register data are subject to strict purpose limitation: they may only be used for the stated purpose and must be deleted thereafter. This creates a legal challenge, as the register data themselves cannot be shared with the party organisation that delivers the canvassing treatment.
+
+I address this through a two-stream data architecture. The register data serve solely as a recruitment tool and are never transmitted to third parties. Instead, respondents independently provide their contact details (name, address) within the baseline survey. This self-reported information constitutes a legally distinct data collection, for which we obtain consent at the point of collection. The consent statement informs participants that their contact data may be temporarily shared with research partners for the purposes of this study, and will be deleted upon study completion. The party organisation processes these data under a formal data processing agreement (Art. 28 GDPR), acting on the researcher's instructions. 
+
+This will mean that those individuals who don't enter their address data in the baseline survey won't be joining the panel. I don't have a good prior for how this will affect the effective response rate. The closest benchmark I have is from the Metson, Könneke and Kelly (2025), where respondents were some respondents were recruited via meta. Among those recruited via meta, 32 out of 74 (43%) didn't provide an address. While I don't model this in the power simulations, I would effectively mean that distributing to 20,000 households would yield a baseline sample of around 1000 participants, instead of 2000.
+
+### Costs
+
+Recruiting the panel requires sending addressed mailers to sampled households. The cost has two components: (1) **production** (VDP letter + windowed DL envelope, including lettershop fulfilment),^[Quote for 20,000 personalised letters with windowed DL envelope, variable data printing, and lettershop fulfilment: €2,108 net. Source: <https://www.wir-machen-druck.de/briefhuelle-din-lang-unbedruckt-mit-fenster-inkl-anschreiben-din-a4.html>] and (2) **postage**. The carrier varies by scenario: Deutsche Post for standard and hybrid mailings (cheaper on a gross basis because standard letters are VAT-exempt), PIN AG for bulk advertising mail (cheaper net rate). I consider three postage scenarios:
+
+- **Standard letter** (Deutsche Post *Standardbrief*): individual addressed letter, no minimum volume. Rate: €0.95 per piece (VAT-exempt under §4 Nr. 11b UStG — this is the final price).^[Deutsche Post standard letter prices (valid from 01.01.2025): <https://www.deutschepost.de/de/b/briefe-in-deutschland.html>]
+- **Advertising mail** (PIN AG *Werbepost Standard*): addressed bulk advertising mail, minimum 1,000 pieces. Net rate: €0.35 per piece (gross: €0.42). No setup fee.^[PIN AG advertising mail prices (valid from 01.01.2025): <https://pin-ag.de/geschaeftskunden/produkte-preise/werbepost>. 
+- **Hybrid**: 50% self-distributed (no postage), 50% sent via Deutsche Post standard letter. If self-distribution becomes necessary, I will seek to partner with another researcher and offer them to run a survey experiment in wave 2 or 3 of the panel, after the main outcomes in wave 2 have been measured. In exchange, they would need to help distribute the letters to the self-distributed households. According to some back of the envelope calculations, if we distribute the letters exclusively in the *Brunnenviertel* neighbourhood (which is densly populated and has a high share of large social housing buildings with many letterboxes easily accessible from the street), we could distribute the 10.000 letters in about 5 days. 
+
+```{r cost-function}
+# cost_production is the all-in quoted price (VAT already included by the lettershop).
+# Only PIN AG Werbepost postage is quoted net and needs VAT applied.
+# Deutsche Post Standardbrief postage is VAT-exempt — quoted price is the final price.
+estimate_mailer_cost <- function(
+    n_letters = 20000, # total number of recruitment mailers
+    cost_production = 0.1054, # all-in quoted price per piece, VAT incl. (€2,108 / 20k)
+    cost_post_standard = 0.95, # Deutsche Post Standardbrief ≤20g — VAT-exempt, final price (EUR)
+    cost_post_werbemail = 0.35, # net PIN AG Werbepost Standard ≤20g (EUR); 19% VAT applied below
+    cost_design = 0, # optional one-time design cost, VAT incl. (EUR)
+    frac_handdelivered = 0.5, # share of letters self-distributed (postage only saved)
+    vat_rate = 0.19, # German standard VAT rate (applied to Werbepost postage only)
+    eur_gbp = 0.85 # EUR to GBP exchange rate
+    ) {
+    v <- 1 + vat_rate
+    n_mailed <- round(n_letters * (1 - frac_handdelivered))
+    prod <- n_letters * cost_production # already incl. VAT
+
+    # Scenario 1: Deutsche Post Standardbrief — production already gross; postage exempt
+    s1_postage <- n_letters * cost_post_standard
+    s1_total <- prod + s1_postage + cost_design
+
+    # Scenario 2: PIN AG Werbepost — production already gross; postage is net, apply VAT
+    s2_postage <- n_letters * cost_post_werbemail * v
+    s2_total <- prod + s2_postage + cost_design
+
+    # Scenario 3: hybrid — production already gross; mailed share via Deutsche Post (exempt)
+    s3_postage <- n_mailed * cost_post_standard
+    s3_total <- prod + s3_postage + cost_design
+
+    hybrid_label <- paste0(
+        "Hybrid (", round(frac_handdelivered * 100), "% self-distributed, Deutsche Post)"
+    )
+
+    scenarios <- data.frame(
+        Scenario = c("Standard letter (Deutsche Post)", "Advertising mail (PIN AG)", hybrid_label),
+        N = n_letters,
+        Production = prod,
+        Postage = c(s1_postage, s2_postage, s3_postage),
+        Design = cost_design,
+        Total = c(s1_total, s2_total, s3_total),
+        Total_gbp = c(s1_total, s2_total, s3_total) * eur_gbp,
+        Per_unit = c(s1_total, s2_total, s3_total) / n_letters,
+        stringsAsFactors = FALSE
+    )
+
+    list(scenarios = scenarios, params = as.list(environment()))
+}
+```
+
+```{r costtable}
+res <- estimate_mailer_cost()
+tab <- res$scenarios
+gbp <- res$params$eur_gbp
+
+tab_display <- data.frame(
+    Scenario = tab$Scenario,
+    N = format(tab$N, big.mark = ","),
+    Production = sprintf("€%.0f", tab$Production),
+    Postage = sprintf("€%.0f", tab$Postage),
+    `Total (€)` = sprintf("€%.0f", tab$Total),
+    `Total (£)` = sprintf("£%.0f", tab$Total_gbp),
+    `Per posted unit` = sprintf("€%.2f", tab$Per_unit),
+    check.names = FALSE
+)
+
+knitr::kable(
+    tab_display,
+    booktabs = TRUE,
+    caption = paste0(
+        "Recruitment mailer cost scenarios (20,000 letters, defaults). ",
+        "All prices as paid: production quoted incl. VAT; ",
+        "Deutsche Post postage VAT-exempt; PIN AG Werbepost postage incl. 19\\% VAT. ",
+        "GBP at 1 EUR = ", gbp, "."
+    ),
+    align = c("l", "r", "r", "r", "r", "r", "r")
+) |>
+    kable_styling(
+        latex_options = c("hold_position"),
+        font_size     = 9,
+        full_width    = FALSE
+    ) |>
+    column_spec(1, width = "3.5cm")
+```
+
+The ideal scenario would be sending all mailers via PinAG as advertising mail. Unfortunately, whether this is possible or not depends on the company's classification of the content. If they classify the mailer as advertisement, the reduced rate would apply. If they don't, the standard price (which is more than 2x the reduced rate) would apply. 
+
+
+
+## Outcomes
+
+:::{.callout-note}
+The questionnaire has not yet been developed, but I seek to measure the following primary outcomes:
+
+- Political efficacy (external)
+- Perceived influence on party and candidate
+- Attitudes towards party activists
+- PTV, vote choice, candidate evaluation
+- Issue battery (salience and position)
+- Affective Polarisation
+
+In addition to that, I will measure potential mediators in the second wave to explore mechanisms as well as manipulation checks. 
+:::
+
+## Randomisation
+
+Randomisation is stratified and pre-blocked to serve two purposes: (i) ensuring that each treated unit and its matched controls are measured at the same calendar time and at the same lag after treatment delivery, which is necessary for a clean comparison given the rolling canvassing schedule; and (ii) controlling for Wahlbezirk-level variation in political attitudes and for time-varying features of the political environment near the election.
+
+### Block formation
+
+After Wave 1 is complete, participants within each Wahlbezirk are grouped by geographic proximity: the 12 recruited participants whose addresses are nearest to each other form a single block (six treatment, six control). This ensures canvassers can visit all six treatment units in a block during a single weekly session without long detours, and that paired control units share a similar local political environment. Within each block, six participants are randomly assigned to treatment. Because blocks are defined geographically rather than by the baseline outcome, precision gains come from covariate adjustment in the regression rather than from the blocking structure itself.
+
+### Rolling Wave 2 trigger
+
+Canvassing proceeds in weekly batches by block. When the canvassing session targeting a block's treated units is completed, the entire block — treated and control participants alike — is simultaneously invited to Wave 2 approximately one week later. This guarantees that (a) treatment and control units within a block are measured at the same calendar date, and (b) the lag between the canvassing session and Wave 2 measurement is consistent across blocks. The trigger fires after the full weekly contact cycle is complete: canvassers return on Saturday to attempt contact with treatment units not reached during weekday sessions, so the Wave 2 trigger fires after both the weekday session and the Saturday recontact. The trigger fires regardless of whether contact was ultimately made with each treated unit, preserving the ITT structure.
+
+### Block size rationale
+
+With six units per arm, the probability that attrition causes an entire arm within a block to drop out is:
+
+$$P(\text{block unusable}) = 2p^6 - p^{12}$$
+
+At 30% attrition ($p = 0.30$) this is $< 0.2\%$; at 50% attrition ($p = 0.50$) it is $\approx 3.1\%$. Block-level dropout is therefore unlikely to materially affect the analysis at either end of the anticipated attrition range. The power simulations in the following section reflect this blocked design (blocked randomisation within groups of 12, block fixed effects in the estimator); because geographic blocks do not sort on the outcome, blocking adds negligible efficiency beyond the covariate adjustment, and power is driven primarily by $\rho$.
+
+## Effect Size Calibration
+
+To contextualise the simulated effect sizes, @fig-gles-benchmark shows standardised differences (Cohen's d) for external political efficacy across known group contrasts in the GLES 2025 post-election cross-section (ZA10100, $n \approx 7{,}300$) [@glesZA10100GLESCrossSection2025]. Four items are shown: q50b ("parties only want votes"), q50c ("problems too complex for politics"), q51c ("representatives should implement people's will"), and q51e ("citizens need better representation") — all on 1–5 agreement scales where a higher score indicates lower external political efficacy or stronger demand for responsiveness. The canvassing contact comparison (respondents who recall a party visit vs. those who do not) is highlighted in green, as it is the closest observational analogue to the experimental treatment. The dark green point estimates the standardised difference after matching on several socio-demographic and political covariates (most importantly political intreest). 
+
+The canvassing-contact gap is consistent across all four items at approximately $d \approx 0.19$, providing a natural anchor: our target ATE of $d = 0.20$ sits essentially at this raw association between self-reported contact and efficacy, so the power analysis asks for an effect no larger than the observed cross-sectional gap (a larger $d = 0.30$ is excluded as implausibly optimistic for a single campaign contact). The AfD voter gap ($d \approx -0.88$) and the political-interest gap ($d \approx 0.42$) mark the largest naturally-occurring contrasts in the dataset and serve as an upper bound on what we would expect any single campaign contact to achieve.
+
+```{r gles-benchmark-setup}
+bench <- readRDS(here("analysis/objects/gles2025_efficacy_benchmark.rds"))
+```
+
+```{r fig-gles-benchmark}
+#| fig-cap: "Standardised differences (Cohen's d) in four external political efficacy items, GLES 2025 post-election cross-section. d > 0 means the first-named group scores higher (more agreement = lower external efficacy). Grey band: |d| < 0.2. Canvassing contact (green) is the closest observational analogue to the experimental treatment."
+#| fig-width: 9
+#| fig-height: 8
+#| out-width: "100%"
+knitr::include_graphics(here("analysis/plots/gles2025_efficacy_benchmark.png"))
+```
+
+## Power
+
+```{r}
+#| echo: false
+#| include: false
+#| eval: true
+wohnaddressen <- readRDS(here("tools/maptool/data/wohnadressen.rds"))
+
+# keep only those in WK 7
+woha_wk7 <- wohnaddressen |>
+    st_transform("WGS84") |>
+    st_join(wahlkreise_mitte |> filter(AWK2 == "07"), join = st_within) |>
+    filter(!is.na(AWK2))
+
+# same as leaflet
+leaflet(woha_wk7) |>
+    addProviderTiles(providers$OpenStreetMap.DE) |>
+    addPolygons(
+        data = wahlkreise_mitte,
+        fillColor = ~NA,
+        weight = 1
+    ) |>
+    addCircleMarkers(
+        radius = 2,
+        color = "red",
+        fillOpacity = 0.5
+    ) |>
+    leaflet::addLegend(
+        position = "bottomright",
+        colors = c("#f00000", "#3b11f4"),
+        labels = c("WK 7", "andere WK in Mitte")
+    )
+```
+
+```{r}
+#| message: false
+# Anzahl Addressen
+N_adr <- sum(nrow(woha_wk7))
+census <- read_csv(here("data/geo/old_assignments_with_census.csv")) |>
+    select(-c(condition3_ri:condition2_holdouttreat))
+
+# merge with shapefiles
+btw25_wbz7 <- read_sf(here("data/geo/2025_wahlbezirke/RBS_OD_UWB_BT25.shp")) |>
+    st_transform("WGS84") |>
+    filter(AWK == "0107") |>
+    select(UWB, BWB, geometry)
+
+census <- left_join(btw25_wbz7, census, by = c("UWB", "BWB"))
+
+# Anzahl Addressen pro Wahlbezirk
+woha_wk7_sums <- woha_wk7 |>
+    group_by(UWB) |>
+    summarise(N_adr = n()) |>
+    st_drop_geometry()
+
+# merge with census
+census <- left_join(census, woha_wk7_sums, by = "UWB")
+
+# Bewohner*innen
+N_inhab <- round(sum(census$Insgesamt_Bevoelkerung), 0)
+
+# wahlberechtigte
+N_wbr <- round(sum(census$wahlberechtigte), 0)
+
+# durchschnittliche Haushaltsgröße
+avg_hh_size <- round(mean(census$DurchschnHHGroesse), 4)
+
+# Summe wohnungen
+N_flats <- N_inhab / avg_hh_size
+```
+
+|Variable       |Value     |
+|---------------|---------|
+|Inhabitants | `r N_inhab`|
+|Eligible Voters| `r N_wbr`|
+|Avg. Age of Voters | `r round(sum(census$wahlberechtigte)/sum(census$Insgesamt_Bevoelkerung), 2)` |
+|Number of Buildings| `r N_adr`|
+|Estimated number of Flats | `r round(N_flats, 0)` |
+|Estimated number of Flats per building | `r round(N_flats/N_adr, 2)` |
+|Avg. Number of residents per flat | `r avg_hh_size` |
+
+```{r power-setup}
+res_visit <- readRDS(here("pap_agh/power/power_results/res_visit.rds"))
+
+# Power lookup: mde = ATE (per-contact effect); cr = contact rate
+pw <- function(n, ate, attr, rho = 0.6, cr = 0.33) {
+    res_visit |>
+        dplyr::filter(
+            N == n, mde_d == ate, attrition == attr,
+            rho_baseline == rho, contact_rate == cr
+        ) |>
+        dplyr::pull(power) |>
+        round(2)
+}
+# Implied ITT for a given ATE and contact rate
+itt <- function(ate, cr) round(ate * cr, 2)
+```
+
+I plan to send recruitment mailers to 20000 households in state electoral district 7 in Berlin Mitte. At an expected panel sign-up rate of approximately 10%, this yields a baseline sample of $N \approx 2{,}000$ participants. Participants are assigned with equal probability to a treatment arm (canvassing visit) and a control arm, so each arm receives approximately 1,000 units at baseline.
+
+### Power Analysis Parameters
+
+I assess power via simulation-based power analysis using DeclareDesign, with 500 draws per design cell ($\alpha = 0.05$, one-sided, in the hypothesised positive direction). The simulation varies sample size ($N \in \{1,000; 1,500; 2,000; 2,300\}$), the per-contact effect (ATE $\in \{0.15, 0.20\}$), Wave 2 attrition (30% and 50%), baseline–outcome correlation ($\rho \in \{0.5, 0.6, 0.7\}$), and contact rate (33% and 50%). Compliance is modelled directly in the DGP: only contacted units receive the treatment, so the estimable ITT = contact rate $\times$ ATE. All models include the Wave 1 baseline measure as a covariate.
+
+:::{style="font-size: 0.8em;"}
+
+|Parameter | Value | Study | Note |
+|----------|-----|--------------|------------|
+|Attrition w1–w2 |  46% | Metson, Könneke and Kelly (2025) |   |
+|Attrition w1–w2 | 10% | Könneke (2024) | |
+|Attrition w1–w2 | 10-14% | Cinar (2023) | |
+|$\rho$  | 0.65 - 0.71  | Metson, Könneke and Kelly (2025) | |
+|$\rho$ | 0.64| Könneke (2024) | |
+|% who don't share address|  $\frac{32}{74} = 48\%$ | Metson, Könneke and Kelly (2025) | *Power Simulations assume 100% share their address*|
+|Response rate | 14% | @BerlinerWasserUnd | Berlin, slight oversampling of younger individuals |
+|Response rate | 15% | @faasMehrWahlenWagen2023 | Brandenburg and Sachsen, exclusively younger individuals |
+: Parameter Priors
+:::
+
+:::{.callout-important}
+## Compliance and the estimable effect
+Prior canvassing experiments in the district achieved a door-contact rate of approximately 33% — canvassers successfully spoke with someone at roughly one in three assigned addresses on a given evening. To boost this, I plan to deploy a second team to addresses not reached during the first attempt, targeting a combined contact rate of around 50%. The power analysis therefore presents results for both 33% and 50% as lower and upper bounds.
+
+The key estimand is the ITT, averaged over all assigned households regardless of whether contact was made. The per-contact effects (CACEs) implied by the simulated ATE values of $d = 0.15$ and $0.20$ translate to ITTs of approximately $0.05$–$0.07$ at 33% compliance and $0.08$–$0.10$ at 50% compliance. For reference, [@broockmanDurablyReducingTransphobia2016] find CACEs between $0.19$ and $0.45$ SDs for a listening intervention — though theirs lasted around 10 minutes, was conducted outside an election campaign, and targeted attitude change on a different topic. The primary outcomes here (political efficacy, perceived influence) may be more malleable than attitudes towards outgroups.
+
+:::
+
+### Power Analysis Results
+
+ Even with one-sided tests, the two-arm design is underpowered for the realistic effect range except in its most optimistic corner, where the largest sample and highest baseline predictiveness ($N = 2{,}300$, $\rho = 0.7$, 50% contact) lift power for $d = 0.20$ to `r pw(2300, 0.20, 0.3, rho = 0.7, cr = 0.50)`. At the more central scenario of $N = 2{,}000$, 30% Wave 2 attrition, $\rho = 0.6$, and 50% contact rate, power for ATE $d = 0.20$ (ITT $\approx$ `r itt(0.20, 0.50)`) is `r pw(2000, 0.20, 0.3, cr = 0.50)` and for ATE $d = 0.15$ (ITT $\approx$ `r itt(0.15, 0.50)`) is `r pw(2000, 0.15, 0.3, cr = 0.50)`. At the baseline contact rate of 33%, power for ATE $d = 0.20$ (ITT $\approx$ `r itt(0.20, 0.33)`) falls to `r pw(2000, 0.20, 0.3)` — underpowered for confirmatory inference. Under 50% Wave 2 attrition at 50% contact rate, power for $d = 0.20$ is `r pw(2000, 0.20, 0.5, cr = 0.50)`. The full simulation grid is shown in @fig-power.
+
+```{r fig-power}
+#| fig-cap: "Simulated power for the ITT effect of a canvassing visit (two-arm design, $\\alpha = 0.05$, one-sided, 500 simulations per cell). Top panel: 33% contact rate. Bottom panel: 50% contact rate. Within each panel — rows: Wave 2 attrition; columns: baseline–outcome correlation $\\rho$. Y-axis: ATE (per-contact effect); implied ITT shown in parentheses."
+#| fig-width: 9
+#| fig-height: 10
+#| out-width: "100%"
+knitr::include_graphics("power/power_results/plot_visit_tile.png")
+```
+
+
+## Treatment Delivery and Partner Organisation Resources
+
+```{r}
+session_effectiveness <- readRDS(here("pap_agh/doors_and_convos_per_session.rds"))
+session_effectiveness |>
+    mutate(value = round(value, 2)) |>
+    knitr::kable(
+        caption = "Average number of households visited and individuals contacted per canvassing session (2 canvassers, 2h during the week, longer on weekends) in Berlin Mitte, based on previous canvassing experience"
+    ) |>
+    kable_styling(latex_options = "hold_position")
+```
+
+Visiting 1000 households is a significant undertaking. Based on previous canvassing experience in the district, a team of 2 canvassers can visit around 30 households per session (2h during the week), making contact with about 11 individuals. However, these priors stem from a precint randomised RCT where canvassers contacted anyone living in the treatment precinct. For this experiment, the density of respondents will be much lower, leading to longer walks between households. Hence, I expect canvassers will be able to visit 20 flats and speak to 6 persons per shift. 
+
+To approach 1000 households, we would thus need approximately $\frac{1000}{20} \approx 50$ one-pair sessions. If the organisation manages to run 20 sessions with 8 canvassers (3-4 session per week in the final 6 weeks before the election)  this would yield 80 one-pair sessions and consequently 1600 visited households. If after the first 1000 visits, we successfully talked to 330 individuals, we could spend 600 visits on recontacts, which should yield roughly $600 \times 0.33 \approx 200$ additional contacts, bringing the total number of contacted individuals to around 530 (and compliance to approximately 53%). Note that this may be an optimistic scenario if the probability of contact on the group that wasn't contacted in the first round is lower than the overall contact rate. To partly account for this, we will visit those addresses where nobody opened during the week during weekend shifts.
+
+While the overall number of visits is feasible, the field here is only one (relatively safe) electoral district. Hence, the number of canvassers willing to expend their resources in this area may be limited. Yet, given we managed to knock on more than 22,000 doors during the 2021 federal election campaign, reaching 1600 doors in a single district seems achievable.
+
+# Estimand and Estimators
+
+I target the ITT effect of the canvassing visit on Wave 2 outcomes:
+
+$$
+\tau_{\text{ITT}} = E[Y_i(z = 1) - Y_i(z = 0)]
+$$
+
+where $Y_i(z)$ is the potential outcome for unit $i$ under treatment assignment $z \in \{0, 1\}$. The ITT captures the average effect of being assigned to receive a canvassing visit, regardless of whether contact was made.
+
+### Primary estimator
+
+I estimate the ITT using OLS with block fixed effects and baseline covariate adjustment:
+
+$$
+Y_i = \hat{\tau}_{\text{ITT}}\, Z_i + \mathbf{X}_i'\gamma + \delta_b + \epsilon_i
+$$
+
+where $Z_i$ is the treatment assignment indicator, $\mathbf{X}_i$ is a vector of baseline covariates, $\delta_b$ is a block fixed effect, and $\epsilon_i$ is the error term. $\mathbf{X}_i$ includes the baseline measure of the outcome variable, gender, age, education, vote intention, political interest, left-right self-placement, and partisanship. I report heteroskedasticity-robust (HC2) confidence intervals. Hypothesis tests use blocked randomisation inference (see the Inference section); under this design-based approach, dependence within blocks is handled by the permutation structure, and no additional variance estimator adjustment is required.
+
+### Heterogeneous treatment effects
+
+Pre-registered HTE analyses test whether the average ITT varies systematically across subgroups. Each is tested against the sharp null of *constant* treatment effects by comparing the F-statistic of restricted and unrestricted models via blocked randomisation inference. The restricted model includes the moderator as a covariate but no interaction:
+
+$$
+Y_i = \beta_1 Z_i + \beta_2 M_i + \mathbf{X}_{-M,i}'\gamma + \delta_b + \epsilon_i \tag{Restricted}
+$$
+
+The unrestricted model adds the interaction:
+
+$$
+Y_i = \beta_1 Z_i + \beta_2 M_i + \beta_3 (Z_i \times M_i) + \mathbf{X}_{-M,i}'\gamma + \delta_b + \epsilon_i \tag{Unrestricted}
+$$
+
+$\beta_3$ is the coefficient of interest; $\mathbf{X}_{-M,i}$ is the baseline covariate vector with $M_i$ excluded. I pre-specify three moderators, all measured at Wave 1 prior to treatment assignment:
+
+| Moderator | Rationale |
+|-----------|-----------|
+| Baseline political efficacy ($M_1$) | Units with lower efficacy have more room to improve; effects may be concentrated among the more politically cynical. |
+| Affective polarisation ($M_2$) | More affectively polarised citizens have more room to improve; effects may be concentrated among the more polarised, reducing overall hostility. |
+| Party Identification ($M_3$) | Out-party voters face a larger prior-posterior update; distance may moderate the attitude component of the listening effect. |
+
+These analyses are exploratory in nature. The study is not powered to detect HTE individually. Null interaction estimates should not be interpreted as evidence of homogeneous effects.
+
+# Inference
+
+Because the primary hypotheses (H1–H3) are directional, I test them **one-sided** in the hypothesised direction — higher external efficacy, lower populist attitudes, and warmer attitudes towards party members. I use blocked randomisation inference to test the sharp null hypothesis of no effect: treatment assignments are permuted within blocks, preserving the blocked randomisation structure, and the one-sided $p$-value is the share of permutations with a test statistic at least as extreme as the observed one in the hypothesised direction. If the Wave 1 N exceeds 1,500, I use a one-sided $\alpha = 0.05$; if it falls below 1,500, I use the less conservative one-sided $\alpha = 0.10$. The heterogeneous-effects tests in the preceding section remain two-sided, as I have no directional prior on the moderation.
+
+# Robustness Checks
+
+To account for the potential of differential attrition between treatment arms, I report Lee (2009) bounds on the ITT [@leeTrainingWagesSample2009]. The bounds are constructed by trimming the sample in the arm with the higher Wave 2 completion rate: retaining only the units with the highest observed outcomes yields the upper bound; retaining only the lowest yields the lower bound. The resulting interval contains the true ITT under the assumption of monotone selection — that any unit who would respond under one treatment arm would also respond under the other. Bounds are tightened by conditioning on $\mathbf{X}$ and Wahlbezirk block $\delta_b$. If the confidence intervals of the two bounds overlap zero, I treat the result as inconclusive.
+
+In addition to estimating Lee bounds, I also estimate a doubly-robust IPW version of the primary model: I fit a logistic regression of Wave 2 completion on baseline covariates^[I use a LASSO model to select the variables most predictive of attrition in a data-driven way.] and treatment assignment, weight each completer by the inverse of their predicted completion probability, and re-estimate the block fixed-effect model on the weighted sample. The estimator is consistent if either the attrition model or the outcome model is correctly specified.
+
+# References
+:::{#refs}
+:::
+
+\clearpage
+
+# Appendices {.appendix}
+
+
+## Power Under Building-Cluster Design Without Baseline Survey {#sec-appendix-building .appendix}
+
+This appendix sketches statistical power for an alternative experimental configuration that avoids a pre-election baseline survey. All 1,600 buildings (Gebäude) in WK 7 are assigned 50/50 to treatment or control (800 each); canvassers visit only the 800 treatment buildings at a 33% contact rate; and 20,000 letters are sent to registered voters in both arms after the election to collect survey responses on the primary outcomes. There is no Wave 1.
+
+### Design Comparison {.unlisted}
+
+| Feature | Panel | Cross-Section |
+|---------|-------------|----------------|
+| Randomisation unit | Individual | Building |
+| Baseline survey | Yes (Wave 1) | No |
+| Covariate adjustment | Survey baseline ($\rho \approx 0.60$) | Admin covariates ($\rho \approx 0.30$) |
+| Outcome measurement | Wave 2 post-election survey | Post-election letter ($N = 20{,}000$) |
+| Attrition  | W1 $\to$ W2 (30–50\%) | None |
+| Response rate  | 5–15\% (Wave 2 only) | 5–15\% (post-election letter) |
+
+The main design gains precision from individual-level baseline outcomes ($\rho \approx 0.60$), but requires recruiting participants before the election and sustaining a two-wave panel. This alternative eliminates the panel but forfeits that precision: admin covariates (precinct-level past electoral results and Melderegister data) plausibly yield $\rho \approx 0.30$, reducing residual variance by only $1 - 0.30^2 = 0.91$ compared to $1 - 0.60^2 = 0.64$ with a survey baseline. Crucially, with 1,600 buildings and 20,000 letters the mean cluster size is only $m \approx 1.25$ respondents per building at a 10\% response rate, so the design effect $\text{DEFF} \approx 1.03$ is negligible — clustering itself is not the binding constraint.
+
+### Parameters {.unlisted}
+
+| Parameter | Values | Rationale |
+|-----------|--------|-----------|
+| Number of buildings | 1,600 (fixed) — 800 per arm | All buildings in WK 7; assignment is building-level |
+| Post-election response rate | 5%, **10%**, 15% | Cold-contact letters; no prior panel relationship |
+| ICC (building level) | 0.05, **0.10**, 0.15 | Building-level sorting on political attitudes |
+| ATE (per-contact, Cohen's $d$) | 0.15, **0.20** | Calibrated to GLES 2025 canvassing gap ($d \approx 0.19$); a larger $d = 0.30$ is excluded as implausible |
+| Contact rate | 33% (fixed) | Prior district RCTs; no recontact strategy in this design |
+| $\rho$ (admin covariate correlation) | 0, 0.20, **0.30** | 0 = no adjustment; 0.30 = precinct electoral history + Melderegister |
+
+Bold values are the central estimates used in the tile plot. Fixed: $N_\text{letters} = 20{,}000$, $\alpha = 0.05$.
+
+### Simulation Design {.unlisted}
+
+Power is computed via DeclareDesign simulation (200 draws per cell, $\alpha = 0.05$, one-sided). Each draw generates 1,600 buildings assigned 50/50 to treatment or control; 12 potential letter-recipients per building respond independently at the cell's response rate; 33% of treatment-building residents are contacted. An ITT estimator with building-level cluster-robust SEs and an ecological admin covariate is used in each draw. The earlier analytical DEFF formula substantially overestimated power (by roughly 25–30 pp): with only $m \approx 1.2$ respondents per building at 10\% response, within-cluster averaging contributes most of the residual variance in a way not captured by DEFF $\approx 1.02$.
+
+### Power Results {.unlisted}
+
+```{r}
+#| label: fig-building-power
+#| fig-cap: "Power under building-cluster design (1,600 buildings, 800 per arm, 33% contact rate, ρ = 0.30). Each row shows a different per-contact ATE. Cells report DeclareDesign simulated power (200 draws per cell, α = 0.05, one-sided) at varying ICC and post-election response rates."
+#| out-width: "70%"
+knitr::include_graphics(here::here("pap_agh/power/power_results/plot_building_cluster.png"))
+```
+
+Power in this design is governed primarily by the **ITT** and the **response rate**; the ICC has a moderate secondary effect. At 33% contact, the implied ITTs are $\tau_\text{ITT} = 0.050$ and $0.066$ SDs for ATEs of 0.15 and 0.20, respectively.
+
+At the most plausible scenario ($d = 0.20$, 10\% response, ICC = 0.10), one-sided power is approximately 0.41 — still well below the conventional 0.80 threshold. Even at 15\% response it reaches only 0.54 at $d = 0.20$ (and 0.41 at $d = 0.15$). The design does not reach the 0.80 threshold in any scenario considered — the maximum across the whole grid is 0.54. Excluding the implausibly large $d = 0.30$ removes the only effect size for which this design previously came close to adequacy; for realistic effects ($d \leq 0.20$) the cross-sectional building-cluster design is underpowered even under one-sided tests and the most favourable response rate.
+
+### Canvassing Feasibility {.unlisted}
+
+With 29,445 eligible voters spread across 1,600 buildings, each building holds on average $29{,}445 / 1{,}600 \approx 18.4$ registered voters, and the 800 treatment buildings therefore contain roughly 14,700 eligible voters in total.
+
+To deliver the treatment meaningfully, canvassers must visit every building in the treatment group. If some treatment buildings receive no visits, the cluster assignment is vacuous for those buildings and the effective contact rate falls further. Each building has approximately 17 flats; at the district's general canvassing rate of 30 flats per two-canvasser session — applicable here because every household in a treatment building is a target, unlike the panel design where respondent density is low — a single comprehensive pass through all 800 buildings requires approximately $800 \times 17 / 30 \approx 453$ one-pair sessions.
+
+Achieving a 33\% contact rate — the assumption in the power calculations above — requires $14{,}700 \times 0.33 \approx 4{,}860$ contacts. At 11 contacts per session, this amounts to $4{,}860 / 11 \approx 442$ one-pair sessions, nearly identical to the visit estimate. Either way, the required canvassing is around 450 sessions.
+
+Whether this is feasible depends on the partner organisation's capacity. While they did manage to contact 22,000 households across the entire district in 2025, mobilisation seems to have lowered since and the field here is only one (relatively safe) electoral district.
+
+
+## Power Under a Placebo-Controlled Design {#sec-appendix-placebo .appendix}
+
+This appendix evaluates an alternative two-arm configuration designed to recover statistical power without changing the recruitment strategy or the sample size. The motivation is the central concern of this PAP: the main design (canvassing visit vs. pure control) is well powered only for large per-contact effects combined with a boosted contact rate, because the estimable ITT is diluted by the contact rate. A *placebo-controlled* design sidesteps the dilution by estimating the per-contact effect (CACE) directly.
+
+```{r placebo-setup}
+res_placebo <- readRDS(here("pap_agh/power/power_results/res_placebo.rds"))
+
+# Power lookup for the placebo design: cace = per-contact effect; cr = contact rate
+pw_pl <- function(n, cace, attr, rho = 0.6, cr = 0.33) {
+    res_placebo |>
+        dplyr::filter(
+            N == n, mde_d == cace, attrition == attr,
+            rho_baseline == rho, contact_rate == cr
+        ) |>
+        dplyr::pull(power) |>
+        round(2)
+}
+```
+
+### Design Logic {.unlisted}
+
+In this configuration the control arm is not left untouched: it receives a *placebo visit* — a brief, deliberately **non-political** doorstep conversation (for example, a short neighbourhood or local-amenities survey) delivered by the same canvassers, in the same blocks, on the same rolling schedule. The treatment arm receives the canvassing and listening intervention as before. The only systematic difference between the arms is the political content of the conversation.
+
+Because both arms are visited, the set of residents who *open the door* — the compliers — is observed in **both** arms. The analysis then compares non-attriting compliers in the treatment arm to non-attriting compliers in the placebo arm, which identifies the complier average causal effect (CACE) directly. Crucially, there is no contact-rate dilution: the estimand is the full per-contact effect $d$, not the ITT $= \text{contact rate} \times d$. The trade-off is that the analysis uses only the complier subset ($\approx N \times \text{contact rate} \times (1 - \text{attrition})$ units), rather than the full sample.
+
+### Identifying Assumptions {.unlisted}
+
+Comparing compliers across arms is valid under two assumptions that the placebo visit is designed to satisfy:
+
+1. **Common complier population.** Whether a resident opens the door is determined before they learn the conversation's topic, so the latent complier set is the same in both arms. The placebo and treatment visits must therefore be indistinguishable at the point of door-opening (same canvassers, same approach, same timing).
+2. **Balanced attrition.** Because both arms experience a visit of comparable length and tone, Wave 2 attrition should not differ systematically by arm. Conditioning on non-attrition then does not induce differential selection between arms.
+
+Under these assumptions the within-complier mean difference is an unbiased estimate of the CACE. The power simulations below assume both hold exactly; in the field, a manipulation check (recalled visit topic) and a comparison of arm-specific attrition will be used to probe them.
+
+### Parameters {.unlisted}
+
+| Parameter | Values | Rationale |
+|-----------|--------|-----------|
+| Baseline N | 1,000, 1,500, **2,000**, 2,300 | Wave 1 sample, split 50/50 across arms (same range as the main grid) |
+| CACE (per-contact, Cohen's $d$) | 0.10, 0.15, **0.20** | Spans the credible range; the trivial $0.05$ and the implausible $0.30$ are excluded |
+| Wave 2 attrition | **30%**, 50% | As in the main design |
+| $\rho$ (baseline–outcome correlation) | **0.60**, 0.70 | Survey baseline predictiveness; as in the main design |
+| Contact rate | **33%** (fixed) | Door-opening rate, equal across arms; visiting both arms precludes the recontact wave the main design uses to reach 50% |
+
+Bold values mark the central scenario used in the prose. Fixed: $\alpha = 0.05$ (one-sided), blocked randomisation in geographic blocks of 12, and a 33% contact rate (see *Cost and Feasibility*). Relative to the main two-arm grid, this design drops $\rho = 0.50$ and the 50% contact rate and adds a smaller CACE of $0.10$; it shares the main grid's baseline-N range ($1{,}000$–$2{,}300$) and likewise excludes the implausibly large $0.30$ (as well as the trivially small $0.05$).
+
+### Simulation Design {.unlisted}
+
+Power is computed via DeclareDesign simulation (500 draws per cell, $\alpha = 0.05$, one-sided) over a 48-cell grid. Each draw generates $N$ units split 50/50 across arms by blocked randomisation (`block_ra` within geographic blocks of 12); a latent compliance indicator (door-opening) shared across arms at the 33% contact rate; and independent Wave 2 attrition, equal across arms. The estimand is the CACE among compliers. The estimator is covariate-adjusted OLS ($Y \sim Z + Y_{\text{baseline}}$, HC2 standard errors) fit on the non-attriting complier subset. Unlike the main ITT analysis, the complier subset is too sparse for block fixed effects (roughly one to four retained units per block of 12); since geographic blocks do not sort on the outcome, baseline covariate adjustment alone is used, consistent with the negligible blocking efficiency noted in the main text.
+
+### Power Results {.unlisted}
+
+```{r}
+#| label: fig-placebo-power
+#| fig-cap: "Power for the CACE under the placebo-controlled design (non-attriting compliers, two arms, $\\alpha = 0.05$, one-sided, 500 simulations per cell) at the achievable 33% contact rate. Rows: Wave 2 attrition; columns: baseline–outcome correlation $\\rho$. Y-axis: CACE (per-contact effect); unlike the ITT design there is no contact-rate dilution."
+#| out-width: "100%"
+knitr::include_graphics(here::here("pap_agh/power/power_results/plot_placebo_tile.png"))
+```
+
+Power rises steeply with the sample size and with the per-contact effect. At $\rho = 0.6$, 30% attrition and $N = 2{,}000$, the design reaches `r pw_pl(2000, 0.20, 0.3, rho = 0.6, cr = 0.33)` power for a CACE of $d = 0.20$, `r pw_pl(2000, 0.15, 0.3, rho = 0.6, cr = 0.33)` for $d = 0.15$, and `r pw_pl(2000, 0.10, 0.3, rho = 0.6, cr = 0.33)` for $d = 0.10$; at the largest sample ($N = 2{,}300$) it reaches `r pw_pl(2300, 0.20, 0.3, rho = 0.6, cr = 0.33)` for $d = 0.20$, climbing to `r pw_pl(2300, 0.20, 0.3, rho = 0.7, cr = 0.33)` under the more optimistic $\rho = 0.7$. All figures are at the 33% contact rate this design can realistically achieve. The full grid is shown in @fig-placebo-power.
+
+### Efficiency Gain vs. the Two-Arm ITT Design {.unlisted}
+
+```{r}
+#| label: fig-placebo-vs-visit
+#| fig-cap: "Power to detect the same per-contact effect $d$ under the placebo-controlled design (CACE among compliers) versus the main two-arm design (diluted ITT), both at a matched 33% contact rate ($\\rho = 0.6$, 30% attrition), across the overlapping effect sizes. Dashed line: 0.80."
+#| out-width: "90%"
+knitr::include_graphics(here::here("pap_agh/power/power_results/plot_placebo_vs_visit.png"))
+```
+
+For the same per-contact effect and the same contact rate, the placebo design is far better powered than the two-arm ITT design, because it estimates $d$ directly rather than the diluted ITT. At $\rho = 0.6$, 30% attrition and the achievable 33% contact rate, detecting $d = 0.20$ at $N = 2{,}000$ yields `r pw_pl(2000, 0.20, 0.3, rho = 0.6, cr = 0.33)` power under the placebo design versus `r pw(2000, 0.20, 0.3, cr = 0.33)` under the two-arm design at the same contact rate; at $d = 0.15$ the figures are `r pw_pl(2000, 0.15, 0.3, rho = 0.6, cr = 0.33)` versus `r pw(2000, 0.15, 0.3, cr = 0.33)`. The gain follows from the design's non-centrality advantage of $1 / \sqrt{\text{contact rate}}$ — roughly $1.7\times$ at a 33% contact rate — which more than offsets analysing only the complier subset. It is large enough that the placebo design at 33% contact even surpasses the two-arm design at its *boosted* 50% contact rate: for $d = 0.20$ at $N = 2{,}000$, `r pw_pl(2000, 0.20, 0.3, rho = 0.6, cr = 0.33)` versus `r pw(2000, 0.20, 0.3, cr = 0.5)`. @fig-placebo-vs-visit visualises the matched-contact-rate contrast across the overlapping effect sizes.
+
+### Unequal Allocation to the Placebo Arm {.unlisted}
+
+The placebo visit consumes canvassing effort without delivering the campaign's message, so the party may prefer to assign fewer respondents to the placebo arm and more to treatment. Doing so shrinks the placebo complier group, and the precision of the complier comparison is governed by the *smaller* of the two arms. @fig-placebo-alloc traces power for the CACE as the placebo share falls from a balanced 50% to 20%, holding $N = 2{,}000$, $\rho = 0.7$, 30% attrition and the 33% contact rate fixed.
+
+```{r placebo-alloc-setup}
+res_alloc <- readRDS(here("pap_agh/power/power_results/res_placebo_alloc.rds"))
+# Power lookup for the allocation analysis: share = placebo arm share; cace = effect
+pw_alloc <- function(share, cace) {
+    res_alloc |>
+        dplyr::filter(placebo_share == share, mde_d == cace) |>
+        dplyr::pull(power) |>
+        round(2)
+}
+```
+
+```{r}
+#| label: fig-placebo-alloc
+#| fig-cap: "Power for the CACE under the placebo-controlled design as the share assigned to the placebo (control) arm varies from 20% to 50%, holding $N = 2{,}000$, $\\rho = 0.7$, 30% Wave 2 attrition and a 33% contact rate fixed ($\\alpha = 0.05$, one-sided, 500 simulations per cell). Lines: CACE = 0.15 and 0.20. Dashed line: 0.80."
+#| out-width: "85%"
+knitr::include_graphics(here::here("pap_agh/power/power_results/plot_placebo_alloc.png"))
+```
+
+Power is roughly flat between a 50% and a 30–40% placebo share — for a CACE of 0.20 it stays around `r pw_alloc(0.4, 0.2)`, and for 0.15 around `r pw_alloc(0.4, 0.15)` — so up to roughly a third of the placebo arm can be shifted to treatment at little cost. The penalty appears only at the extreme: cutting the placebo arm to 20% lowers power to `r pw_alloc(0.2, 0.2)` for a CACE of 0.20 and to `r pw_alloc(0.2, 0.15)` for 0.15, against `r pw_alloc(0.5, 0.2)` and `r pw_alloc(0.5, 0.15)` at the balanced split. The intuition is that the difference-in-means precision depends on the harmonic mean of the two arm sizes, which is maximised at parity and degrades sharply once one arm becomes much smaller. A modest tilt toward treatment — a 30–40% placebo share — is therefore a reasonable compromise between statistical power and the canvassing effort spent on placebo visits.
+
+### Cost and Feasibility {.unlisted}
+
+The efficiency gain is not free. Because the control arm must also be visited, canvassers now have to reach **every** recruited unit (roughly 2,000) rather than only the treatment half (roughly 1,000). At the planning figure of 20 visited flats per one-pair session, full coverage of both arms requires on the order of $2{,}000 / 20 \approx 100$ one-pair sessions, against roughly 50 for the main two-arm design — close to a doubling of the field effort. Crucially, because every recruited unit must already be visited once, there is no spare canvasser capacity for the recontact wave that the main design uses to lift its contact rate to 50%; the placebo design is therefore confined to the baseline 33% contact rate, which is the rate the power figures above assume. The recruitment-mailer cost is unchanged, since the panel and sample size are identical.
+
+Two further considerations bear on feasibility. First, a credible non-political placebo conversation must be designed that is comparable in length and warmth to the listening intervention but carries no political content — and the party's canvassers, who are strongly attached to the listening script, must be willing to deliver it; the same canvasser-compliance risk noted for the alternative scripts in the Secondary Treatment Scenarios appendix applies here. Second, the design assumes the placebo visit leaves Wave 2 attrition and the complier composition unchanged relative to the treatment visit; if the non-political visit is materially less engaging, that assumption — and with it the clean complier comparison — weakens.
+
+
+## Secondary Treatment Scenarios {#sec-appendix-secondary-treatment .appendix}
+
+### Scenario 1 — General Response Letter {.unlisted}
+
+*Design:* A 2×2 in which the second dimension is a follow-up letter mailed to all T2 and T3 households several days after the canvassing wave, noting that canvassers recently visited the neighbourhood and that residents raised a particular issue during conversations.
+
+*Pros:* The treatment is cheap, requires no change to the canvassing script, and can be posted independently of whether a household was actually contacted at the door, preserving the 2×2 structure. It tests whether a written follow-up that references the canvassing wave amplifies the effects of the visit.
+
+*Cons:* Because the letter cannot credibly reference individual conversations for households where no one answered, the content would necessarily be generic — likely producing a weak stimulus. Given the sample size, a secondary treatment needs an effect nearly as large as the visit to be reliably detectable, which seems implausible for a generic letter of this kind. As canvassing will need to take place on a rolling basis, timing of the letter-sending is also non-trivial.
+
+### Scenario 2 — Personalised Response Letter {.unlisted}
+
+*Design:* A three-arm design (control, visit only, visit + personalised follow-up) in which canvassers note the household's stated concerns at the door and a personalised letter referencing those specific issues is sent afterwards.
+
+*Pros:* This is a considerably stronger version of the response treatment, creating a genuine two-way exchange and testing whether the listening effect persists through written, personalised acknowledgement. It would be a novel test of whether feeling heard has durable downstream effects.
+
+*Cons:* The design is operationally demanding and raises serious data protection concerns. Recording names and political concerns at every doorstep would require GDPR-compliant protocols and likely party approval that may be difficult to obtain. Canvassers would need to record interactions at non-contact households too to preserve excludability, creating significant compliance risk. The treatment also approaches micro-targeting, which raises distinct normative and reputational concerns for the party.
+
+### Scenario 3 — Activist vs. Candidate as Canvasser {.unlisted}
+
+*Design:* A 2×2 in which canvassers are randomly assigned to present themselves as either a local party activist or the district parliamentary candidate (*Direktkandidat*).
+
+*Pros:* The messenger contrast is substantively interesting: it tests whether the perceived authority and accountability of the elected representative, relative to a grassroots activist, changes how voters respond to an identical conversation. This comparison will probably be something people ask about anyway. 
+
+*Cons:* This would decrease the density of respondents in the candidate and canvasser arms, increasing the time needed to complete the canvassing. It would also increase the complexity of the on-the-ground logistics. Finally, even without randomisation, I can test this quite well: Selection bias will likely be minimal as the candidate will try to cover all neighbourhoods of their districs. Even if there is selection bias, I observe enough data and have good qualitative knowledge about the data generation process, meaning I could produce credible estimates using matching or regression adjustment.
+
+### Scenario 4 — Persuasion vs. Listening Script {.unlisted}
+
+*Design:* A 2×2 in which the canvassing script is varied: one arm receives the standard listening intervention; the other arm receives a persuasive message focused on a specific policy issue, holding the topic constant across arms.
+
+*Pros:* This directly replicates and extends [@santoroListenChangeLongitudinal2025] in a real electoral field setting, testing whether the superiority of persuasive appeals over listening holds outside the lab. It would contribute to a growing literature on the mechanisms behind canvassing efficacy.
+
+*Cons:* The party's canvassers are strongly attached to the listening script and there is prior evidence of non-compliance when alternative approaches are introduced. A persuasive script also requires settling on a single issue, which may be difficult given the Greens' broad platform. Ceiling effects are a material concern: on most salient issues in this constituency, voters are already sympathetic to Green positions, which limits the variance the persuasion arm can produce and reduces power for the interaction.

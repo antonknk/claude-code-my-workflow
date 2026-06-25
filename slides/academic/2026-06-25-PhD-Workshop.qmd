@@ -1,0 +1,109 @@
+---
+title: "Doorstep Deliberation"
+subtitle: "PhD Workshop"
+author:
+  - name: Anton Könneke
+    orcid: 0009-0005-8444-4198
+    email: a.konneke@lse.ac.uk
+    affiliations:
+      - name: London School of Economics and Political Science
+        address: Houghton Street
+        city: London
+        postal-code: WC2A 2AE
+date: last-modified
+format:
+  revealjs:
+    embed-resources: true
+    self-contained: true
+    theme: default_mod
+    auto-stretch: true
+    slide-number: true
+    # logo: lse_logo.png
+    include-in-header:
+      - text: |
+          <meta name="googlebot" content="noindex">
+lang: en
+bibliography: /Users/anton/Library/CloudStorage/OneDrive-LondonSchoolofEconomics/PhD/phd.bib
+---
+
+
+
+## Theoretical Background {data-roadmap="Theory"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(deckroadmap)
+use_roadmap(
+    c("Theory", "Design", "Outcomes", "Merits & Challenges", "Questions"),
+    style = "minimal",
+    active_color = "#E0112b",
+    font_size = "13px",
+    bottom = "13px"
+)
+```
+
+- Can personal interactions between citizens and activists **improve representation**?
+- Normatively, we want representation to be **reflexive**: allowing for mutual influence and dense feedback loops between citizens and representatives.
+- **Deliberation** is widely seen as a key mechanism for increasing reflexivity, but making a political system more deliberative is difficult in practice.
+
+. . . 
+
+$\implies$ This projects tests the effects of deliberation in the context of **doorstep canvassing** on **diffuse** and specific political support.
+
+## Experimental Design {data-roadmap="Design"}
+
+:::{.incremental}
+1. **Randomisation**: At each door, canvassers are randomly assigned to either a **deliberative** or **non-deliberative** script.
+2. **Treatments**: The scripts differ in the following ways:
+    - **Non-Deliberative**: Active listening
+    - **Deliberative**: Active listening + topic pitch + discussion of topic
+3. **Measurement of DVs**: After the conversations, the voter is handed a mini-questionnaire with 3 - 4 questions, which they fill out (anonymously) and drop into a small **ballot box** the canvassers carry.
+    - Canvassers record gender and age of the voter, tone of the conversation, and topic of the conversation. They also guess PTV.
+    - Ballots can be linked to canvasser data via a unique ID
+:::
+ 
+## Outcomes {data-roadmap="Outcomes"}
+
+#### Core
+
+- External Efficacy: Does the voter feel that parties are responsive to their concerns? (1-5 scale)
+- PTV: Does the voter intend to vote for the party? (1-5 scale)
+- Coalition Preference: Which coalition would the voter prefer? 
+
+#### Possible Extensions 
+
+- Liking: Does the voter like the canvassers/enjoy the interaction?
+- Topic: What was the most important topic for the voter? 
+- Party specific external efficacy: (Do you think that the partner organisation is responsive to your concerns? (1-5 scale))
+
+## Anticipated Merits and Challenges {data-roadmap="Merits & Challenges"}
+
+#### Merits
+
+- High power because non-response among compliers should be low.
+- Social desirability bias should be low due to secret ballot + constant across conditions
+- Voter responses can be linked to canvasser data ($\implies$ can use covariates to improve precision, analyse heterogeneity, validate canvasser PTV perception, and test dyad effects)
+
+
+## Anticipated Merits and Challenges
+
+#### Challenges and Limitations
+
+- Field is a stronghold of the party, deliberation may be hard to implement in a homogenous in-group setting.
+- Sufficiently standardising the deliberative treatment
+- Very limited number of questions on the mini-questionnaire
+- Logistics
+- No way to measure persistence/decay
+
+
+## Let's talk about... {data-roadmap="Questions"}
+
+1. *Anything!*
+2. The right choice of DVs 
+3. The experimental condition, especially the deliberative script
+4. Interesting dyad effects to explore
+5. Mechanisms and measurable mediators
+6. Last but not least: Theory and Relevance!

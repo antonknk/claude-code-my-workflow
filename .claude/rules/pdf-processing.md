@@ -1,6 +1,7 @@
 ---
 paths:
-  - "master_supporting_docs/**"
+  - "resources/**"
+  - "archive/lecture-template/master_supporting_docs/**"
 ---
 
 # Robust PDF Processing

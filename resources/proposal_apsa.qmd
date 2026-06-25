@@ -1,0 +1,46 @@
+---
+title: "Reciprocity in Persuasion: An Experimental Test of Social Influence Reciprocity"
+author:
+  - name: Anton Könneke
+    affiliations:
+      - name: London School of Economics
+lang: en-GB
+bibliography: /Users/anton/Library/CloudStorage/OneDrive-LondonSchoolofEconomics/PhD/phd.bib
+format:
+    pdf:
+        documentclass: article
+        latex-engine: xelatex
+        papersize: a4
+        toc: false
+        number-sections: false
+        fontsize: 10.5pt
+        geometry: margin=2cm
+        template-partials:
+            - partials/before-body.tex
+header-includes:
+    - \PassOptionsToPackage{protrusion=true}{microtype}
+    - \usepackage{fontspec}
+    - \setmainfont[Ligatures=TeX, Numbers=OldStyle]{Palatino}
+    - \usepackage{setspace}
+    - \setstretch{1.0}
+    - \usepackage{xcolor}
+    - \usepackage{etoolbox}
+    - \AtBeginDocument{\AtBeginEnvironment{CSLReferences}{\small}}
+    - \usepackage{hyperref}
+    - \hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+---
+
+Are we more persuasive when we are open to being persuaded? Deliberative theory has long supposed so: genuine, two-way exchange is held to transform citizens through mutual persuasion [@habermasFaktizitatUndGeltung1998; @mansbridgeRethinkingRepresentation2003; @mansbridgeEverydayTalkDeliberative1999; @gutmannDeliberativeDemocracyProcess], a centripetal force that can forge common ground amid rising polarisation [@hoboltPolarizingEffectPartisan2024; @fishkinDeliberationAntidoteExtreme2021]. One half of that promise is now well established. Political information persuades, durably and in parallel, in increments that vary little with the messenger, the message, or the issue [@coppockPersuasionParallelHow2022; @broockmanConsumingCrossCuttingMedia2025]. Yet this evidence vindicates only the thinnest version of the ideal. If argument moves people irrespective of who advances it, then exposure to new considerations may be all that dialogue contributes, and the reciprocal, interpersonal exchange long taken to be its heart may add nothing. Two questions remain open. The first concerns reception: that result rests on designs that guarantee exposure, yet attention is precisely what is scarce beyond them [@zallerNatureOriginsMass1992b]. The second concerns acceptance: even when a message is heard, are we more willing to revise our views when an interlocutor has visibly revised theirs in response to ours? I argue that reciprocity bears on both. The perception of having influenced someone makes us attend more closely to what they say next, and more willing to be moved by it in turn.
+
+Two hypotheses follow, one at each of Zaller's stages. The first, *reception reciprocity* (H1), holds that perceived reciprocal influence heightens attention to what an interlocutor says next. On its own, H1 would resolve a standing puzzle: reciprocity signalling practices like listening facilitate persuasion in the field [@broockmanDurablyReducingTransphobia2016; @kallaReducingExclusionaryAttitudes2020] but not in the laboratory [@santoroListenChangeLongitudinal2025]. The discrepancy may be procedural, for laboratory designs purchase attention through payment and compelled exposure, saturating the very channel reciprocity would open in the field. The second, *social influence reciprocity* (H2), holds that perceived reciprocal influence raises acceptance, a genuine openness to revision, and it is this claim that matters most for deliberative theory. Prior attempts to test social influence reciprocity are few and indirect: one isolated a genuine reciprocity effect only in an abstract dot-placement laboratory task [@mahmoodiReciprocitySocialInfluence2018], the other doubted whether it had successfully induced reciprocity at all [@cialdiniWhenTacticalPronouncements1992a].
+
+To test these hypotheses, I propose a pre-registered survey experiment that manipulates reciprocity on one issue and measures persuasion on another. Participants first correspond with a purported "pen-pal" on a political issue (issue A). After an interval long enough to make a human reply plausible, they receive an (LLM-generated but ostensibly human) response that either acknowledges having been influenced by their arguments or does not. The responsive reply both declares the movement ("I was around a 6, but your message brought me closer to a 4.5") and demonstrates it by engaging the participant's specific point. The pen-pal then advances an identical appeal on a second, unrelated issue (issue B), so that persuasion on B reflects the relationship formed on A rather than the content of the appeal itself. A crossed warmth factor distinguishes reciprocal influence from mere liking and allows effect size benchmarking. The outcome is the pre-to-post shift in attitude, capturing genuine belief change rather than the public declaration or self-reported attitude change in Cialdini [-@cialdiniWhenTacticalPronouncements1992a]. The attitude shift tests H2; reading time and recall of the identical appeal test H1, so an effect on attention is visible even where attitudes do not, or not yet, move.
+
+The central difficulty is one of isolation: separating the perception of reciprocal influence from the warmth, effort, and engagement with which it is naturally confounded, and conveying it credibly through individualised, LLM-generated replies. These are precisely the decisions on which expert judgement is most valuable, and least reversible once the study is pre-registered and fielded. As an early-career researcher training as an experimentalist, I would use the fellowship's mentorship at exactly this stage: bringing the design before a senior scholar of experimental persuasion to tighten the manipulation against confounds, to validate and quality-control the generated letters, and to finalise the pre-analysis plan. The \$500 would not fund the study on its own, but it would defray part of the participant payments for the main experiment.
+
+{{< pagebreak >}}
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

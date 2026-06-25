@@ -1,14 +1,16 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
-  - "scripts/**/*.R"
+  - "pap/**/*.qmd"
+  - "party_deliverables/**/*.qmd"
+  - "scripts/R/**/*.R"
 ---
 
-# Course Knowledge Base: [YOUR COURSE NAME]
+# Study Design Knowledge Base: Doorstep Deliberation (AGH 2026)
 
-<!-- Fill in the tables below with YOUR domain-specific content.
-     Claude reads this before creating/modifying any lecture content. -->
+<!-- Fill in the tables below with the study's notation, variables, and design
+     decisions. Claude reads this before creating/modifying PAP, ethics, or
+     party-deliverable content so design language stays consistent across
+     documents. -->
 
 ## Notation Registry
 
@@ -22,23 +24,28 @@ paths:
 |--------|---------|------------|
 | | | |
 
-## Lecture Progression
+## Study Components
 
-| # | Title | Core Question | Key Notation | Key Method |
-|---|-------|--------------|-------------|------------|
-| 1 | | | | |
-| 2 | | | | |
+| Wave / Component | Core Question | Key Variable | Key Method |
+|---|---|---|---|
+| | | | |
 
-## Empirical Applications
+## Estimand Registry
 
-| Application | Paper | Dataset | Lecture(s) | Purpose |
-|------------|-------|---------|------------|---------|
-| | | | | |
+| Estimand | Definition | Hypothesis | Estimator |
+|---|---|---|---|
+| | | | |
+
+## Empirical Benchmarks
+
+| Benchmark | Source | Used For |
+|------------|-------|---------|
+| | | |
 
 ## Design Principles
 
-| Principle | Evidence | Lectures Applied |
-|-----------|----------|-----------------|
+| Principle | Evidence | Applied In |
+|-----------|----------|-----------|
 | | | |
 
 ## Anti-Patterns (Don't Do This)
@@ -47,10 +54,8 @@ paths:
 |-------------|---------------|-----------|
 | | | |
 
-## R Code Pitfalls
+## R / Power-Simulation Pitfalls
 
 | Bug | Impact | Fix |
 |-----|--------|-----|
 | | | |
-
-<!-- For research projects, add: Estimand Registry, DGP Configs, Tolerance Thresholds -->

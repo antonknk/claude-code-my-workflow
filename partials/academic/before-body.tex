@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  before-body.tex
+%%  Quarto custom title page modelled (loosely) on the
+%%  Journal of Politics article opener.
+%%
+%%  No horizontal rules. Designed for use with Linux Libertine
+%%  (the small-caps and oldstyle figures look best with libertine).
+%%
+%%  Usage in your .qmd YAML:
+%%
+%%    format:
+%%      pdf:
+%%        template-partials:
+%%          - before-body.tex
+%%
+%%  Reads:
+%%    title, subtitle, date, abstract, keywords
+%%    author:
+%%      - name: Jane Doe
+%%        email: j.doe@example.org
+%%        affiliations:
+%%          - name: London School of Economics
+%%            department: Department of Government
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+    \thispagestyle{empty}
+
+    % =============== Header block (all centered) ====================
+    \begin{center}
+
+        \vspace*{2.5em}
+
+        % ---- Title ----
+        {\LARGE\bfseries $title$\par}
+
+        % ---- Subtitle ----
+        $if(subtitle)$
+        \vspace{0.7em}
+        {\Large\itshape $subtitle$\par}
+        $endif$
+        \vspace{3em}
+    \end{center}
+
+    $if(by-author)$
+    % ---- Authors: bold name, lightweight inline affiliation + email ----
+    \begingroup
+    \raggedright\setlength{\parindent}{0pt}
+    $for(by-author)$%
+    {\large\bfseries $it.name.literal$\strut}%
+    $if(it.affiliations)$\enspace{\small\textemdash\enspace{}$for(it.affiliations)$$it.name$$if(it.department)$, $it.department$$endif$$sep$; $endfor$}$endif$%
+    $if(it.email)$\enspace{\small\textemdash\enspace\href{mailto:$it.email$}{$it.email$}}$endif$%
+    $sep$\par\vspace{0.35em}$endfor$\par
+    \endgroup
+    $else$$if(author)$
+                \noindent$for(author)$\textbf{$author$}$sep$, $endfor$\par
+            $endif$$endif$
+
+            \begin{center}
+
+                \vspace{2.5em}
+
+                % ---- Date ----
+                $if(date)$
+                $date$\par
+                $endif$
+
+            \end{center}
+
+            \vspace{1em}
+
+            % =============== Abstract  ============================
+
+        $if(abstract)$
+            \begin{center}{\textbf{Abstract}}\end{center}
+            \vspace{0.4em}
+            {\small\noindent $abstract$\par}
+            \vspace{1em}
+        $endif$
+
+            % \vfill
+            \vspace{1em}
+
+            % =============== Keywords =============================
+
+        $if(keywords)$
+            \begin{quote}\small\noindent\textbf{Keywords:}\enspace $for(keywords)$$keywords$$sep$, $endfor$\end{quote}
+        $endif$
+
+    \vspace{1em}
+
+\end{titlepage}
+
+\clearpage

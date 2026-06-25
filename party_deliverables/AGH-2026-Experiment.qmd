@@ -1,0 +1,61 @@
+---
+title: "Haustürstudie AGH 2026"
+lang: de
+date: today
+author: "Anton Könneke (LSE)"
+format:
+    pdf:
+        documentclass: article
+        latex-engine: xelatex
+        papersize: a4
+        toc: false
+        number-sections: false
+        fontsize: 10.5pt
+        geometry: margin=2cm
+        template-partials:
+            - ../partials/lean/before-body.tex
+header-includes:
+    - \PassOptionsToPackage{protrusion=true}{microtype}
+    - \usepackage{setspace}
+    - \setstretch{1.05}
+    - \usepackage{xcolor}
+    - \usepackage{etoolbox}
+    - \usepackage{titlesec}
+    - \titleformat{\section}{\normalsize\bfseries\scshape}{}{0pt}{}
+    - \titlespacing*{\section}{0pt}{1.3em}{0.5em}
+    - \AtBeginDocument{\AtBeginEnvironment{CSLReferences}{\small}}
+    - \usepackage{hyperref}
+    - \hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+---
+
+# Kernidee
+
+Dieses Feldexperiment testet, ob deliberative Gespräche an der Tür wirksamer sind als reines aktives Zuhören plus Positionsmitteilung. Im Hausbesuchswahlkampf von Bündnis 90/Die Grünen in Wahlkreis 7 (Berlin-Mitte) zur Abgeordnetenhauswahl 2026 wird pro Gespräch zufällig entschieden, ob die Canvasserin oder der Canvasser non-deliberativ oder deliberativ vorgeht. Am Ende erhalten die Bewohner\*innen einen kurzen, anonymen Fragebogen, den sie selbst in eine kleine Wahlurne werfen, die die Canvasser\*innen mitführen.
+
+# Ablauf an der Tür
+
+Canvasser\*innen werden in beiden Skripten geschult und wenden während einer Session beide an; welches Skript an welcher Tür zum Einsatz kommt, entscheidet der Zufall. Nach dem Gespräch trägt die Canvasser\*in kurze eigene Einschätzungen ein (Tonfall, vermutete Themen); die Bewohner\*innen beantworten selbst und anonym drei Fragen — Wahlabsicht, Einschätzung der Responsivität der Partei, Koalitionspräferenz — und werfen den Zettel direkt in die mitgeführte Box.
+
+# Die zwei Gesprächsvarianten
+
+Beide Skripte folgen derselben Grundstruktur und unterscheiden sich erst im letzten Schritt:
+
+1. Begrüßung, Partei wird genannt.
+2. Die Canvasser\*in fragt nach dem für die Person wichtigsten Thema und hört aktiv zu — Nachfragen, Paraphrasieren, keine Wertung.
+3. Die Canvasser\*in bringt ein Thema und die Position der Partei dazu ein.
+
+**Non-deliberativ:** Die Position wird mitgeteilt und kurz begründet. Reagiert die Person mit Zustimmung oder Widerspruch, hört die Canvasser\*in zu, geht aber inhaltlich nicht weiter darauf ein.
+
+**Deliberativ:** Die Position wird ausführlicher begründet. Bringt die Person ein Gegenargument vor, nimmt die Canvasser\*in es auf, antwortet inhaltlich und führt das Argument fort — bis ein echter Austausch entsteht oder die Person das Thema von sich aus abschließt.
+
+In beiden Fällen endet das Gespräch mit Dank und der Bitte, den Fragebogen auszufüllen.
+
+# Warum sollte das funktionieren?
+
+Die Frage dahinter: Reicht es, dass die Partei zuhört und ihre Position mitteilt, oder muss sie sich auch auf den Widerspruch der Wähler\*innen einlassen, damit Vertrauen und Wahlabsicht steigen?
+
+Ein zentraler Befund der Persuasionsforschung ist, dass politische Information weitgehend unabhängig davon überzeugt, wer sie vorträgt. Wenn allein der Inhalt zählt, sollte es für die Wirkung der Parteibotschaft keinen Unterschied machen, ob sie unwidersprochen bleibt oder diskutiert wird — beide Skripte vermitteln ja dieselbe Position. Die deliberative Theorie behauptet das Gegenteil: Erst der echte, wechselseitige Austausch von Argumenten soll Menschen tatsächlich bewegen, nicht die bloße Konfrontation mit Information.
+
+Deliberation setzt an zwei Stellen an. Erstens bei der Aufmerksamkeit: Wer merkt, dass der eigene Einwand tatsächlich aufgenommen und beantwortet wird, hört der Gegenseite eher weiter zu, statt innerlich abzuschalten. Zweitens bei der Bereitschaft, sich bewegen zu lassen: Wenn jemand auf das eigene Argument eingeht, fühlt man sich eher verpflichtet, im Gegenzug offen für dessen Argument zu sein. Reines Zuhören ohne inhaltliche Erwiderung kann diesen zweiten Mechanismus nicht auslösen, weil dort gar nichts erwidert wird — und genau das deckt sich mit einer früheren Studie mit der Partei zur Bundestagswahl 2025: reines, nicht-erwiderndes Zuhören zeigte im Schnitt keinen Effekt auf das Wahlergebnis.
+
+Eine Einschränkung bleibt: Deliberation wirkt in der Theorie am stärksten zwischen Menschen mit unterschiedlichen Ausgangspositionen — bei ohnehin überzeugten Anhänger\*innen bleibt wenig Raum für Meinungsänderung. Der Mehrwert der deliberativen Variante dürfte sich daher vor allem bei unentschlossenen oder kritischen Wähler\*innen zeigen.

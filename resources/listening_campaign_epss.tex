@@ -1,0 +1,647 @@
+% !TeX spellcheck = <none>
+\documentclass[11pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertine} 
+\setlength{\emergencystretch}{1em} % erlaubt TeX etwas mehr Spielraum bei Zwischenräumen
+\usepackage{adjustbox}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{svg}
+
+
+\usepackage{float}
+
+\usepackage{abstract}
+\usepackage[toc, page]{appendix}
+
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage{easyReview}
+\usepackage{subcaption}
+\usepackage{titling}
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
+\usepackage[includehead, headsep=.4in]{geometry}
+
+
+\usepackage{threeparttable}
+\usepackage{dcolumn}
+\usepackage{siunitx}
+\usepackage{tabularray}
+\newcolumntype{d}{S[
+	input-open-uncertainty=,
+	input-close-uncertainty=,
+	parse-numbers = false,
+	table-align-text-pre=false,
+	table-align-text-post=false
+	]}
+	
+
+%\usepackage{fancyhdr}
+%\setlength{\headheight}{13.6pt}
+%\setlength{\headheight}{15.2pt}
+%\thispagestyle{fancy}
+
+\newcommand{\hypautorefname}{Hypothesis}
+\usepackage{ntheorem}
+\theoremindent2em
+\theoremseparator{:}
+\newtheorem{hyp}{Hypothesis}
+
+
+%\renewcommand\thehyp{\arabic{prehyp}\alph{hyp}}
+%\newcommand{\hypgroup}{\refstepcounter{prehyp}}
+
+%\usepackage[breaklinks, hidelinks]{hyperref}
+\usepackage[colorlinks = true, linkcolor = black, urlcolor  = blue,citecolor = blue, anchorcolor = blue, breaklinks] {hyperref}
+
+\usepackage[format=plain,
+labelformat=simple,
+labelfont = bf,
+font={normal},
+indention=0cm,
+labelsep=period,
+justification=centering,
+singlelinecheck=true,
+tableposition=top,
+figureposition=top]{caption}
+
+\usepackage[
+backend=biber,
+style=apa,
+annotation=false,
+doi=true,
+date=year,
+labeldate=year, 
+isbn=false,
+uniquename=false,
+url=true
+]{biblatex}
+
+\addbibresource{../../../../phd.bib}
+\usepackage{pdfpages}
+
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+\begin{document}
+
+
+\setlength{\abovedisplayskip}{1pt}
+\SetCiteCommand{\autocite}
+
+
+\begin{titlingpage}
+	\begin{center}
+		\vspace*{1cm}
+		\LARGE\textbf{Non-Judgemental Listening as a Campaign Strategy in Partisan Doorstep Campaigns} \\[5ex]
+
+		\normalsize\textbf{Evidence from a Field Experiment in Germany}\\
+		\vspace{15em}
+		\normalsize\mdseries
+		\textsc{Anton Könneke} \\[2ex]
+		Department of Government\\[2ex]
+		London School of Economics and Political Science\\[2ex]
+		\today \\[2ex]
+		%			 5,247 Words \\[2ex]
+		%			 39 pages (30 main paper, 9 appendix)
+
+
+	\end{center}
+\end{titlingpage}
+
+%	\pagestyle{fancy}
+%	\title{Statement of Academic Purpose}
+
+\date{}
+%	\fancyhf{}
+%	\fancyfoot{} % clear all footer fields
+%	\fancyhead[R]{\thepage}
+%	\fancyhead[L]{Candidate 50149}
+%	\fancyhead[C]{Field Seminar Paper GV5XC}
+%	
+%	\thispagestyle{fancy}
+
+\doublespacing
+
+\pagebreak
+\setcounter{page}{1}
+%    \tableofcontents
+\pagebreak
+
+
+\begin{abstract}
+	Non-judgemental listening in face-to-face interactions has been shown to create feelings of receptiveness and connectedness and to facilitate attitude change. Building on the idea that political representation could benefit from a stronger connection and mutual exchange between citizens and political parties, this paper tests the effectiveness of non-judgemental listening as a campaign strategy in partisan doorstep campaigns. In a field experiment with the German Green party, conducted during the campaign for the 2025 General Elections in Berlin, I randomised campaign visits following a non-judgemental listening script on the electoral precinct level. Counter to the hypotheses, the treatment has no main effect on electoral results. These null results are precisely estimated within a range of about $\pm1$  percentage point. Exploratory analyses, however, point to larger effects in precincts the party rates as having the highest potential. I discuss possible explanations like the unprecedented salience of the election and identify some challenges in converting single-issue campaign-strategies into partisan ones.
+
+\end{abstract}
+
+\vspace{4cm}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+% Key Question
+Can listening win elections? In recent years, face-to-face canvassing campaigns have increasingly branded themselves as \emph{listening} exercises in which volunteers set out to hear from voters about their grievances and key political issues. Examples range from Emmanuel Macron's \enquote{Grande Marche} -- the 2016 doorstep campaign that kickstarted his presidential bid \autocite{schultheisCanFrenchPolitical2017}, Labour's increased emphasis of active listening strategies at the doorstep since 2022 \autocite{avrilPersuasionPathwaysHero2025}, the 2025 election campaign of the German \enquote{Die Linke}, which asked voters to share with canvassers what they would do if they themselves were elected chancellor \autocite{HausturwahlkampfWieLinke2025}, all the way to Zohran Mamdani's push for the New York Mayoralty \autocite{pilkingtonNewYorkersHave2025}.
+
+Adopting strategies pioneered by deep canvassing campaigns that successfully persuaded people to change their exclusionary attitudes towards minorities \autocites{broockmanDurablyReducingTransphobia2016}{kallaReducingExclusionaryAttitudes2020}{kallaWhichNarrativeStrategies2023}, these listening campaigns differ from previous canvassing campaigns in important ways. Instead of focussing on the quantity of interactions to \emph{mobilise} loyal (but potentially abstaining) supporters, they shift more towards a \emph{persuasion} strategy. Do strategies adapted from prejudice reduction interventions work as persuasive devices in partisan campaigning? While the decline in party identification \autocite{garziaPartisanDealignmentPersonalisation2022} and the sizeable group of (European) voters with broad consideration sets \autocite{wagnerMicroPerspectivePolitical2017} may render persuasion strategies promising, meta-analyses of traditional light-touch canvassing methods in the US found \enquote{an average effect of zero in general elections} on vote choice \autocite{kallaMinimalPersuasiveEffects2018}.
+
+Thus far, no studies have evaluated the effectiveness of \emph{partisan} listening strategies. However, as I argue below, they are fundamentally different from prejudice-reduction deep canvassing interventions: canvassers ask for support rather than tolerance, and conversations can hardly be designed around a single, superimposed issue.
+
+This paper makes three contributions: firstly, it conceptualises partisan doorstep listening as a persuasive strategy and proposes potential mechanisms through which listening might affect electoral outcomes. I argue that listening is a necessary (though not sufficient) condition for responsiveness. By listening, the party demonstrates that it cares for voters' perspectives and justifications -- a characteristic voters appreciate in a representative, be it a candidate or a political party.
+
+%    Maybe this should go into the discussion part
+Next, I discuss the deliberative potential of these interactions and its side-effects on representation. My key argument is that while not optimal from a deliberation perspective, these interventions represent a scaleable form of low-stakes political participation, that voters are exposed to incidentially. Hence, the party visits may do double-duty: in the process of competing for votes, parties that lend an ear to the electorate may also counteract political alienation and feelings of political inefficacy. Listening campaigns may therefore be a promising party-driven democratic innovation \autocite[cf.][]{farrellDemocraticInnovationPolitical2025}.
+
+Finally, I test the effectiveness of \emph{non-judgemental listening} in canvassing campaigns by political parties. In collaboration with the Green Party in Berlin, Germany, I conducted a randomised experiment at the electoral precinct level to determine the impact of having party members visit and listen to citizens. Canvassers were trained in \enquote{non-judgemental listening} techniques. In the treatment group, party activists encouraged voters to discuss issues important to them, listened attentively and visibly, asked clarifying and engaging questions, and paraphrased the voters' responses. No doorstep visits were made in the control group. Over 200 party members participated, knocking on nearly 23,000 doors and engaging with 8,840 voters.
+
+%this is the first in germany and the first listening in partisan campaigns
+This study is the first to assess the effectiveness of non-judgemental listening in a partisan canvassing campaign in the run-up to an election. It is also the first study to test the effectiveness of partisan doorstep canvassing as a mobilisation and persuasion strategy on actual electoral results in Germany and one of the few studies that use actual election results as dependent variable, thereby avoiding generalisability and validity pitfalls that are hard to rule out when using surveys to measure outcomes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	Across Europe, citizens are highly sceptical about the ability of the political system to represent the sovereign. When asked how much their national \enquote{political system allows people to have influence on politics} in the 2023 European Social Survey, 63\% responded with \enquote{very little} or \enquote{Not at all}. Only 8\% found that they have \enquote{a lot} or \enquote{A great deal} of influence \parencite{essericESS11IntegratedFile2024}. Similarly, most citizens of the European Union (EU) surveyed after the 2024 European Parliament Elections didn't believe that members of the European Parliament actually know what their constituents want: 47\% disagreed while only 22\% agreed that their representatives know about their views on politics \parencite{ZA8868}. 
+%	These responses indicate that a feeling of political inefficacy is pervasive in Europe. 
+
+%	Political Efficacy, the feeling that one's actions  have a bearing on political outcomes, is strongly related to the legitimacy of democracy. Government has to be \emph{able} to act on the issues it wants to act on  \textcite[122, 144]{dahlPolyarchyParticipationOpposition2007} and these issues have to correspond to the issues that are important to citizens. This second part of the effectiveness chain imposes that a citizen has to \enquote{believe that when he speaks other political actors will listen} \parencite[26]{eastonChildsAcquisitionRegime1967}. 
+
+%	Political parties in many democracies across the world reach a sizeable share of the population by simply knocking on their doors \autocite{daltonPartyMobilizationCampaign2011}. If these interventions can be used to reinforce citizens' feelings of efficacy, they could contribute to tackling the widespread disaffection with the representative system. Political parties are powerful civil society organisations whose potential to innovate democracy has thus far received to little attention \autocite{farrellDemocraticInnovationPolitical2025}. However, as they are \enquote{no civic charities} \autocite{foosPartiesAreNo2018}, parties are unlikely to engage in campaign practices with a broader democratic benefit unless they also profit from the intervention. Therefore, this paper focuses on the immediate electoral consequences of the intervention, leaving the study of mechanisms for future inquiries. 
+
+% This is what I study in this paper
+%	This paper evaluates the effectiveness of incorporating \emph{non-judgmental listening} into doorstep canvassing by political parties. In collaboration with the Green Party in Berlin, Germany, I conducted a randomized experiment at the electoral precinct level to determine the impact of having party members visit and listen to citizens. Canvassers were trained in \enquote{non-judgmental listening} techniques. During their doorstep interactions, party activists encouraged voters to discuss issues important to them, listened attentively and visibly, asked clarifying and engaging questions, and paraphrased the voters' responses. Over 200 party members participated, knocking on nearly 23,000 doors and engaging with 8,840 voters.
+%		
+%	%this is the first in germany and the first listening in partisan campaigns
+%	This study is the first to assess the effectiveness of non-judgemental listening -- which has been shown to be effective in laboratory settings and as a prejudice reduction intervention in pressure group campaigns \autocites{itzchakovCanHighQuality2020}{kallaReducingExclusionaryAttitudes2020} -- in a partisan canvassing campaign in the run-up to an election. It is also the first study to test the effectiveness of partisan doorstep canvassing as a mobilisation and persuasion strategy on actual electoral results in Germany.
+
+% Results 
+%	While the inquiry was well powered to detect an Intent-to-Treat effect of at least 2.5 percentage points, the point estimate for vote shares is only 0.0016, or 0.16 percentage points. There were also no measurable effects on turnout, candidate vote share, and the polar party's vote share. The effectiveness of the treatment did not vary based on the timing of the intervention. However, it was significantly more effective in areas where the party had estimated a high potential for impact.
+%	% Discussion
+%	I discuss the likelihood that its unprecedented salience made the 2025 German General Election an extremely difficult test for the hypotheses and that future studies should pay special attention to the combination of strategies that facilitate dialogue and those serve to persuade. 
+%		
+
+
+\section{Theory and Literature}
+
+Why should listening help political parties win votes? The following section surveys the current literature on the effects of listening and develops a valence-based argument for the why such interactions could benefit political parties electorally.  Moving beyond the effects on specific political support, I then outline potential side-effects of listening strategies for perceptions of the representative system writ large.
+
+\subsection{Listening as Persuasive Device}
+
+% Defining Listening
+Listening is a core democratic skill. Both representative and deliberative models of democracy require citizens and elites to listen. No meaningful deliberation can come from interactions that skip listening to others' views before engaging in negotiation about competing perspectives \autocite{scudderListeningCenteredApproachDemocratic2020}. Representative politics builds on the idea that representatives are \enquote{acting in the interest of the represented, in a manner responsive to them} \autocite[209]{pitkinConceptRepresentation1972}. This responsiveness criterion demands that the representative  regularly seeks out what the people they represent think, feel, and want.
+
+What does it mean to \emph{listen}? In a recent study, \textcite[570]{busbyTheyEvenCare2025} put this question to a sample of American respondents and find that listening is broadly construed as \enquote{hearing others' perspectives, being open-minded, and withholding judgement}. Political theorists have similarly defined listening as a practice that suspends previously understood categories during a conversation to facilitate the interactive construction of categories and meaning between interlocutors \autocite[174-177]{dobsonListeningDemocracyRecognition2014}. A key property of listening thus seems to be its \emph{non-judgemental} nature. Hearing someone talk and thinking about all the flaws in their argument while they're still going on thus wouldn't qualify as listening. While information about attitudes can be conferred in many ways (think opinion polls, protest, written words), these channels don't come with the experience of being listened to. We might infer that when a government shifts positions on a policy after a poll showed that policy to be unpopular, it has \enquote{listened to the people} but this is solely an assumption about how the position change came about. At no point will any citizen actually have had the experience of being listened to. Hence, I define listening as the direct face-to-face experience of sharing ones views with an interlocutor who attentively and non-judgementally receives the information conveyed.
+
+% What do we know about the effects of listening
+Research on the effects of listening on attitudes towards the listener and speaker is rich but fragmented across disciplines. Social-psychologists have mostly relied on lab experiments demonstrating that non-judgemental listening increases self-reflection, facilitates open-mindedness, attitude change,  and depolarisation and leads to a more positive and self-resembling perception of the listener \autocite{itzchakovListeningUnderstandRole2024}. People who talk about a prejudiced topic also experience higher autonomy and self-esteem when someone listens to them non-judgementally \autocite{itzchakovHighQualityListeningSupports2021}. Similarly, high-quality attentive listening -- a concept closely related to non-judgemental listening \autocites[see][249-250]{itzchakovHighQualityListeningSupports2021}[][1]{itzchakovCanHighQuality2020} -- also increases perceived receptiveness of the listener, making them feel understood, validated and cared for  \autocites{itzchakovHowFosterPerceived2022}{itzchakovCanHighQuality2020}.
+
+% Field experimental evidence
+Can listening lead to attitude change outside the lab? Some field experiments have thus far assessed the effectiveness of different listening strategies on political attitudes and behaviour. \textcite{kallaReducingExclusionaryAttitudes2020} test the effectiveness of a \enquote{non-judgemental narrative exchange} in three canvassing campaigns, targeted at reducing exclusionary attitudes towards immigrants and transgender people. They find that persuasive appeals were only effective when paired with non-judgemental narrative exchange, though \textcite{santoroListenChangeLongitudinal2024} find the opposite in a recent lab-experiment.  Furthermore, some previous studies have focused on narrative structures that elicit empathy for stigmatised out-groups \autocites{kallaWhichNarrativeStrategies2023}{broockmanDurablyReducingTransphobia2016}, showing a non-judgemental narrative exchange to be effective in reducing prejudice.
+
+Beyond the field and the lab, \textcite{vogelEvidentiaryBasisPolitical2025} meta-analyse 50 studies on the effects of perceived listening and find that speakers who felt their interlocutor listened to them feel more connected to the listener and trust them more. \textcite{busbyTheyEvenCare2025} run a conjoint experiment and demonstrate that voters value officials that listen to their constituencies, even if they are misaligned on policy or partisanship. Taken together, these findings point towards listening as an effective persuasive device in the context of prejudice reduction campaigns. Whether these effects travel to partisan canvassing is, however, a different question.
+
+\subsection{Listening in Partisan Campaigns}
+
+Should we expect listening to persuade in the partisan context? Several substantial differences make a direct transfer of mechanisms questionable. While some have argued that the in- and out-groups created by partisanship are no different to those between other social groups \autocite{nicholsonPolarizingCues2012}, the target of prejudice reduction and electoral persuasion interventions is very different. Whereas \textcite{broockmanDurablyReducingTransphobia2016} try to shift voters' attitudes towards the out-group, partisan canvassers arrive with a much bigger ask. Essentially, they ask voters not just for tolerance, but for support at the ballot box.
+Secondly, because parties canvassing before an election ask voters to support their platform, listening conversations can hardly be as narrowly pre-defined as in single-issue campaigns. Existing field experiments on the effects of listening were conducted in partnership with single-issue campaigns that imposed the conversation topic. There is nothing odd about that if the canvassing organisation is a single-issue campaign but for a party that contests for government to prescribe the topic of a \enquote{listening} conversation would strip the exercise of its core potential \autocite[356]{cohenDELIBERATIONDEMOCRATICLEGITIMACY2003}.
+
+Why should listening sway voters? I argue that partisan listening campaigns operate on a valence basis. \textcite{stokesSpatialModelsParty1963} defines valence-issues -- in contrast to position-issues -- as \enquote{those that merely involve the linking of the parties with some condition that is positively or negatively valued by the electorate}. Since voters like representatives who listen \autocite{busbyTheyEvenCare2025} and since listening fosters relatedness \autocite{vogelEvidentiaryBasisPolitical2025} and perceived partner responsiveness \autocite{itzchakovPerceivingOthersResponsive2024}, the strategy should demonstrate to voters that the canvassers -- and in abstraction the party -- are a \enquote{good type} of responsive representatives.
+
+Naturally, whether this is actually true or not, is a whole other question. A party may well conduct a listening campaign and either discard or even distort the insights gained to align it with its pre-existing views. However, it should be acknowledged that listening is indeed a necessary, if not sufficient, condition for responsiveness.
+
+%	Evidence that politicians listen to citizens and partisans
+Some evidence may suggest that listening does indeed promote responsiveness.
+Politicians frequently resort to anecdotes about what citizens shared with them to explain and justify their positions and establish themselves as representatives \autocites{sawardRepresentativeClaim2006}. They also report information from direct interactions with citizens to be the most important source of their perception of public opinion \autocite{walgraveHowPoliticiansLearn2023}. There is also evidence suggesting that representatives update their perceptions of public opinion  in response to the contacts they have with the electorate \autocite{broockmanBiasPerceptionsPublic2018}. Of course, most canvassing is usually conducted by activists, not representatives themselves. But these activists' perceptions and attitudes are not meaningless. Party activists are in a power exchange relationship with their party elites that manifests in mutual influence \autocites[22-22]{panebiancoPoliticalPartiesOrganization1988}{whiteleyExplainingPartyActivism1994}.
+%	Would they be interested in learning about other's opinions
+It is, however, less clear whether members would take preferences of voters into account when exerting their influence.
+Recent research has shown that interactions between highly politically interested partisans of opposing political ideologies as well as intense canvassing interactions across the aisle can reduce affective polarisation \autocites{hoboltPolarizingEffectPartisan2024}{kallaVoterOutreachCampaigns2022}, suggesting that party members political sophistication does not inoculate them against the information they receive when seriously engaging with outgroup members.
+
+In summary, partisan listening campaigns can be understood as a performance of responsiveness that may persuade voters based on valence considerations about what makes a good representative. While listening is voluntary and no guarantee of responsiveness, it creates a space in which political actors may learn new things about the electorate that change their perception of public opinion.
+
+% Psychological mechanism established, but do we belive this to be true? At least canvassers are party of the selectorate and there is mutual influence. Listening is a necessary condition not a sufficient one (four step EPE). Mention performative responsiveness. Don't go overboard, leave stuff for final paragraph.
+
+
+%%%%%%%%%
+%%%%%%%%%
+
+%	In the sections that follow, I explore how political parties can play a crucial role in addressing feelings of political inefficacy. I break down external efficacy into several key components based on previous literature and identify embedding \emph{listening} in doorstep campaigns as a promising innovation. 
+
+\subsection{Listening Campaigns and Democracy}
+
+The discussion so far has concerned the party's own electoral fortunes. Yet the same doorstep encounters may matter for democratic representation well beyond the implementing party's vote share. Political parties are often portrayed as a key actor to blame for the widespread disaffection with democratic representation \autocites[see e.g.][]{katzChangingModelsParty1995}{Michels1910}, and very rarely do we read about ways in which they might instead improve and innovate it \autocite{farrellDemocraticInnovationPolitical2025}. As the intermediary institution linking voters and the political system, parties in many democracies could be well positioned and resourceful enough to reinforce the connection between citizens and otherwise distant legislative and executive institutions. By playing a role at almost all levels of governance, from the local council to the European Union, they are the intermediary most forced to deal with the centrifugal forces of affective polarisation \autocite{reiljanFearLoathingParty2020a} and with levels of party-system fragmentation not seen in Europe since the 1930s \autocite{casalbertoaWhoGovernsEurope2022}. Yet this same reach also means they bridge spheres of policy-making and representation that would otherwise remain remote from one another: members frequently mingle with their elected officials, and even an MEP assigned to a region is likely just a phone call away from the local party leader. If these structures are open and the party on the ground lends an ear to people's concerns, political representation could become more tangible.
+
+That tangibility appears to be in short supply. Across Europe, citizens are highly sceptical about the ability of the political system to represent the sovereign. Asked in the 2023 European Social Survey how much their national political system allows people to have influence on politics, 63\% answered \enquote{very little} or \enquote{not at all}, while only 8\% felt they had \enquote{a lot} or \enquote{a great deal} of influence \autocite{essericESS11IntegratedFile2024}. Likewise, most citizens surveyed after the 2024 European Parliament Elections did not believe that their representatives know what their constituents want: 47\% disagreed and only 22\% agreed that members of the European Parliament are aware of their views on politics \autocite{ZA8868}. A feeling of political inefficacy thus appears pervasive across the continent.
+
+Political efficacy is usually considered to have two main dimensions: internal political efficacy, a person's perceived ability to participate in politics, and external political efficacy, a belief about the system's capacity and its actors' willingness to transform inputs into outputs \autocites{balchMultipleIndicatorsSurvey1974}{craigMeasuringPoliticalEfficacy1982}. \textcite{demulderMakingSenseCitizens2022} argues that external efficacy is itself multidimensional, distinguishing whether voters believe their representatives \emph{listen}, \emph{know}, \emph{act}, and \emph{succeed}. These dimensions differ markedly in how far they lie within representatives' control. Whether a party \emph{succeeds} when acting on its constituents' behalf is constrained by countervailing interests and the environment, and even to \emph{act} pre-supposes \emph{knowing} citizens' preferences. While politicians can rely on opinion polls or focus groups to gauge what the people they represent want, only direct, face-to-face listening comes with the experience of being listened to, and so it is the one channel that can make the transmission of those preferences tangible to the citizen. When a representative -- or, as in the campaign studied here, an activist canvassing on the party's behalf -- listens, representees may experience that their views are valued and that they bear on what politicians think and do. This resonates with Easton's classic observation that efficacy requires a citizen to \enquote{believe that when he speaks other political actors will listen} \autocite[26]{eastonChildsAcquisitionRegime1967}. It is not that congruence between citizens and representatives is impossible without listening, or guaranteed by it; rather, it should make a difference for efficacy whether such congruence can be attributed to one's own input.
+
+Two features make doorstep listening an unusually promising vehicle for this. First, it is cheap and easy to implement and -- once delegated to activists -- scalable to large portions of the electorate, since parties in many democracies already reach a sizeable share of the population simply by knocking on doors \autocite{daltonPartyMobilizationCampaign2011}. Second, because the visit comes to the citizen's door, it can reach even those who do not usually participate in politics, exposing them to a low-stakes form of political engagement almost incidentally.
+
+From a strict deliberative standpoint, these encounters are far from optimal: a single, time-pressed conversation at the doorstep is unlikely to qualify as deliberation in the demanding sense of an ideal deliberative procedure among free and equal participants trying to arrive at a consensus \autocite{cohenDELIBERATIONDEMOCRATICLEGITIMACY2003}. As parties ultimately want to win the support of voters they talk to, they can be expected to avoid confrontation.
+Yet even bracketing whether the party acts on what it hears, the act of getting a citizen to formulate and voice their political views to an attentive other may be valuable in its own right. Inviting voters to articulate what matters to them, and receiving it without judgement, may therefore do something to counteract political alienation quite apart from any downstream effect on policy.
+
+Seen this way, partisan listening campaigns might do double-duty. In the very process of competing for votes, a party that lends an ear to the electorate may also do its bit to tackle political alienation and inefficacy. Whether large-scale listening genuinely facilitates the transmission of attitudes or merely simulates it remains an open question with a strong normative component, and one a study of electoral outcomes alone cannot settle. Crucially, though, because parties are \enquote{no civic charities} \autocite{foosPartiesAreNo2018}, they are unlikely to take up more demanding canvassing scripts unless these also pay off at the ballot box. It is for precisely this reason that the present study turns first to the immediate electoral consequences of the intervention, leaving a fuller appraisal of its democratic side-effects to future work.
+
+
+\subsection{Hypotheses}
+
+This valence argument yields a straightforward electoral expectation: canvassers who visibly listen should leave voters with a more favourable impression of the party, and that impression should translate into support at the ballot box.
+The macro-level design adopted here cannot observe these attitudinal steps directly and instead focuses on political behaviour as captured by actual electoral results -- an outcome that both sidesteps the validity and generalisability pitfalls of survey-based measures and reflects what matters most to the implementing party. The hypotheses below therefore concern aggregate electoral outcomes at the precinct level.
+
+Hence, the first hypothesis is:
+
+\begin{hyp}\label{h:green_zweit}
+	Canvassing a precinct using non-judgemental listening increases the vote share of the implementing party.
+\end{hyp}
+
+Germany uses mixed-member proportional representation. Each voter has a list vote for a party and a candidate vote to elect a representative from their own electoral district. The partner organisation had the clear aim of winning the majority of both votes but was quite confident that their local candidate -- who was also the incumbent MP -- would be reelected. The treatment involved no direct reference to the candidate, apart from a leaflet with their photo on it that was handed over at the end of each interaction. As the listening intervention was a local campaign, voters who appreciated the local party's attempt to learn about their views might foremost reward the local candidate.
+
+\begin{hyp}\label{h:green_erst}
+	Canvassing a precinct using non-judgemental listening increases the vote share of the implementing party's local candidate.
+\end{hyp}
+
+While the treatment was explicitly designed to persuade voters, there is no reason to believe that it would not at the same time mobilise supporters. Mobilisation treatments in German canvassing campaigns usually involve a very short interaction in which voters are asked if they know about the upcoming election and whether they have already decided who they will vote for. Many practitioners speculate that the mere presence at the doorstep is what increases turnout, not the content of the interaction \autocites[184]{geisePartizipationDurchDialog2019}, which is broadly in line with findings showing that campaign interactions are more effective if they signal \emph{effort} by the campaigner \autocites{bartonWhatPersuadesVoters2014}{foosParliamentaryCandidatePersuader2018}.
+
+\begin{hyp}\label{h:turnout}
+	Canvassing a precinct using non-judgemental listening increases the overall turnout in the precinct.
+\end{hyp}
+
+The listening intervention has thus far foremost been tested as a strategy to decrease prejudice and counteract polarisation \autocites[e.g. in]{kallaVoterOutreachCampaigns2022}{broockmanDurablyReducingTransphobia2016}{itzchakovListeningUnderstandRole2024}. Hence, the intervention might have marked effects on supporters of the party most opposed to the canvassers' party. In the German case, polarisation is highest between supporters of the AfD and the Greens \autocite{huddePartisanAffectTimes2022}. The listening intervention could reduce the effectiveness of the Greens as \enquote{bogeyman}, potentially defusing an important mobilising factor.
+
+\begin{hyp}\label{h:afd}
+	Canvassing a precinct using non-judgemental listening decreases the vote share of the party most opposed (AfD) to the implementing party.
+\end{hyp}
+
+I also test two hypotheses that -- while pre-registered -- are not of immediate interest to the theoretical argument of the paper. Firstly, I calculate heterogenous treatment effects by canvassing timing. As the sequence in which units were visited was randomised, variance in timing is also exogenous. Theoretically, two counteracting factors are at play: the earlier the interaction takes place, the more likely it is that the voter has not yet made up their mind about which party to vote for, which could mean a greater openness to new information and a higher effectiveness early in the campaign \autocite{panagopoulosTimingEverythingPrimacy2011}. At the same time, effects long before election day might be more prone to decay as other campaigns also approach the voter and the memory of the doorstep interaction fades \autocites{nickersonQualityJobOne2007}{kallaMinimalPersuasiveEffects2018}.
+
+\begin{hyp}\label{h:timinga}
+	Effects will be stronger the earlier in the campaign phase a precinct was canvassed.
+\end{hyp}
+
+Secondly, while the opportunity to randomise treatment across the whole electoral district means that the canvassed precincts are representative for the district, the sample is less informative with regards to external validity. Usually, parties would not randomly canvass precincts in their electoral district but rely on a heuristic to identify precincts in which their time and effort translates into votes most efficiently. Hence, I also estimate heterogenous treatment effects by a precinct level \emph{potential index} estimated by the parties' data science team and kindly made available by the party.\footnote{Note that this index was provided for superseded precinct boundaries and was interpolated to the 2025 precinct boundaries using areal weighted interpolation.}
+
+\begin{hyp}\label{h:potential}
+	Effects will be stronger in precincts for which the party estimates a higher potential.
+\end{hyp}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%================================
+%================================
+%%%%%%%%%%%%%%%%%%%%%%%
+%	
+%	\subsection{Listening Campaigns and Democracy}
+%	
+%	Political parties are often portrayed as a key actor to blame for the widespread disaffection with democratic representation  \autocites[see e.g.][]{katzChangingModelsParty1995}{Michels1910}. Yet, somewhat tellingly, very rarely do we read about ways in which they could improve and innovate representation \autocite{farrellDemocraticInnovationPolitical2025}. As a key intermediary linking voters and the political system, parties in many democracies could be well positioned and resourceful enough to reinforce the link between citizens and distant legislative and executive institutions. 
+%	
+%	By playing a role in almost all levels of governance, from the local council to the European Union, political parties are the intermediary institution most forced to deal with the centrifugal forces of affective polarisation \autocite{reiljanFearLoathingParty2020a} and levels of party system fragmentation and polarization not seen in Europe since the 1930s \autocite{casalbertoaWhoGovernsEurope2022}. Yet, it also means that they bridge otherwise distant spheres of policy making and representation. Members frequently mingle with their elected officials, and even an MEP assigned to a region is likely just a phone call away from the local party leader. If these structures are open and the party on the ground lends an ear to people's concerns, this could make political representation more tangible.
+%		
+%%	These theoretical predictions about the significance of political efficacy are backed by empirical findings. Low levels of efficacy are connected to a populist worldview \parencite{beneSafetyNetPopulism2023}, that negates the need for political compromise and imagines a highly potent, united people that is barred from executing its political power by a corrupt elite \parencite{alma99148707089602021}. 
+%%	
+%%	While the populist critique reverberates with some contemporary diagnoses of democratic decline driven by a political elite that has long lost its connection to society \autocites{katzChangingModelsParty1995}{crouchPostdemocracy2004}, it is nevertheless obvious that its core assumption of a homogenous and united people is empirically wrong. Not least demonstrated by levels of party system fragmentation and polarization not seen in Europe since the 1930s \autocite{casalbertoaWhoGovernsEurope2022} and high levels of affective polarisation \autocite{reiljanFearLoathingParty2020a}. 
+%%	
+%%	%	How does this relate to intergouvernmental politics (EU)
+%%	The risk attached to this misconception is that societies enter a spiral of inefficacy and fragmentation. Voters who feel that the political system no longer translates their demands into outputs but only serves to dilute and defuse them might try \enquote{even harder} by adopting more extreme demands or electing candidates and parties opposed to a politics of compromise and who are even less likely to be backed by a majority. Such behaviour would follow the predictions of \emph{Prospect Theory} \autocites{kahnemanProspectTheoryAnalysis1979}{levyApplicationsProspectTheory2003} which posits that humans are willing to take larger risks when they feel deprived. If the political system no longer links demands and outputs, increasing effectiveness at the expense of democratic institutions might seem as a worthwile gamble for some.
+%%	
+%%	
+%%	% Link with Literature on democracies in Europe
+%%	\add{ Link with Literature on democracies in Europe}
+%%	
+%%	\subsection{Linking Efficacy and Listening}
+%%%	OUTLINE
+%% 1. Many people don't feel heard, which is a challenge for all democratic politics
+%
+%
+%% 2. Efficacy is multi-dimensional (De Moulder) 
+%	Political Efficacy is usually considered to have two main dimensions: internal political efficacy which refers to a person's (perceived) ability to participate in politics and external political efficacy, a belief about the system's capacity and its actors' willingness to transform inputs into outputs \autocites{balchMultipleIndicatorsSurvey1974}{craigMeasuringPoliticalEfficacy1982}. External (In-)efficacy might be felt for a number of reasons. One might believe that the institutional system is not capable of channelling demands, even though politicians would like to do exactly that. Similarly, a lack of efficacy could be both grounded in unwillingness or inability to act on citizens demands. \textcite{demulderMakingSenseCitizens2022} thus argues that external political efficacy is multidimensional. By disentangling whether voters believe their representatives 1) \emph{listen}, 2) \emph{know}, 3) \emph{act} and 4) \emph{succeed}, and by showing that these dimensions don't necessarily align, this multi-dimensional concept of external efficacy helps reasoning about interventions to increase external efficacy.
+%
+%% 3. While some dimensions are highly subject to political process, others can be influenced by party on the ground 
+%
+%	The four dimensions clearly differ in the extent to which they are in the control of representatives. Surely, representatives would hope to \emph{succeed} when acting on behalf of their constituents but will meet countervailing interests and environmental constraints. To \emph{act} on constituents behalf is easier to accomplish but pre-supposes \emph{knowing} their interests or preferences. While politicians can ultimately rely on public opinion polls or focus groups to gauge what the people they represent want, \emph{listening}  in direct face-to-face interaction could make transmission tangible. 
+%	% 4. One of these is listening  - the party as a socially embedded civic organiation could fulfill a function there, giving its members a purpose (reflect on motivations to particiapte in a party) and use them as connecting devices to different parts of society.
+%	When representatives listen, representees may make the experience that their views are valued and that they influence what politicians think and do. This is not to say that there can't be preference congruence between citizens and representatives without listening or that there will necessarily be congruence when there is listening. Instead, the argument is that it should make a difference for efficacy whether such congruence can be attributed to one's inputs or not.
+%	
+%%	In other words, knowing about citizens' preferences is a necessary condition for responsiveness but responsive policy making alone is not sufficient to demonstrate responsivity, the degree to which citizens experience the process of interest aggregation -- at the very start of which is interest sampling -- makes an important difference \autocite{Luhmann1983-xx}. 
+%	
+%% We know that politicians are somewhat responsive to what they hear, but can we expect party activists to link politicians and voters?
+%	If parties are to work towards increasing external efficacy, listening is a practice relatively easily implemented and -- when including activists -- also one that is scalable to reach large portions of the electorate. Yet, an important question with a strong normative component is whether large scale listening merely simulates or actually facilitates transmission of attitudes. Ultimately, preferences and public opinion perceptions of both activists and representatives will be a complex function involving  a plethora of individuals and environmental factors.
+%	
+%%	Evidence that politicians listen to citizens and partisans
+%	Politicians frequently resort to anecdotes about what citizens shared with them to explain and justify their positions and establish themselves as representatives \autocites{sawardRepresentativeClaim2006}. They also report information from direct interactions with citizens to be the most important source of their perception of public opinion \autocite{walgraveHowPoliticiansLearn2023}. There is also evidence suggesting that citizen-representative s affect representatives perceptions of public opinion \autocite{broockmanBiasPerceptionsPublic2018} and political behaviour \autocite{butlerCanLearningConstituency2011} and that lower-rank politicians who are given information about public opinion recommend higher rank co-partisans to adapt their strategies to it \autocite{liaqatNoRepresentationInformation2023}.
+%
+%% Evidence that activists have an intrinsic, pro democratic motivation and would probably like to act as joints.
+%	Can we expect similar patterns for activists? Do party activists act as \enquote{ambassadors to the community} \autocite[111]{scarrowPartiesTheirMembers2003}?
+%	% Would they channel in?
+%	It seems straightforward that party members seek to influence the policies adopted by their party and candidates.
+%	Activists and party elites are in a power exchange relationship that manifests in mutual influence \autocites[22-22]{panebiancoPoliticalPartiesOrganization1988}{whiteleyExplainingPartyActivism1994}. 
+%	%	Would they be interested in learning about other's opinions
+%	It is, however, less clear whether members would take preferences of co-citizens into account when exerting their influence. 
+%	Recent research has shown that interactions between highly politically interested partisans of opposing political ideologies as well as intense canvassing interactions across the aisle can reduce affective polarisation \autocites{hoboltPolarizingEffectPartisan2024}{kallaVoterOutreachCampaigns2022}, suggesting that party members political sophistication does not inoculate them against the information they receive when seriously engaging with outgroup members.
+%	Party members report \enquote{sustaining democracy} as a core motive for their participation \autocite{polettiWhyOnlyPeople2019} and many value the  deliberation component of intra party democracy  \autocite{wolkensteinIntrapartyDemocracyAggregation2018b}. 
+%	
+%	Yet, as parties are \enquote{no civic charities} \autocite{foosPartiesAreNo2018}, their main interest when campaigning is in winning elections. While the close connection between persuasion and representation \autocite{dischMakingConstituenciesRethinking2021} suggests that the two could go together in practice, it is thus paramount to establish whether more engaging forms of interactions also yield electoral rewards. 
+%
+%% 5. Yet, while parties have an interest in knowing about voters demands, they have cheaper ways to learn about them. To learn about the electorate, the party does not need to listen directly, it can base its assessments on public opintion data.
+%%	Yet, even if large scale listening campaigns could \alert{I guess this is where I explain why I study specific supports not diffuse ones in this paper}
+%% 6. However, they canvass anyways and there is a literature that suggests combining canvassing attempts with listening can be effective in persuasion. Yet, ideally, listening would affect voting behaviour, as this would give the party an incentive to listen. 
+%
+%	\subsection{Non-Judgemental Listening in Canvassing Campaigns}
+%
+%	A promising framework to increase mutual influence between party members and voters is \emph{non-judgemental listening}, a conversations strategy that reduces defensive processing and allows interlocutors to engage in a more meaningful and open exchange \autocite{itzchakovCanHighQuality2020}. Non-judgemental listening increases self-reflection, facilitates open-mindedness, attitude change,  and depolarisation and leads to a more positive and self-resembling perception of the listener \autocite{itzchakovListeningUnderstandRole2024}. People who talk about a prejudiced topic also experience higher autonomy, and self-esteem when someone listens to them non-judgementally \autocite{itzchakovHighQualityListeningSupports2021}. Similarly, hiqh-quality attentive listening -- a concept closely related to non-judgemental listening \autocites[see][249-250]{itzchakovHighQualityListeningSupports2021}[][1]{itzchakovCanHighQuality2020} -- also increases perceived receptiveness of the listener, making them feel understood, validated and cared for  \autocites{itzchakovHowFosterPerceived2022}{itzchakovCanHighQuality2020}. 
+%
+%	% Field experimental evidence
+%	Can listening lead to attitude change outside the lab? Some field experiments have thus far assessed the effectiveness of different listening strategies on political attitudes and behaviour. \textcite{kallaReducingExclusionaryAttitudes2020} test the effectiveness of a \enquote{non-judgemental narrative exchange} in three canvassing campaigns, targeted at reducing exclusionary attitudes towards immigrants and transgender people and find that persuasive appeals were only effective when paired with non-judgemental narrative exchange.  Furthermore, some previous studies have focused on narrative structures that elicit empathy for stigmatised out-groups \autocites{kallaWhichNarrativeStrategies2023}{broockmanDurablyReducingTransphobia2016}, showing a non-judgemental narrative exchange to be effective in reducing prejudice.  On the other hand, \textcite{santoroListenChangeLongitudinal2024} in a recent field experiment find -- against their expectations -- only a short lived effect of listening on attitude change and no substantial interaction between a listening and a persuasive-appeal treatment. 
+%	In summary, the previous literature suggests that  persuaders are viewed more positively when they employ non-judgemental listening but has yielded mixed results in the field in terms of attitude change. 
+%	
+%	To date, no study has examined the effects of non-judgmental listening in partisan canvassing campaigns. Unlike pressure group campaigns, party canvassing cannot easily pre-select conversation topics, especially during elections when voters consider diverse issues. Unlike campaigns studied in existing literature, partisan outreach primarily aims to win votes rather than change attitudes towards social groups. Given the impact of listening on the perceived qualities of the listener, the mechanism by which this intervention influences party vote shares may involve valence evaluations. Voters might view a party that engages empathetically as more trustworthy and genuinely interested in their perspectives. If individuals perceive listeners as more responsive \autocite{itzchakovHowFosterPerceived2022}, this perception could extend to the organization they represent. In this context, non-judgmental listening might affect political attitudes and behavior in two ways: firstly, by encouraging voters to critically reflect on their beliefs and be more open to other viewpoints; secondly, by enhancing voters' evaluation of the canvassing party as more responsive, potentially reducing feelings of political inefficacy and increasing the likelihood of voting for the party.
+%
+%%	The macro level design of the study precludes an analysis of attitudinal effects and focuses directly on political behaviour. While this means that the attitudinal dimension of the hypothesised mechanism can't be tested in this study, it moves beyond single-issue focused interventions and laboratory settings. This is partly due to resource constraints; the election under study was called unexpectedly and with comparatively short notice, leaving to little time to also implement a probabilistic survey. At the same time, electoral effects is what mainly counts for the implementing parties. As they are \enquote{no civic charities} \autocite{foosPartiesAreNo2018}, many parties will be doubtful about implementing more time-intensive canvassing scripts if these have no effect on the electoral result.
+%
+%% 7. Additionally, party members are not as trained and inmanipulable as party leaders, meaning they might be more influenced by interactions. Depending on the system, they are important in leadership selection and also seen as a group the party leaders cater to.
+%
+%%% Main Hypotheses 
+%
+%%% Could travel through persuasion or mobilisation, thus also looking at effects on turnout
+%
+%%% Listening could reduce affective polarisation to polar party, thereby demobilising AfD supporters.
+%
+%%% Additional hypotheses
+%
+%
+%	
+%Hence, the first hypothesis is:
+%
+%\begin{hyp}\label{h:green_zweit}
+%		Canvassing a precinct using non-judgemental listening increases the vote share of the implementing party.
+%\end{hyp} 
+%	
+%	Germany uses mixed-member proportional representation. Each voter has a list vote for a party and a candidate vote so select a representative from their own electoral district. The partner organisation had the clear aim of winning the majority of both votes but was quite confident that their local candidate -- who was also the incumbent MP -- would be reelected. The treatment involved no direct reference to the candidate, apart from a leaflet with their photo on it that was handed over at the end of each interaction. As the listening intervention was a local campaign and voters who liked the local parties attempt to get their views might thus foremost reward the local candidate.
+%	
+%	\begin{hyp}\label{h:green_erst}
+%		Canvassing a precinct using non-judgemental listening increases the vote share of the implementing party's local candidate. 
+%		
+%	\end{hyp} 
+%	
+%	While the treatment was explicitly designed to persuade voters, there is no reason to believe that it would not at the same time mobilise supporters. Mobilisation treatments in German canvassing campaigns usually involve a very short interaction in which voters are asked if they know about the upcoming election and whether they already decided who they'll vote for.  Many practioneers speculate that the mere presence at the doorstep is what increases turnout, not the content of the interaction \autocites[184]{geisePartizipationDurchDialog2019}, which is broadly in line with  findings showing that  campaign interactions are more effective if they signal \emph{effort} by the campaigner \autocites{bartonWhatPersuadesVoters2014}{foosParliamentaryCandidatePersuader2018}. 
+%	
+%	\begin{hyp}\label{h:turnout}
+%		Canvassing a precinct using non-judgemental listening increases the overall turnout in the precinct. 
+%	\end{hyp} 
+%
+%	The listening intervention has thus far foremost been tested as a strategy to decrease prejudice and counteract polarisation \autocites[e.g. in]{kallaVoterOutreachCampaigns2022}{broockmanDurablyReducingTransphobia2016}{itzchakovListeningUnderstandRole2024}. Hence, the intervention might have marked effects on supporters of the party most opposed to the canvassers' party. In the German case, polarisation is highest between supporters of the AfD and the Greens \autocite{huddePartisanAffectTimes2022}. The listening intervention could reduce the effectiveness of the Greens as \enquote{bogeyman}, potentially defusing an important mobilising factor. 
+%	
+%	\begin{hyp}\label{h:afd}
+%		Canvassing a precinct using non-judgemental listening decreases the vote share of the party most opposed (AfD) to the implementing party. 
+%	\end{hyp} 
+%	
+%	
+%	I also test two hypotheses that -- while pre-registered -- are not of immediate interest to the theoretical argument of the paper. Firstly, I calculate heterogenous treatment effects by canvassing timing. As the sequence in which units where visited was randomised, variance in timing is also exogenous. Theoretically, two counteracting factors are at play: the earlier the interaction takes place, the more likely it is that the voter has not yet made up their mind about which party to vote for, which could mean a greater openness to new information and a higher effectiveness early in the campaign \autocite{panagopoulosTimingEverythingPrimacy2011}. At the same time, effects long before election day might be more prone to decay as other campaigns also approach the voter and the memory of the doorstep interaction fades \autocites{nickersonQualityJobOne2007}{kallaMinimalPersuasiveEffects2018}. 
+%	
+%	\begin{hyp}\label{h:timinga}
+%			Effects will be stronger the earlier in the campaign phase a precinct was canvassed. 
+%	\end{hyp} 
+%		
+%
+%	Secondly, while the opportunity to randomise treatment across the whole electoral district means that the canvassed precincts are  representative for the district, the sample is less informative with regards to external validity. Usually, parties would not randomly canvass precincts in their electoral district but  rely on a heuristic to identify precincts in which their time and effort translates into votes most efficiently. Hence, I also estimate heterogenous treatment effects by a precinct level \emph{potential index} estimated by the parties' data science team and kindly made available by the party.\footnote{Note that this index was provided for superseded precinct boundaries and was interpolated to the 2025 precinct boundaries using areal weighted interpolation.}
+%		
+%	\begin{hyp}\label{h:potential}
+%			Effects will be stronger in precincts for which the party estimates a higher potential.
+%	\end{hyp} 
+
+%%%%%%%%%%%%%%%
+%====================
+%====================
+%%%%%%%%%%%%%%
+
+\section{Analytical Strategy}
+
+To test the hypotheses above, I conduct a field experiment with a political party in Berlin, Germany. The two-arm randomised-controlled trial compares precincts in which the party did not conduct doorstep canvassing with precincts in which it used a non-judgemental listening strategy. The following sections detail the design and implementation.
+
+\subsection{Treatment}
+
+% Getting into house
+Treatment was assigned at the electoral precinct level (for more details see \autoref{sec-randomisation}), and the party tried to visit all households in precincts in the treatment group. At the doorstep, canvassers introduced themselves and disclosed their partisan identity. They then asked the resident for their most important political issue and gave them some time to think. If the resident couldn't think of anything right away, they reassured them to share whatever was on their mind and mentioned broad policy areas (\enquote{This could be something relating to world politics, something very local, or something concerning the whole nation}). If respondents still couldn't think of an issue, canvassers were instructed to suggest topics based on what neighbours had shared with them before \enquote{For example, many of your neighbours mentioned public transport  and the high rents}. To avoid canvassers priming voters on the issues most important for the party, canvassers were instructed to be honest when suggesting topics and to only use this as a last resort. When respondents mentioned a topic but did not give an opinion, they were explicitly asked for their view on the issue.
+
+% Listening
+For the listening part of the conversations, canvassers were instructed to show that they were listening through body language (eye contact, nodding, mirroring the voter's facial expressions) and verbally. This included posing clarifying questions, asking for examples and opinions, paralinguistic vocalisations (\enquote{mhh}, \enquote{aha}, \enquote{mhh-hm}), and paraphrasing what the voter had said. Canvassers were given the clear instruction not to directly promote their platform or to challenge (or affirm) what residents shared with them.
+
+Canvassers aimed to keep conversations going for two to five minutes. At the end, they handed out a postcard with a QR code to a survey on voters’ main issues by the party (to corroborate the listening treatment) and a leaflet of the local candidate. Most canvassers received a one-hour induction on campaign logistics and non-judgemental listening, along with a script (see \autoref{A:script}). Untrained canvassers received a brief induction and shadowed experienced volunteers.
+
+
+
+\subsection{Randomisation}\label{sec-randomisation}
+
+To improve statistical power, units were block randomly assigned to treatment and control. Using  the major parties' vote shares and turnout from the European Parliament Elections in 2024 as pre-treatment covariates, 52  blocks of four precincts each\footnote{Since there were 209 precincts in total, one precinct was dropped.} were formed using multivariate continuous blocking \autocite{mooreMultivariateContinuousBlocking2017}. Covariate balance on socio-structural variables provided by the state election officer \autocite{amtfurstatistikberlin-brandenburgStrukturdatenFurWahl2024} and not used for blocking are reported in \autoref{tab:balance}. All variables are nicely balanced across treatment and control. \autoref{sec:placebo} presents further placebo tests on past electoral results in further support of successful randomisation.
+
+\input{../analysis/tables/balance.tex}
+
+In each block, units were randomly assigned to treatment with 0.25 probability, to control with 0.5 probability or to a holdout group with 0.25 probability using complete random assignment. 	Had all 52 precincts in the treatment group been treated before the end of the campaign, precincts from the holdout would have rolled out according to a random, pre-determined holdout-rollout sequence. In this case, the analysis would have accounted for differential treatment probabilities by block by using inverse-probability-weights \autocite[76]{gerberFieldExperimentsDesign2012}. However, as the holdout was not activated, no inverse-probability-weights were used in the analysis.
+
+\begin{figure}
+	\centering
+	\caption{Assignment of Precincts and Rollout}\label{fig:map}
+	\begin{subfigure}{0.66\textwidth}
+		\caption{In each block, one precinct is assigned to treatment, one to holdout, and two to control.}
+		\includegraphics[width=\textwidth]{../analysis/plots/map_conditions_all}
+	\end{subfigure}
+	\begin{subfigure}{0.66\textwidth}
+
+		\caption{The white precincts belong to blocks that were not rolled out -- the party didn't manage to treat the precinct assigned to treatment. }
+		\includegraphics[width=\textwidth]{../analysis/plots/map_conditions_activated}
+	\end{subfigure}
+	\begin{subfigure}{0.66\textwidth}
+
+		\caption{As the holdout was not used, all holdout precincts in blocks that were rolled out are moved into the control group. The analysis compares the red treated and the grey untreated precincts. Precincts in blocks that were never visited are not included in the analysis.}
+		\includegraphics[width=\textwidth]{../analysis/plots/map_conditions_holdout_control}
+	\end{subfigure}
+\end{figure}
+
+%		\begin{figure}
+%			\centering
+%			\caption[Assignment of Precincts and Rollout]{Assignment of Precincts and Rollout}\label{fig:map}
+%			\includegraphics[width=\linewidth]{../analysis/plots/map_rollout}
+%			\begin{minipage}{1\linewidth}
+%				\footnotesize\raggedleft	
+%				\emph{Note: Map displays electoral district 74 (Berlin Mitte). Thick lines represent city district (Ortsteil) borders.}
+%			\end{minipage}
+%		\end{figure}
+
+The resulting 52 blocks were randomly assigned a treatment-rollout sequence between 1 and 52 which determined the order in which precincts were visited \autocite[see][]{nickersonScalableProtocolsOffer2005}. As pre-registered, the final analysis includes all blocks with a rollout value smaller or equal to the highest realised rollout. In other words, as all precincts in blocks with rollout values below or equal to 29 have been visited, only the blocks with a rollout level between 1 and 29 are included in the final analysis. As the holdout was not used, it is pooled with the control group. This means that there are 29 blocks, each containing one treated and three control precincts. \autoref{fig:map} shows the 209 precincts, their condition and whether they were within the 29 blocks that were ultimately rolled out.
+
+
+
+\subsection{Pre-Registration and Data}
+
+All hypotheses, the research design, randomisation code and assignments, rollout sequence, statistical tests and 90\% confidence intervals have been pre-registered and are available under \href{https://doi.org/10.17605/OSF.IO/Z5W8E}{https://doi.org/10.17605/OSF.IO/Z5W8E}. Data for the party's mobilisation index were made available for the electoral district under study, though the party did not fully disclose the underlying model. However, the indices' main use is to direct canvassers to precincts in which the party suspects canvassing to be most effective.\footnote{In the experimental electoral district, all doorstep canvassing was coordinated centrally via the party chair and the score was not used in any way.} The index is correlated with the party's past vote shares. Two different but highly correlated versions of the index were provided, and I test \autoref{h:potential} on both of these below. As the indices were provided for superseded precinct boundaries, I reprojected them to the 2025 precincts using areal weighted interpolation.
+
+\subsection{Compliance}
+
+To keep track of compliance and the progress of the roughly 250 activists involved in the campaign, it was decided to use a proprietary qualtrics-based web app as a tool to record each door knock.  Activists had to log into the application by entering a land-lot level identifier (we used animal names to make these easier to memorise) and were then sent into a loop in which they were asked  several questions after each interaction (if one had taken place). Crucially, doors that weren't opened were also recorded. \autoref{sec:revisit} details efforts to increase compliance by making sure as many as possible buildings in a precinct were visited.
+
+
+\input{../analysis/tables/contactrate_2.tex}
+
+The campaign knocked on a total of 22,939 doors, at 8,840 (38.5\%) of which the door was opened. Most conversations lasted less than a minute (20.4\% of doors/53.1\% of conversations) but 27\% of conversations (2,371 conversations, 10.3\% of doors) lasted between 2 and over 7 minutes. While there is no data on the number of apartments (or \enquote{doors} in that sense) in the electoral district, the party won a total of 2,523 list votes of the total 13,295 votes cast  in the treated precincts.\footnote{Note that this excludes mail-in ballots, which are not counted at the precinct level. Mail-in ballots are thus excluded from all analyses.} It thus seems adequate to posit that canvassers visited a large share of individuals in the treatment group and that they were able to conduct non-judgemental listening in a substantial share of these conversations.
+
+\section{Results}
+
+\autoref{tab:main} reports the results for hypotheses \ref{h:green_zweit}, \ref{h:green_erst}, \ref{h:turnout} and \ref{h:afd}. Point estimates are calculated using ordinary-least-squares, inferential statistics for the ITT are estimated with randomisation inference, testing against the sharp null hypothesis of no effect for all units. Note that given the small sample size that precinct randomised designs imply, I use an $\alpha$ threshold of 0.1 and 90\% confidence intervals for hypothesis testing. As randomisation inference can yield biased confidence intervals when treatment and control groups differ and the smaller group exerts a higher variance \autocite[68]{gerberFieldExperimentsDesign2012}, I report the standard deviation and group size of all outcome variables by condition. Only in the case of \autoref{h:afd} is the variance in the (smaller) treatment group slightly larger than in the control group. \autoref{A:ses} replicates \autoref{tab:main} with heteroscedasticity robust standard errors for small samples (HC3). The resulting confidence intervals tend to be slightly larger but don't change the substantial interpretation of the results presented here.
+
+
+\input{../analysis/tables/main_ri.tex}
+
+Neither of the ITT estimates is statistically significant at the pre-registered $\alpha = 0.1$. 	Note that the dependent variable represents percentages and is scaled to range from 0 to 100. The effect on list votes is estimated at 0.16 percentage points  ($d = 0.02, p = 0.89$), which -- in a precinct with 464 voters (mean turnout in the control group) -- would translate to only $464 \times 0.0016 = 0.74$ additional votes. Without adjusting for covariates, the 90\% confidence interval ranges from -1.67 to 2.07 percentage points. When adjusting for the party's vote share at the 2024 European Parliament Elections\footnote{I use vote shares at the last European Parliament Elections for two reasons. Firstly, because the election happened less than a year before the 2025 general elections, and secondly, because the precinct boundaries were the same as in 2025. This is not the case for the last general elections, which were still held according to now deprecated precinct boundaries.} (see \autoref{tab:ri_cov}) to reduce sampling variability and increase precision, the effect changes sign and remains insignificant but the confidence intervals shrink substantially, now ranging from -1.12 to 0.84 percentage points. Relating this upper bound of the 90\% covariate adjusted CI to the average turnout in the control group, the intervention is unlikely to have produced an effect of more than $464 \times 0.0084 \approx 3.9$ voters per precinct. Hence, it is unlikely that the treatment had a sizeable effect on the party's vote share.
+
+For candidate vote share too, the insignificant ($p = 0.77$) point estimate is negative and small in magnitude ($ITT = -0.38, d = -0.042$). In the covariate corrected model, the estimate is -0.771 ($d = -0.08$) with confidence intervals ranging from -1.85 to 0.35. While this is the largest effect detected, it should be noted that the covariate adjustment using European Election vote shares might be least appropriate for the candidate votes, as candidates are elected by plurality.  A more adequate control strategy might thus be to rely instead on candidate vote share in the 2021 federal elections. Exploratory analyses using candidate vote shares from 2021 (interpolated to 2025 precincts using areal weighting) yield an insignificant point estimate of 0.037, indicating that the comparatively large negative effect in the covariate adjusted model is highly sensitive to alternative specifications (see \autoref{tab:ri_cov_21} of \autoref{A:2021controls}).
+
+\input{../analysis/tables/cov_ri.tex}
+
+The ITT for turnout is 0.114 ($p = 0.897, d = 0.025$) in the unadjusted and 0.265 ($p = 0.666, d = 0.06$) with the 90\% CI spanning from -0.72 to 1.25 for the covariate adjusted model. Finally, the effect on AfD vote share is positive and insignificant in the unadjusted model ($p = 0.77, d = 0.05, \text{CI:} [-1.015, 1.524]$), and essentially zero in the adjusted model ($p = 0.961, d = 0.004, \text{CI:} [-0.581, 0.598]$).
+
+
+
+
+\subsection{Heterogenous Treatment Effects}
+I test \autoref{h:timinga} and \ref{h:potential} against the null hypothesis of constant effect by estimating a restricted model which includes the treatment indicator and the potential moderator on the right hand side and an unrestricted model that also includes an interaction of the moderator and the treatment indicator:
+
+\begin{gather}
+	Y = \beta_0 + \beta_{1} D + \beta_2 M + \epsilon \quad \tag{Restricted Model} \\
+	Y = \beta_0 + \beta_1 D + \beta_2 M + \beta_3 (D \times M) + \epsilon \quad \tag{Unrestricted Model}
+\end{gather}
+
+I then use randomisation inference to simulate 10,000 random assignments and calculate the F-statistic for each model. The p-value is then estimated as the share of randomly generated F-statistics larger than the empirical F-statistic and  I reject the null hypothesis if the p-value is smaller than 0.1. This procedure follows \textcite[298-299]{gerberFieldExperimentsDesign2012}. The models themselves are estimated using OLS and the reported uncertainty estimates for coefficients are estimated from HC3 heteroscedasticity robust standard errors \autocite{longUsingHeteroscedasticityConsistent2000}.
+
+\input{../analysis/tables/HTE_pr.tex}
+
+\autoref{tab:HTE_pr} reports the unrestricted models. The first two rows of the goodness-of-fit block give the $F$-statistic for the comparison with the restricted model and the corresponding randomisation-inference $p$-value. The party supplied two versions of its potential score, which turned out to be (almost exactly) a linear index -- ranging from 3 to 9 in the district under study -- and its square; the two are correlated at $r_{\text{pearson}} = 0.994$, and I test \autoref{h:potential} on both. Both strongly predict the Greens' list vote share ($R^2 = 0.69$ for the linear and $0.68$ for the squared version), confirming that the score captures real variation in party support; this is visible in panels A and B of \autoref{fig:hte}.
+
+Consistent with \autoref{h:potential}, the treatment effect is concentrated in the precincts the party rates most highly. For the linear index (column~1; panel~B of \autoref{fig:hte}), the interaction is marginally significant at the pre-registered threshold ($p_{\text{RI}} = 0.098$): each one-point increase in the potential score is associated with a treatment effect larger by about 1.1 percentage points. Given the 3-to-9 range of the index, the implied effect is negative in the lowest-potential precincts but turns positive -- on the order of two percentage points -- in the highest-potential ones, where the fitted line for treated precincts visibly overtakes that of the controls. The squared specification (column~2; panel~A) points in the same direction but falls just short of significance ($p_{\text{RI}} = 0.126$). Reassuringly, the non-parametric binning estimator of \textcite{hainmuellerHowMuchShould2019}, reported in \autoref{fig:hte_bins}, recovers the same positive gradient, indicating that the interaction is not merely an artefact of imposing a linear functional form. A parallel -- and somewhat stronger -- pattern emerges for turnout (panel~C): the treatment raised turnout more in higher-potential precincts ($F = 5.83$, $p_{\text{RI}} = 0.013$), although this particular moderation was not pre-registered and is therefore exploratory.
+
+These results warrant caution: the moderation was pre-registered only as a secondary hypothesis, the evidence is marginal, and it relies on an index the party supplied but did not fully document. Still, the pattern is substantively important. Parties do not canvass at random; they target precincts where they expect their effort to translate into votes. The precisely-estimated null on average (\autoref{tab:main}) thus masks meaningful heterogeneity, and tentatively suggests that non-judgemental listening may pay off precisely in the subset of precincts where a party would realistically deploy it -- the very subset that a randomised, district-wide rollout dilutes.
+
+\begin{figure}
+	\centering
+	\caption[Heterogenous Treatment Effects by Mobilisation Index and Rollout]{Heterogenous Treatment Effects by Mobilisation Index and Rollout}
+	\label{fig:hte}
+	\includegraphics[width=\linewidth]{../analysis/plots/hte_panels}
+	\begin{minipage}{1\linewidth}
+		\footnotesize\raggedleft
+		\emph{Note: Each panel plots precinct-level Green list vote share (panels A, B, D) or turnout (panel C) against a moderator, with separate OLS fits for treated (green) and control (blue) precincts. $F$ and randomisation-inference $p$-values test the null of a constant treatment effect.}
+	\end{minipage}
+\end{figure}
+
+By contrast, there is no indication of treatment-effect variability by rollout timing (\autoref{h:timinga}), whether the treatment indicator is interacted with the assigned rollout sequence or with the time between the median canvassing visit and the election (columns~3 and~4 of \autoref{tab:HTE_pr}). The almost perfectly aligned regression lines for treated and untreated precincts in panel~D of \autoref{fig:hte} ($F = 0$, $p_{\text{RI}} = 0.928$) underline this null.
+
+
+% Turnout effects in strongholds
+% Vote share effects in strongholds
+
+%	Compliance
+
+
+\section{Discussion and Conclusion}
+This paper developed the argument that political parties are well-positioned actors to confront feelings of political inefficacy: they conduct large-scale outreach campaigns that -- when adapted appropriately -- could benefit both the party and representative democracy more broadly. It put the first and more demanding half of that argument to the test, asking whether a non-judgemental listening script yields electoral returns, in a field experiment run in cooperation with a major German party. On average, it did not: the intervention had no detectable effect on the party's list vote share, on its candidate's vote share, on turnout, or on the vote share of its polar opponent. These nulls are precisely estimated -- the covariate-adjusted confidence interval for the main outcome rules out effects larger than about one percentage point in either direction -- so the finding is one of a substantively small effect, not mere statistical inconclusiveness.
+
+The averages, however, conceal a more nuanced pattern. The estimated treatment effect rises with the party's own assessment of a precinct's potential, and in the precincts the party rates most highly the implied effect on both vote share and turnout turns positive. This bears on how the headline null should be read. A randomised, district-wide rollout deliberately spreads treatment across precincts most campaigns would never prioritise, so the resulting average answers a question campaigns rarely ask. Seen in that light, the evidence is consistent with listening paying off precisely where a party would choose to deploy it, even as it washes out across the district as a whole. This moderation is, to be clear, marginal, pre-registered only as a secondary hypothesis, and based on an index the party supplied but did not document; it should inform better-powered future designs rather than be read as settled.
+
+Non-judgemental listening has featured as an important component in the interventions of a range of recent studies that investigated prejudice reduction and attitude change more generally \autocites{kallaReducingExclusionaryAttitudes2020}{broockmanDurablyReducingTransphobia2016}. Why did the implementation in a partisan doorstep canvassing campaign during the German General Elections 2025 not affect the electoral result? There are several theoretical explanations. Firstly,  persuasion in general elections is extremely difficult to achieve \autocite{kallaMinimalPersuasiveEffects2018}. In that regard, the 2025 German federal election was probably one of the most difficult tests to which the hypotheses could have been subjected. Called early after the collapse of the governing coalition, it was fought at exceptional salience, with three parties -- the FDP, Die Linke, and the newly founded BSW -- battling for (re-)entry to the Bundestag around the five-percent threshold. The intensity is visible in turnout: at 82.5\% of eligible voters, participation was the highest since 1987. In a contest this saturated with competing campaign stimuli, a single doorstep conversation faces long odds of producing durable persuasion.
+
+A second reason is the difficulty of transplanting a script designed for single-issue persuasion into a partisan campaign. The interventions from which non-judgemental listening is borrowed introduced voters to a pre-defined topic before eliciting their views \autocites{kallaReducingExclusionaryAttitudes2020}{broockmanDurablyReducingTransphobia2016}. A party canvassing before an election cannot do this without hollowing out the exercise: prescribing the topic of a \enquote{listening} conversation would defeat its purpose. Activists therefore had little control over the content of each interaction. This made it difficult for them to achieve conversations of the desired length. As they were instructed not to steer the conversation, they often struggled to keep it engaging after their interlocutors had shared their top-of-the-head issues.
+
+A third possibility is imperfect treatment delivery. Roughly 53\% of conversations lasted no longer than a minute, and canvassers consistently reported that getting voters to open up was the hardest part of the task. Canvassing is far less common in Germany than in the United Kingdom or the United States and is sometimes met with the wariness reserved for religious missionaries. Stronger effects might thus emerge where voters are more accustomed to a conversation with a stranger at the door, or under a script and training intensive enough to draw voters out reliably; training that grows too elaborate, however, would erode the very scalability that makes listening attractive as a party strategy in the first place. In fact, parties struggle no less with low compliance when researchers are not looking -- the ITTs identified in this paper are thus the most policy-relevant estimands.
+
+Beyond these explanations, the shape of the heterogeneity is itself theoretically instructive, because it speaks to the mechanism and not merely to the difficulty of the test. The treatment left the vote share of the party's polar opponent untouched (\autoref{h:afd}), and what electoral payoff there is emerges only where the Greens were already strong, where it surfaces in vote share and turnout alike. That the two outcomes move together is the signature of mobilisation rather than conversion: the listening visit appears to have activated latent supporters in the party's strongholds rather than to have brought opponents across. In the low-potential precincts -- where the doors that open belong disproportionately to non-supporters -- listening produced no positive effect, and if anything a slightly negative one, in exactly the places where a persuasion mechanism would have had the most room to operate. The macro-level design cannot decompose this into turnout and vote-switching at the individual level, and the negative estimates are not individually significant, so the reading remains inferential. Taken as a whole, however, the pattern suggests that in a high-salience partisan general election even a richer, more empathetic script collapses into the mobilisation tool that light-touch canvassing has long been shown to be \autocite{kallaMinimalPersuasiveEffects2018}.
+
+These results speak only to the first, electoral link in the broader argument; the second -- whether listening campaigns can shore up external efficacy and counteract political alienation -- remains untested here. The macro-level design observes electoral behaviour but none of the intervening attitudinal steps, and was chosen deliberately because electoral returns are what a vote-seeking party ultimately responds to \autocite{foosPartiesAreNo2018}. The marginal but suggestive heterogeneity by potential offers at least a slender reason to think the electoral incentive is not entirely absent. Establishing whether the hoped-for democratic side-effects are real, however, will require pairing the intervention with individual-level measures of efficacy, trust, and perceived responsiveness -- something the unexpectedly short campaign window did not allow in this case.
+
+Given time and resource constraints, this study could only compare the listening treatment against a pure, uncontacted control group. It therefore cannot separate the effect of listening from that of a doorstep visit as such, nor establish whether listening works best in combination with an explicit appeal for support. Future experiments should test several operationalisations of the listening script, contrast them against an active conventional-canvassing control, and pair listening with persuasive appeals: listening may raise voters' receptiveness and depth of processing yet translate into votes only when followed by an ask. The intuition was captured by one of the canvassers, who remarked that \enquote{it sometimes felt like listening brought us to the penalty spot, but we weren't allowed to score}.
+
+
+\section{References}
+
+\printbibliography[heading=none]
+
+\newpage
+% Appendices
+\begin{appendices}
+
+	\begin{refsection}
+
+		\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+		\counterwithin{figure}{section}
+		\counterwithin{table}{section}
+
+		\section{Procedure if Land Logs had to be Revisited}\label{sec:revisit}
+		At the end of a canvassing session, activist entered the addresses which they had visited. To make sure as many buildings as possible were visited in each precinct, these data were fed into an online tool that listed at the building level whether treatment was assigned. That way, if canvassers did not manage to visit each building in one land-log, they could come back to finish these remaining buildings at the next opportunity. With the average land log containing only 22 buildings, a case-based decision  about whether to conduct an additional canvassing session was made if  more than 80\% of buildings in a land log were left untreated after a session.  An archived version of the tool is available
+		\href{https://antonkoenneke.de/_files/papers/2025/berlin_listening_rct/supplementary_documents/maptool.html}{here}  and a copy of the enumerator tool is available \href{https://lse.eu.qualtrics.com/jfe/form/SV_6RNRl2SydAy4ORo?distribution=ReplicationMaterial}{here}.
+
+		\section{Placebo Tests}\label{sec:placebo}
+
+		To test whether randomisation was carried out successfully, I also run placebo checks on past electoral results. Note that the 2024 european election results at the precinct level were used to construct the randomisation blocks. Hence, it is not surprising that these are balanced across treatment and control. The 2021 federal election results, however, were not considered when the blocks were constructed. As \autoref{fig:placebo} clearly shows, electoral results of the main parties did not differ significantly for between treatment and control group for either election. What's more, the differences are also substantially small. For the main DV, the Greens' vote share, the difference is less than half a percentage point.
+
+		\begin{figure}
+			\centering
+			\caption[Results of Placebo Tests]{Results of Placebo Tests}
+			\label{fig:placebo}
+			\includegraphics[width=\linewidth]{../analysis/plots/balance_placebo.png}
+			%    	\begin{minipage}{1\linewidth}
+			%    		\footnotesize\raggedleft	
+			%    		\emph{Note: Median Days to Election represents the median difference of days between a canvassing visited and the election.}
+			%    	\end{minipage}
+		\end{figure}
+
+		\section{Non-Parametric Test for Heterogeneous Treatment Effects}\label{sec:nonpar}
+
+		The parametric interaction models in \autoref{tab:HTE_pr} assume that the treatment effect changes linearly with the moderator. To guard against the possibility that this functional-form assumption drives the heterogeneity reported in the main text, I re-estimate the moderation using the binning estimator proposed by \textcite{hainmuellerHowMuchShould2019}. This estimator splits the moderator into low, medium, and high bins and estimates the marginal effect of treatment within each, so that a non-linear or non-existent interaction would show up as binned estimates that depart from the linear fit. \autoref{fig:hte_bins} reports the results. For both the linear and the squared potential index (panels A and B) and for turnout (panel C), the binned marginal effects are mainly driven by the H-bin (precincts with high potential). For canvassing rollout (panel D), the binned estimates are flat and statistically indistinguishable from one another, mirroring the null reported in the main text.
+
+		\begin{figure}
+			\centering
+			\caption[Non-Parametric (Binning) Tests for Heterogeneous Treatment Effects]{Non-Parametric (Binning) Tests for Heterogeneous Treatment Effects}
+			\label{fig:hte_bins}
+			\includegraphics[width=\linewidth]{../analysis/plots/bin_hte_panel.png}
+			\begin{minipage}{1\linewidth}
+				\footnotesize\raggedright
+				\emph{Note: Binning estimator of \textcite{hainmuellerHowMuchShould2019}. Hollow points are the estimated marginal effect of treatment within the low (L), medium (M), and high (H) tercile of the moderator; thick and thin red bars give 83\% and 90\% confidence intervals. The solid line is the linear interaction estimate.}
+			\end{minipage}
+		\end{figure}
+
+		\section{Power Analysis}\label{A:power}
+		As the party found it difficult to estimate how many activists it would recruit and how many doors it would be able to visit and since the campaign period was much shorter than usual, one of the most important concerns was statistical power. To maximise power, we decided to conduct the experiment on the urn-precinct (Urnenwahlbezirk) level. In Berlin, postal ballots and locally cast \enquote{urn} ballots are not counted and aggregated at the same geographical unit. Instead, postal ballots from multiple (usually adjacent) urn-precincts are pooled in one postal ballot precinct (Briefwahlbezirk). This means that there are only 94 postal voting precincts but 209 urn-precincts.
+
+		Following the randomisation procedure detailed above, power simulations estimated that with 28 treated units, an ITT of at least 0.32 standard deviations could be detected at the $\alpha = 0.1$ significance threshold with a probability of 80\% (two-tailed t-test). This corresponds to an effect of roughly 2.4 percentage points for the party vote share variable. Had the party managed to canvass one precinct in each of the 52 blocks, the smallest detectable effect would have been 0.21 standard deviations (1.6 percentage points on the main dependent variable).
+
+
+		\includepdf[pages=1, scale=0.8,frame=true, pagecommand={\section{Canvassing Script}\label{A:script}},linktodoc=false]{listening_script_berlin_en.pdf}
+		\includepdf[pages={2,3}, scale=0.8,frame=true]{listening_script_berlin_en.pdf}
+
+		\section{ Heteroscedasticity Robust Standard Errors}\label{A:ses}
+
+		Given the small sample size of the data and the plausibility of heteroscedasticity, I also calculate \emph{HC3} standard errors following \textcite{longUsingHeteroscedasticityConsistent2000}. In some cases, these yield larger confidence intervals than the pre-registered randomisation inference confidence intervals.
+
+		\input{../analysis/tables/main_hc3.tex}
+
+		\input{../analysis/tables/cov_hc3.tex}
+
+		\section{Covariate Adjusted Models - Interpolated 2021 General Election Control Variables}\label{A:2021controls}
+		\input{../analysis/tables/cov_ri_21.tex}
+
+		\newpage
+
+		\printbibliography[title=Literature from Appendices]
+
+
+	\end{refsection}
+
+\end{appendices}
+
+
+
+\end{document}

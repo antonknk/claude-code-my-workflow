@@ -1,0 +1,86 @@
+---
+title: "Doorstep Deliberation"
+subtitle: "Pre-Analysis Plan"
+author:
+    - name: Anton Könneke
+      orcid: 0009-0005-8444-4198
+      email: a.konneke@lse.ac.uk
+      phone: +49 157 88122549
+      url: https://www.antonkoenneke.de
+      affiliations:
+        - name: London School of Economics and Political Science
+          department: Government
+          address: Houghton Street
+          city: London
+          postal-code: WC2A 2AE
+          url: https://www.lse.ac.uk
+format:
+  pdf:
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1.25in
+      - right=1.25in
+    latex-max-runs: 4
+    template-partials:
+      - before-body.tex
+    fig-pos: 'H'
+    tbl-pos: 'H'
+    include-in-header:
+      - text: |
+          \usepackage{float}
+          \usepackage{multicol}
+          \usepackage{caption}
+toc: true
+toc-depth: 2
+bibliography: ../../phd.bib
+# global chunk options
+execute:
+  echo: false
+  warning: false
+  message: false
+# abstract: 
+---
+
+# Core Idea
+
+This is the pre-analysis plan for a doorstep experiment testing the effects of deliberative interactions on diffuse and specific supports. In cooperation with a political party, the experiment randomises whether doorstep interactions are deliberative or non-deliberative. In the non-deliberative condition, canvassers listen to voters' concerns and use active listening strategies after which they pitch the party's policy position on a given issue. In the deliberative condition, they additionally discuss this issue with the voter, put forward arguments for the parties position and respond to counterarguments. At the end of the conversation, voters' are handed a physical condition-specific mini-questionnaire with three questions measuring propensity to vote for the party, evaluation of general party responsiveness, and coalition preference. The questionnaire is designed to be completed anonymously and is collected via a small ballot box carried by the canvassers. 
+
+# Theoretical Background
+
+- Reflexivity is what improves representation. Deliberation is a tool to improve reflexivity. Therefore, deliberation should improve representation.
+- We know that deliberation reduces polarisation and can lead to attitude change. 
+
+## Campaign Study Perspective
+- Are longer conversations more effective than shorter conversations? Is it worth investing in more meaningful conversations at the doorstep?
+- Do deliberative conversations lead to more positive evaluations of the party and a higher PTV to vote for it?
+
+
+## Representation Perspective
+
+
+
+
+# Key challenges
+- Deliberation in a homogenous in-group setting may often defeat the purpose of deliberation.
+
+
+# Extensions
+- Canvasser recorded data
+- Link canvasser data to ballot (number on ballot/QR code)
+
+# Variables
+
+## Answered by Canvasser
+- Tone
+- Guessed PTV
+- Topics
+
+## Answered by Voter
+- PTV
+- General Party Responsiveness
+- Coalition Preference?
+
+## Mediators?
+- Liking
+- Agreement 

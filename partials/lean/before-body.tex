@@ -1,0 +1,17 @@
+%% Compact title block for the one-page APSA proposal.
+%% Overrides Quarto's default before-body partial: prints title + author only,
+%% with no titlepage environment and no \clearpage, so the body flows on page 1.
+
+\begin{center}
+    {\LARGE\bfseries $title$\par}
+$if(subtitle)$
+    \vspace{0.35em}
+    {\large\itshape $subtitle$\par}
+$endif$
+    \vspace{0.55em}
+$if(by-author)$
+    {\normalsize $for(by-author)$$it.name.literal$$if(it.affiliations)$, \textit{$for(it.affiliations)$$it.name$$sep$; $endfor$}$endif$$sep$; $endfor$\par}
+$endif$
+\end{center}
+
+\vspace{1.0em}

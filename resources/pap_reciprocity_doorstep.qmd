@@ -1,0 +1,364 @@
+---
+title: "Doorstep Reciprocity Experiment"
+subtitle: "Pre-Analysis Plan"
+author:
+    - name: Anton Könneke
+      orcid: 0009-0005-8444-4198
+      email: a.konneke@lse.ac.uk
+      phone: +49 157 88122549
+      url: https://www.antonkoenneke.de
+      affiliations:
+        - name: London School of Economics and Political Science
+          department: Government
+          address: Houghton Street
+          city: London
+          postal-code: WC2A 2AE
+          url: https://www.lse.ac.uk
+format: 
+  pdf:
+    include-in-header:
+      - text: |
+          \usepackage{multicol}
+          \usepackage{caption}
+toc: true
+bibliography: ../../phd.bib
+abstract: |
+     This pre-analysis plan outlines a randomized field experiment examining how conversational reciprocity affects voter persuasion and activist experiences in partisan doorstep campaigning. Party activists will conduct doorstep visits using a mobile application that randomly assigns conversations to either a reciprocal script (where canvassers first ask residents about their own priority issues before introducing a party topic) or a unidirectional script (where canvassers directly introduce a party topic). Randomization occurs at two levels: the dosage of reciprocal scripts is varied across canvasser-sessions (20% vs 80% probability), while individual conversations are randomly assigned to scripts and topics. The study  tests hypotheses about  effects on topic importance, propensity to vote for the implementing party, and conversation tone as well as canvasser experiences satisfaction, perceived understanding, representative confidence, persuasive efficacy.  
+---
+
+```{r, echo=F}
+pacman::p_load(tidyverse, pwr, here, geomtextpath)
+
+```
+
+## Overview
+
+This randomized field experiment examines the effects of conversational reciprocity in partisan doorstep campaigning through two interconnected studies. Party activists will conduct doorstep visits using a mobile application that randomly assigns each conversation to one of two conditions. In the unidirectional condition, canvassers introduce a randomly selected topic and ask residents to share their views on that topic. In the reciprocal condition, canvassers first ask residents about their own most important political issue and engage in high-quality listening before raising the randomly selected topic. In both conditions, canvassers employ high-quality listening techniques when interlocutors share their views on the introduced topic.
+
+The first experiment investigates whether reciprocal conversations facilitate persuasion and the tone of the conversation compared to unidirectional approaches. The second experiment explores how reciprocal doorstep engagement affects canvassers' self-assessed representative and persuasive skill as well as overall enjoyment of the intervention. By randomly varying the assignment probabilities of scripts across canvassing sessions, the study leverages variation in canvassers' exposure to reciprocal conversations to measure effects on their attitudes and experiences.
+
+The study will be conducted in cooperation with a political party outside election season. This research contributes to understanding how reciprocity, a normatively desirable feature of political conversations, affects both voter persuasion and activist experiences in political outreach.
+
+## Expectations
+
+| Hypothesis | Description |
+|------|------------------------------------|
+| H1 | Voters exposed to reciprocal listening will assign higher importance ratings to the subsequently introduced party topic than voters in the unidirectional condition. |
+| H2 | Voters exposed to reciprocal listening will report a higher propensity to vote for the partner organisation than voters in the unidirectional condition. |
+| H3 | The reported tone of reciprocal conversations will be better than that of unidirectional ones. |
+| H4 | Activists with higher exposure to reciprocal listening evaluate their experiences more positively. |
+| H5 | Activists with higher exposure to reciprocal listening report having a better understanding of their interlocutors. |
+| H6 | Activists with higher exposure to reciprocal listening report greater confidence in their ability to represent constituents in the canvassed neighbourhood. |
+| H7 | Activists with higher exposure to reciprocal listening report greater confidence in their persuasive capabilities. |
+| H8 | Activists evalute conversations more positively when their interlocutor is similar to them in demographics. |
+| H8a | Activists evaluate conversations more positively when their interlocutor is of the same gender. |
+| H8b | Activists evaluate conversations more positively when their interlocutor is of the same age group. |
+| H8c | Activists evaluate conversations more positively when their interlocutor is of the same age group and gender. |
+| H9 | Canvassers will be more likely to return to the next canvassing session if they were in the high-reciprocity condition last time. |
+| H10 | The time between two sessions a canvasser participates in will be shorter if the canvasser was in the high-reciprocity condition in the first session.|
+: Hypotheses {#tbl-hyp}
+
+## Design
+
+
+Randomised Controlled Trial - Subjects are randomly assigned to different treatments. Assignment is controlled by the researcher.
+
+### Blinding
+
+Participants will not know the treatment group to which they have been assigned. Party activists are aware of the experimental design used to study voters reaction at the doorstep but are not aware of the part of the experiental protocol manipulating the dosage of their exposure to different conversation scripts.
+
+### Data Collection
+
+Data collection takes place through three dedicated surveys. 1) A baseline survey of activists that each canvasser fills out before their first canvassing session, 2) a web-app like qualtrics survey used to collect data about each conversation at the doorstep as well as post-session evaluations from the canvassers, and 3) a post-campaign survey of activists conducted at the end of the campaign. This final survey mirrors the baseline survey and additionally collects feedback on organisational aspects of the campaign.
+
+Three canvassing sessions were conducted before study registration. During the first session, only the script was randomised (not the topic) as the partner organisation could not produce supporting handouts for the activists in time. The first canvassing session took place on 6 September 2025 and 20 canvassers knocked on 333 doors, talking to 136 voters. The second canvassing session took place on 20 September 2025 and 13 canvassers knocked on 200 doors, talking to 112 voters. The third canvassing session took place on 11 October 2025, when 16 canvassers knocked on 214 doors and spoke with 139 voters.
+
+
+The ethics application outlining the overall design has been submitted in July 2025, several months before the first session.
+
+
+### Treatment and Randomisation
+
+![Design Overview](../plots/design_overview.png){#fig-design}
+
+
+Randomisation is conducted at two levels. For each activist-session combination, the dosage of reciprocity conversations is randomly selected to be either 0.2 (low reciprocity) or 0.8 (high reciprocity) with equal 0.5 probability.
+At each doorstep (before each conversation), both the script and the topic are randomly selected. The topic is selected from a set of three possible options (cleanliness/littering and local environment, education and schools, transport and mobility) with equal ($\frac{1}{3}$) probability. The randomisation scheme is illustrated in @fig-design.
+
+The script is selected from a set of two options: a *reciprocal* script and a *unidirectional* script. In the reciprocal script, the canvasser first asks the voter to share some thoughts on their most important issue and listens actively to what they share. After that, the canvasser pitches the randomly selected topic and asks the voter for their view on it, again listening actively. In the unidirectional script, the canvasser only pitches the topic and listens to the voter's views on the selected topic. In this condition, voters are not asked to first elaborate on their most important topic.
+
+Canvasssers are trained on the different scripts before participating in the campaign. They are also given written instructions for conduction the doorstep interactions and postcards summarising the party's actions and goals on the three issues to support them at the doorstep. 
+
+
+The dynamic randomisation at the canvasser-session level and each doorstep implies that complete randomisation can't be used. Yet, given that assignment probabilities are conditional on the canvasser-session, the randomisation neither follows a simple random assignment procedure as some randomisations are more likely than others. 
+
+The actual randomisation in Qualtrics is conducted as follows: Once activist $k$ enters the tool for session $j$, they are randomly assigned to the high or low reciprocity condition with $P(S_{jk} = \text{high}) = 0.5$, where $S_{jk}$ denotes the dosage assignment for activist-session $(j,k)$. Qualtrics then pre-generates 150 random numbers[^1] $U_i \sim \text{Uniform}(0,1)$ for $i = 1, \ldots, 150$. The script assignment for door $i$ is determined by
+$D_{ijk} = \mathbf{1}\!\left(U_i > c_{jk}\right)$,
+where $c_{jk} = 0.8$ if $S_{jk} = \text{high}$ and $c_{jk} = 0.2$ if $S_{jk} = \text{low}$, such that $P(D_{ijk} = 1 \mid S_{jk} = \text{high}) = 0.8$ and $P(D_{ijk} = 1 \mid S_{jk} = \text{low}) = 0.2$. At the first door, the canvasser is shown $D_{1jk}$; at the second door, $D_{2jk}$; and so on, regardless of whether the door was opened. Topics are randomised in a similar way but are not conditional on $S_{jk}$ and are picked with probability $\tfrac{1}{3}$ each. If the canvasser moves to another neighbourhood $g$ or returns to the same neighbourhood on another day, this counts as a new session and a new $S_{jk}$ is randomly chosen. If several activists canvass in the same neighbourhood $g$ at the same time $t$, they are still independently assigned to individual $S_{jk}$. 
+
+[^1]: This is the maximum number of doorstep interactions the tool can record in one session. If these are exhausted, the tool submits the data and initiates a new session.
+
+\newpage
+\begin{multicols}{3}
+
+\includegraphics[width=\columnwidth]{dual_treatment_muell.png}
+\captionof{figure}{Reciprocal "Dual" script with topic "cleanliness"}
+
+\columnbreak
+
+\includegraphics[width=\columnwidth]{dual_treatment.png}
+\captionof{figure}{Reciprocal "Dual" script with topic "mobility"}
+
+\columnbreak
+
+\includegraphics[width=\columnwidth]{mono_treatment.png}
+\captionof{figure}{Unidirectional "Mono" script with topic "cleanliness"}
+
+\end{multicols}
+
+## Estimation
+
+### Conversation Level Hypotheses
+
+Hypotheses about effects of the script used at the doorstep on conversation tone, topic importance, and propensity to vote for the partner organisation (H1, H2, H3) will be tested using ordinary linear regression models with session-activist fixed-effects to estimate the difference-in-means. The estimand of interest is the average treatment effect (ATE). 
+
+A priori, each door has a 0.5 probability to receive the high-reciprocity treatment, even though assignment probabilities differ between strata:
+
+$$
+P(S_{jk}, D_{ijk}) =
+\begin{cases}
+P(S_{jk} = 0.8, D_{ijk} = 1) = 0.5 \times 0.8 = 0.4 \\
+P(S_{jk} = 0.2, D_{ijk} = 1) = 0.5 \times 0.2 = 0.1 \\
+P(S_{jk} = 0.8, D_{ijk} = 0) = 0.5 \times 0.2 = 0.1 \\
+P(S_{jk} = 0.2, D_{ijk} = 0) = 0.5 \times 0.8 = 0.4
+\end{cases}
+$$
+
+$$
+\implies P(D_{ijk} = 1) = 0.4 + 0.1 = 0.5, \quad P(D_{ijk} = 0) = 0.1 + 0.4 = 0.5
+$$
+
+
+I estimate the following model which includes canvasser-session fixed effects to account for unequal treatment probabilities between strata:
+
+$$
+Y_{ijk} = \tau_{\text{ATE}} D_{ijk} + \gamma_{jk} + \varepsilon_{ijk}
+$${#eq-fixed-effect-door}
+
+
+where $Y_{ijk}$ is the outcome for individual $i$ in stratum $j$ visited by canvasser $k$. $\tau_{\text{ATE}}$ is the estimator for the ATE, $\gamma_{jk}$ are canvasser-session fixed effects. The canvasser-session is the level at which $S_{jk}$ is assigned. 
+
+As @humphreysBoundsFixedEffects2025 [p. 4] and @gerberFieldExperimentsDesign2012 [p. 119] note, the strata-fixed effects estimator identifies the ATE if the propensity variance is constant across strata. Including strata-fixed effects is equivalent to estimating within strata ATEs and weighting them by $(N_j/N)P_j(1-P_j)$ where $N_j$ is the number of observations in stratum $j$ and $P_j$ is the proportion of units in stratum $j$ that were assigned to the treatment group. Thus, regression with strata-fixed effects and weighted regression are unbiased estimators of the ATE if $P_j(1-P_j)$ is constant across strata. This is the case for the design outlined above, as $P_j(1-P_j)$ is  equivalent to $S_{jk}(1-S_{jk})$. In the high-reciprocity condition, $0.8(1-0.8) = 0.16$ and in the low reciprocity condition $0.2(1-0.2)=0.16$.
+
+
+
+#### Simulation
+
+@fig-bias reports the result of 200 simulations for different model specifications and inference types to reveal the most appropriate model specification. While all specifications yield unbiased estimates of the ATE, asymptotic IID standard errors from models without stratum fixed-effects are downwards biased, yielding overly liberal p-values, especially if sigma is large (potential outcomes are strongly predicted by stratum) and when the share of doors opened is large (though this might merely be due to N increasing as a function of the share of opened doors.) These simulations support the usage of stratum fixed-effects and cluster robust standard errors or randomisation inference.
+
+
+
+![Bias and size across specifications](bias_panels.png){#fig-bias}
+
+### Canvasser-Session Level Hypotheses
+
+Hypotheses H4, H5, H6 and H7 will be tested using ordinary least squares models. For these inquiries, the unit of analysis is the canvasser-session. To retrieve the ATE of the high reciprocity treatment, I run models with  neighbourhood ($\gamma_g$) and day fixed-effects ($\psi_t$) (see @eq-session). In the baseline specification, I don't include canasser fixed effects as this would effectively exclude all canvassers who only participated in one session or who were assigned to the same dosage in every session from the analysis. However, I estimate additional within-canvasser models adding canvasser fixed-effects $\theta_k$ (@eq-session-within). Note that the within-canvasser estimator targets a different estimand, the ATE among returning canvassers. The latter estimator is slightly less informative but has higher statistical power if canvasser fixed effects are highly predictive of potential outcomes and canvasser attrition is low (ie. most canvassers show up repeatedly.) 
+
+$$
+Y_{jk} = \tau_{\text{ATE}} S_{jk} + \psi_t + \gamma_g + \varepsilon_{jk}
+$$ {#eq-session}
+
+$$
+Y_{jk} = \tau_{\text{ATE}} S_{jk} + \theta_k + \psi_t +  \gamma_g + \varepsilon_{jk}
+$$ {#eq-session-within}
+
+Hypothesis H9 will be tested using a logistic regression model in which the dependent variable is a dummy that takes the value 1 if a canvasser participated in the consecutive canvassing session organised by the party and 0 otherwise. As above, I estimate the within- and between-canvasser ATEs. The within-canvasser estimator mechanically excludes all canvassers who participated only a single canvassing event as these canvassers exhibit no variation in $S_{jk}$ and $Y_{jk}$. 
+
+The dependent variable in H10 is a count of the number of canvassing sessions an activist did not participate in after having participated in one session. In other words, if a canvasser participates in the first session, does not participate in sessions 2 and 3, but finally shows up at session 4, the variable takes the value 2 (because two sessions were skipped). If a canvasser never shows up again, they are assigned the maximum possible value (ie. if they canvassed in the third last session, they will be assigned a value of 2). Naturally, the last canvassing session will be excluded from the analysis. Again, I estimate both the within and between canvasser ATE and always include neighbourhood and date fixed effects.
+
+
+### Heterogeneous Treatment Effects
+Hypotheses about treatment effect heterogeneity (H8-H8c) will be tested against the sharp null hypothesis of constant treatment effects, comparing the F-statistic of restricted (@eq-restricted) and unrestricted (@eq-unrestricted) models using randomisation inference. 
+$$
+Y_{ijk} = \beta_1 D_{ijk} + \beta_2 M_{ijk}  + \psi_t + \theta_k + \gamma_g + \varepsilon_{ijk} \tag{\text{Restricted}} 
+$$ {#eq-restricted}
+
+$$
+Y_{ijk} = \beta_1 D_{ijk} + \beta_2 M_{ijk} + \beta_3 (D_{ijk} \times M_{ijk})+ \psi_t + \theta_k + \gamma_g + \varepsilon_{ijk} \tag{\text{Unrestricted}} 
+$$ {#eq-unrestricted}
+
+$M_{ijk}$ is the respective moderator variable and $\beta_3$ is the coefficient of interest. Again, as including canvasser fixed effects might might reduce the sample substantially if many canvassers attend only one session, I will estimate these models both with and without canvasser fixed effects.
+
+### Inference Criterion
+
+Throughout the analysis I will use randomisation inference to test against the sharp null hypothesis of no treatment effect for all units. Hypotheses about effects of the script used at the doorstep on conversation tone, topic importance, and propensity to vote for the partner organisation (H1, H2, H3, H8-H8c) will be rejected if $p \leq 0.05$. Hypotheses relating to canvesser-session-level effects of the dosage randomisation will be rejected if $p \leq 0.1$. In addition to the randomisation inference p-values, I report standard errors clustered at the appropriate level. For the doorstep-level hypotheses, I cluster at the canvasser-session level, for all other hypotheses I cluster at the canvasser level. 
+
+
+
+### Power Analysis
+
+Given the complex randomisation scheme, I use simulations to estimate statistical power to detect effects of the doorstep treatments. For the canvasser-session level hypotheses, simple asymptotic power analyses are sufficient. 
+
+#### Doorstep level
+
+I simulate power based on several hyperparameters.
+
+|Parameter|Description|Value(s)|
+|--------|--------------------------|-------|
+|N_blocks|Number of activist-session combinations|50-300 |
+|shape|Shape parameter for Gamma distribution to simulate number of knocked doors per canvasser-session. Used to approximate the empirical distribution of doors knocked per session |3|
+|rate|Rate parameter for Gamma distribution of contacts per session|0.15|
+|delta|  The gamma distribution used to simulate the number of knocked doors within each stratum is multiplied with this parameter where $S_{jk} = \text{high}$ to account for the possibility that  canvasser-sessions in the high reciprocity condition will yield fewer observations as there are more lenghty conversations. |0.9|
+|p_dosage_high|$P(S_{jk} = 0.8)$|0.5|
+|dosage_high|$P(D_{ijk} = 1 \mid S_{jk} = \text{high})$|0.8|
+|dosage_low|$P(D_{ijk} = 1 \mid S_{jk} = \text{low})$|0.2|
+|sigma|Standard deviation of canvasser-session-level random effects (strata ICC)|$\sqrt{0.1} =  0.316$|
+|p_door_open|Probability that a door is opened|0.32|
+|ATE|Average treatment effect (in standard deviations)|0.2|
+|alpha|Significance level for hypothesis testing|0.05|
+|sims|Number of simulation replications per power calculation|1000|
+|block_fe|Include stratum-fixed effects|T/F|
+: Power-Analysis Parameters {#tbl-power_params}
+
+
+@fig-power_ates reports the results of simulations to estimate the probability of correctly rejecting the null hypothesis conditional on the parameters in @tbl-power_params. Note that the effective N, ie. the number of conversations, is not directly simulated but itself a function of the number of canvasser-sessions. At an ATE of $d_{\text{Cohen}} = 0.2$, about 1,300 conversations (corresponding to roughly 200 canvasser-sessions) are required to achieve a power of 0.8. Note however that the ratio of conversations and blocks is highly variable and a function of eg. the share of doors opened. 
+
+```{r, echo = F}
+#| fig-cap: Power-Analysis for Doorstep Level Hyptheses
+#| label: fig-power_door
+# power_ests <- list()
+# power_ests$power_fe <- readRDS(here("pap", "power_sims", "power_parallel_fe.rds")) |>
+#     t() |>
+#     as.data.frame()
+
+# power_ests$power_parallel_no_ipw_no_fe <- readRDS(here("pap", "power_sims", "power_parallel_no_ipw_no_fe.rds")) |>
+#     t() |>
+#     as.data.frame()
+
+
+# power_data <- bind_rows(power_ests, .id = "spec")
+
+# convos_labs_df <- power_data |>
+#     group_by(N) |>
+#     slice(1)
+
+# ggplot(power_data, aes(N, hit_cluster)) +
+#     geom_line(linewidth = 1, alpha = .5) +
+#     geom_point(color = "black", alpha = .8, size = 4) +
+#     geom_label(data = convos_labs_df, aes(N, hit_cluster - .04, label = round(N_convos), color = "N conversations"), alpha = .7) +
+#     theme_bw() +
+#     labs(
+#         x = "N Canvasser-Sessions",
+#         y = "Power"
+#     ) +
+#     scale_color_manual("", values = 1) +
+#     # scale_fill_manual("Block FE", values = c(2, 3, 4, 5), labels = c("Yes", "No")) +
+#     # scale_size_continuous("Effective N\n(conversations)") +
+#     # scale_shape_manual("Inference type", values = c(1, 2) + 20, labels = c("Cluster", "IID")) +
+#     # scale_linetype_manual("Inference type", values = c(1, 2), labels = c("Cluster", "IID")) +
+#     geom_hline(aes(yintercept = .8), linetype = 2, alpha = .7, color = "red") +
+#     theme(legend.position = "top") +
+#     labs(
+#         subtitle = expression(paste(delta == 0.9, ", ", sigma == sqrt(0.1), ", open doors: 32%, ATE = 0.2")),
+#         caption = "Note: Power estimates based on models with canvasser-session fixed effects\nand standard errors clustered at the canvasser-session level.\n500 simulations per estimate."
+#     )
+
+```
+
+```{r, echo=F}
+#| fig-cap: Power as a Function of the Number of Canvasser-Sessions and Effect Size
+#| label: fig-power_ates
+
+sim_ate <- readRDS(here("pap", "power_sims", "ate_sim.rds"))
+ggplot(sim_ate, aes(N_convos, hit_cluster)) +
+    geom_hline(aes(yintercept = .8), color = "red", linetype = 2, alpha = .7) +
+    geom_textline(aes(
+        label = paste("ATE =", ATE, sep = " "),
+        color = factor(ATE)
+    )) +
+    geom_point(aes(size = N, color = factor(ATE)), alpha = .5) +
+    scale_color_manual("", values = c(1, 2, 3, 4)) +
+    scale_size("N Canvasser-sessions",
+        breaks = seq(50, 300, 50),
+        labels = seq(50, 300, 50)
+    ) +
+    labs(
+        subtitle = expression(paste(delta == 0.9, ", ", sigma == sqrt(0.1), ", open doors: 32%")),
+        y = "Power", x = "N conversations",
+        caption = "Note: Power estimates based on models with canvasser-session fixed-effects\nand standard errors clustered at the canvasser-session level.\n1000 simulations per estimate."
+    ) +
+    theme_bw() +
+    guides(
+        color = "none",
+        size = guide_legend(position = "bottom")
+    )
+```
+
+
+#### Canvasser-Session Level
+
+```{r, echo=F}
+power_canvasser <- list()
+
+n <- 200 / 2
+sig.level <- .1
+power <- .8
+
+power_canvasser$n350alpha1pwr8 <- pwr::pwr.t.test(n = n, sig.level = sig.level, power = power)
+power_canvasser$n350alpha1d2 <- pwr::pwr.t.test(n = n / 2, d = .2, sig.level = sig.level)
+power_canvasser$n350alpha1pwr8oneside <- pwr::pwr.t.test(n = n, sig.level = sig.level, power = power, alternative = "greater")
+power_canvasser$n350alpha1d2 <- pwr::pwr.t.test(n = n / 2, d = .2, sig.level = sig.level, alternative = "greater")
+
+```
+
+Parametric power calculations using the `{{ pwr }}` package in R show that in order to detect a treatment effect at $\alpha$ = `r sig.level` given a sample size of `r n` in treatment and `r n` in control with a probability of `r power`%, the standardised effect would have to be at least `r round(power_canvasser$n350alpha1pwr8$d, 2)`. A test with otherwise identical parameters would be powered `r round(power_canvasser$n350alpha1d2$power, 2)` to detect a smaller effect of $d_{\text{Cohen}} = 0.2$. Even though these power calculations don't factor in the possible precision gains induced by including the fixed effects, the tests are likely to be underpowered and should be considered  exploratory.
+
+
+
+### Sample Size Rationale
+
+Given the reliance on party activist engagement, only a soft target can be pre-specified for the sample size. Echoing the results of the power analysis, I target an N of 1,300 conversations which should correspond to roughly 200 activist-session observations. 
+
+###  Variables
+
+\small
+
+
+| Variable Label | Question Text | Response Scale | Level |
+|-----|-----------|-----|---|
+| Door Opened | Did someone open the door? | Binary: Yes/No | Door |
+| Conversation Occurred | Did a conversation take place? | Binary: Yes/No  | Door |
+| Conversation tone | How was the tone? | 5-point scale: Very good to Very bad | Door |
+| Topics Raised | Which topics did the person bring up? | Multiple choice: 13 topic categories | Door |
+| Topic Importance (assigned) | How important was the topic [random_topic] to the person? | 5-point scale: Very important to Very unimportant + Don't remember | Door |
+| Vote Probability (Partner Org.) | How likely is it that the person will support the [Partner Organisation] with their vote in the [next election]? | 5-point scale: Very likely to Very unlikely + Don't remember + Not eligible to vote | Door |
+| Age Estimate | How old do you estimate the person to be? | 6 categories  | Door |
+| Gender | What gender was the person? | 4 categories: Female/ Male/ Diverse/ Don't know |
+| Overall Satisfaction | How did you like the door-to-door canvassing today? | 5-point scale: Very good to Very bad | Session |
+| Topic Importance Matrix | How important were the following topics to the people you spoke with? | Matrix: 11 topics × 5-point importance scale | Session |
+| Understanding Positions | How well could you understand your interlocutors' positions? | 5-point scale: Very good to Very bad | Session |
+| Representation Ability | How well could you personally represent the people in the neighbourhood? | 5-point scale: Very good to Very bad | Session |
+| Persuasiveness | How well could you persuade people in today's conversations? | 4-point scale: Very good to Very bad | Session |
+: Measured Variables  {#tbl-outcomes}
+
+
+\normalsize
+
+
+### Data Manipulations
+I drop observations with less than three observations (doors) as these are likely just the result of canvassers familiarising themselves with the data collection tool. I also drop data records timestamped to days on which there was no canvassing session. Sessions 1 and 2 will be excluded from the analyses for H9 and H10 because the tool did not record the identity of all canvassers in these sessions. 
+
+
+
+
+## Robustness and Manipulation Checks
+
+The analyses for hypotheses H8-H8c rely on the assumption that canvassers assessment of interlocutor demographics is not affected by the treatment condition. For instance, if canvassers in the reciprocal condition like their interlocutors more and in turn regard them as more similar to themselves, this would induce post-treatment bias and reverse causality. To test whether this is the case, I regress the demographics variables on the treatment indicator. 
+
+Another possible violation of the treatment protocol could occur if canvassers like one condition more than the other and "skip" the treatments they don't like. The tool generates a new treatment at each door, meaning that canvassers could just claim that nobody answered the door, receive new treatment instructions, which is then implemented if it concurs with their preferences. To test whether this is the case, I regress an indicator for whether a door was opened or not on the condition. 
+
+When canvassers don't manage to ask voters for their propensity to vote for the partner organisation, they are asked to provide their best guess about their interlocutors ptv. I re-run the respective models on a subset of the data that only includes the conversations in which voters answered the ptv question to safeguard against the possibility of canvasser misperceptions driving the results. 
+
+To test whether the reciprocal script facilitated holding longer conversations, I will compare the average duration of conversations between the two main conditions. Generally, as the reciprocal scripts are more extensive, these conversations should take longer to administer. However, if voters have a fixed amount of time they are willing to sacrifice at the doorstep, starting the conversation by asking them to share their views on politics might make them spend less time engaging with the issue raised by the party. 
+
+# References 
