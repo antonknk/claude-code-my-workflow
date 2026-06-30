@@ -1,0 +1,194 @@
+---
+title: "Gesprächsleitfaden"
+subtitle: "Berlin-Wahl 2026 – Haustürgespräche in Mitte"
+number-sections: true
+format:
+    html: {}
+    pdf:
+        papersize: a4
+lang: de
+fontfamily: libertine
+embed-resources: true
+---
+
+## Worum geht's? {.unnumbered}
+
+In den vergangenen Haustürkampagnen haben wir vor allem **zugehört** – und gemerkt, dass das offene, respektvolle Gespräche ermöglicht. Diesmal wollen wir herausfinden, ob es sich lohnt, einen Schritt weiterzugehen: Reicht gutes Zuhören, oder sind Gespräche wirksamer, in denen wir unsere Position auch **begründen und gemeinsam mit den Menschen abwägen**?
+
+Dafür haben wir einen Leitfaden mit **zwei Gesprächsvarianten** entwickelt. Beide bauen im Kern auf aktivem Zuhören auf. Welche Variante an welcher Tür zum Einsatz kommt, **entscheidet der Zufall** – die App zeigt sie Dir vor jedem Gespräch an. Dieses Dokument erklärt Dir, worauf es bei den Gesprächen ankommt, wie die Themen gesetzt werden und was es sonst noch zu beachten gibt.
+
+# Die drei Themen
+
+Wir konzentrieren uns im Wahlkampf auf drei Themen. Anders als in den vergangenen Haustürkampagne, geben wir nicht für jede Tür ein Thema vor, Ihr könnt also selbst entscheiden, welches Thema Ihr an der Tür setzen wollt. Die Themen sind:
+
+
+### Klima & kühle Kieze {.unnumbered}
+
+Heiße Sommer treffen die Stadt besonders hart – aufgeheizte Straßen, Wohnungen unterm Dach, wenig Schatten. Wir setzen uns für **kühle und lebenswerte Kieze** ein: Flächen entsiegeln, Bäume pflanzen und pflegen, schattige und kühle Orte schaffen.
+
+**Themen-Pitch:** „Ein Thema, auf das wir Grüne uns hier im Bezirk besonders konzentrieren, sind kühle Kieze. Wir wollen Flächen entsiegeln, mehr Bäume pflanzen und für schattige Orte sorgen, an denen man auch im Hochsommer gut durchatmen kann."
+
+### Saubere Kieze & öffentlicher Raum {.unnumbered}
+
+Alle profitieren davon, wenn der öffentliche Raum einladend ist: saubere Spielplätze, schöne Parks, Straßen ohne herumliegenden Sperrmüll. Wir gehen mit neuen Strategien gegen Vermüllung vor und haben es zum Beispiel einfacher gemacht, **Sperrmüll** loszuwerden.
+
+**Themen-Pitch:** „Ein Thema, das vielen wichtig ist und für das wir uns einsetzen, sind saubere Kieze. Wir wollen Straßen, Parks und Spielplätze einladend halten und es den Menschen leichter machen, etwa Sperrmüll ordentlich loszuwerden."
+
+### Bezahlbarer Wohnraum & Bauen {.unnumbered}
+
+Bezahlbares Wohnen treibt viele in Mitte um. Wir wollen **mehr Wohnraum** schaffen – etwa durch Aufstockungen und ausgebaute Dachgeschosse – und **schnelleres, günstigeres Bauen mit echtem Mieterschutz** verbinden, damit niemand aus seinem Kiez verdrängt wird.
+
+**Themen-Pitch:** „Ein Thema, das hier viele umtreibt, ist bezahlbares Wohnen. Wir wollen mehr Wohnraum schaffen – zum Beispiel durch Aufstockungen und ausgebaute Dächer – und das mit echtem Schutz für die Mieterinnen und Mieter verbinden."
+
+# Richtig zuhören
+
+In **beiden** Gesprächsvarianten kommt es zuerst aufs Zuhören an. Gutes Zuhören zeigt sich durch Körpersprache (Augenkontakt, Nicken, Lächeln) und durch passende Rückfragen, Paraphrasieren und Zuhör-Laute („ahh", „ja", „mhh-hm", „verstehe").
+
+Jeder Mensch hört etwas anders zu. Das ist vollkommen in Ordnung und so gewollt. Wichtig ist, dass die Menschen merken, dass **echtes Interesse** an ihrer Sichtweise besteht. Die Wähler:innen sollen sich wohlfühlen, damit sie wirklich in sich hineinhorchen, um ihre Meinung zu begründen. Gib ihnen also genug Zeit und frag lieber einmal zu viel nach als einmal zu wenig.
+
+Die Formulierungen unten bieten Dir ein bisschen Inspiration für aktives Zuhören:
+
+- Zeigen, dass aufmerksam gefolgt wird („ja, verstehe", „mh-hh", „ah, interessant")
+- Paraphrasieren („Also Sie sagen, dass…", „Verstehe ich das richtig, Sie sind der Ansicht…?")
+- Nachfragen:
+    - Inhaltliche Nachfragen zum Gesagten (Verständnisfragen).
+    - „Was sollte man da Ihrer Meinung nach tun?"
+    - „Es gibt ja verschiedene Ansätze, was man da machen könnte – was denken Sie?"
+    - „Mich würde auch noch interessieren, wieso Sie das glauben."
+    - „Könnten Sie mir ein Beispiel dafür geben?"
+
+**Versuche jedes Gespräch in die nötige Tiefe zu führen, indem Du 2–3 Nachfragen stellst oder Aussagen der Person paraphrasierst.**
+
+Im **nicht-deliberativen** Skript bleibt das Zuhören neutral: Bitte kommuniziere keine explizite Zustimmung („das stimmt!“) oder Ablehnung („das kann man so nicht sagen“). Im **deliberativen** Skript darfst und sollst Du nach dem Zuhören Deine Position begründen – mehr dazu in @sec-argumente.
+
+# Die zwei Gesprächsvarianten
+
+Die beiden Skripte sind sich sehr ähnlich. Sie starten **identisch** – mit Vorstellung, einem offenen Zuhörgespräch und dem Setzen unseres Themas samt Position und Flyer. Sie unterscheiden sich erst im **letzten Schritt**:
+
+- Im **nicht-deliberativen Skript** nennst Du nach dem Zuhören unsere Position zum Thema, überreichst den Flyer – und gehst dann direkt zur Abfrage über. Es gibt **keinen** Austausch von Argumenten.
+- Im **deliberativen Skript** folgt nach Position und Flyer ein **Austausch von Argumenten**: Du begründest, warum das Thema wichtig ist, fragst die Person nach ihrer Sicht und gehst inhaltlich auf ihre Argumente ein.
+
+| **Nicht-deliberativ** | **Deliberativ** |
+|:---------------------:|:---------------:|
+| Vorstellen            | Vorstellen      |
+| Offenes Zuhörgespräch | Offenes Zuhörgespräch |
+| Thema + Position + Flyer | Thema + Position + Flyer |
+| *(direkt zur Abfrage)* | **Argumente austauschen** |
+| Abfrage               | Abfrage         |
+| Verabschieden         | Verabschieden   |
+
+:::{.callout-tip}
+**Worauf es ankommt – bitte halte Dich an die angezeigte Variante.** Nur wenn beide Skripte sauber getrennt bleiben, können wir am Ende vergleichen, was wirklich wirkt. Lass Dich im **nicht-deliberativen** Skript also nicht in eine Debatte ziehen (Position nennen, Flyer geben, weiter zur Abfrage). Und steig im **deliberativen** Skript wirklich in den Austausch ein – auch wenn es manchmal einfacher wäre, nur zuzuhören.
+:::
+
+# Argumente austauschen (nur im deliberativen Skript) {#sec-argumente}
+
+Das ist der Kern der deliberativen Variante. Nachdem Du das Thema gesetzt und unsere Position genannt hast, geht es um einen echten **Austausch**:
+
+1. **Position begründen.** Das kann eine persönliche *Anekdote* („Ich halte es im Sommer in meiner Dachgeschosswohnung kaum mehr aus"), ein *normatives Argument* („wir sollten eine Stadt hinterlassen, die für alle lebenswert ist") oder ein *Fakt* sein.
+2. **Nach der Sichtweise der Person fragen.** „Wie sehen Sie das?" – und dann wieder zuhören.
+3. **Auf Gegenargumente eingehen.** Bringt die Person ein Gegenargument, nimm es ernst, such nach Schnittmengen und antworte inhaltlich. Hier kombinierst Du Zuhören *und* eigene Argumente.
+4. **Bei Einigkeit:** Wenn ihr euch einig seid (der häufigere Fall), tauscht euch über die **persönlichen Erfahrungen und Begründungen** beider Seiten aus.
+
+Das Ziel ist nicht, zu gewinnen, sondern dass am Ende beide die Position des anderen nachvollziehen können. Es geht also nicht nur darum, die Person zu verstehen – sondern auch darum, Dich selbst verständlich zu machen.
+
+## Argumente-Baukasten je Thema {.unnumbered}
+
+Für jedes Thema findest Du unten je ein Beispiel pro Argumenttyp (Anekdote / Norm / Fakt) und eine mögliche Reaktion auf typische Gegenargumente. Das sind **Vorschläge**, keine auswendig zu lernenden Texte – am überzeugendsten bist Du mit eigenen Worten und echten Beispielen.
+
+### Klima & kühle Kieze {.unnumbered}
+
+- **Anekdote:** „Ich wohne unterm Dach, und in den letzten Sommern war meine Wohnung teils kaum auszuhalten – seitdem achte ich ganz anders darauf, wo es im Kiez überhaupt noch Schatten gibt."
+- **Norm:** „Eine Stadt sollte für alle lebenswert bleiben – auch für Kinder, ältere Menschen und alle, die sich keine klimatisierte Wohnung leisten können."
+- **Fakt:** „In heißen Sommern sterben in Deutschland mehrere Tausend Menschen an den Folgen von Hitze – gerade ältere Menschen in aufgeheizten Innenstädten." *(Zahl vor Druck final prüfen)*
+
+| Gegenargument | Mögliche Reaktion |
+|---|---|
+| "Bäume und Begrünung kosten viel und bringen kaum was, wenn draußen 38 Grad sind." | „Stimmt, das kostet erst einmal. Aber verglichen mit den wirtschaftlichen Einbußen, wenn sich niemand mehr vor die Tür wagt, ist das wenig Geld. Aber es klingt für mich als hätten Sie einen anderen Vorschlag?"  |
+| "Gegen den Klimawandel kann Berlin allein eh nichts machen." | "Theoretisch stimme ich Ihnen zu, aber wir sind ja nicht allein. Solche Anpassungen finden ja in Ländern überall auf der Welt statt, weil es einfach nicht mehr auszuhalten ist im Sommer. Ich finde bei den Bäumen außerdem super, dass die sowohl vor Ort für mehr Lebensqualität sorgen und ihren kleinen Beitrag zum Klimaschutz leisten." |
+
+### Saubere Kieze & öffentlicher Raum {.unnumbered}
+
+- **Anekdote:** "Neulich ist meiner Tochter auf dem Spielplatz eine Ratte zwischen den Beinen durchgerannt. Wir haben echt schöne Parks und Spielplätze hier, aber so kann man sie kaum benutzen."
+- **Norm:** "Der öffentliche Raum gehört uns allen – und alle haben es verdient, dass er sauber und sicher ist."
+- **Fakt:** "Wir haben uns im Bezirk dafür eingesetzt, dass man Sperrmüll leichter entsorgen kann – denn illegaler Sperrmüll liegt oft daran, dass die Entsorgung zu kompliziert ist."
+
+| Gegenargument | Mögliche Reaktion |
+|---|---|
+| "Ehrlich gesagt, ich glaube, das ist einfach normal in einer Großstadt." | "Bis zu einem gewissen Grad würde ich zustimmen, aber das bedeutet ja nicht, dass wir uns damit abfinden müssen. Vor 200 Jahren hätte man das mit Blick auf die Hygiene und Abwasser in der Stadt auch sagen können, ich würde aber ungern auf Kanalisation und Müllabfuhr verzichten. Was wäre denn für Sie eine ausgewogene Lösung, die den öffentlichen Raum sauber hält?" |
+| "Es gibt doch wichtigere Probleme." | "Wir hören das wirklich andauernd an den Haustüren. Ich glaube, es ist ein Thema, das einfach selbstverständlich funktionieren sollte und niemand hat so recht Lust, sich damit auseinanderzusetzen. Aber die Leute, die Ratten im Hauseingang haben, weil Sperrmüll vor der Haustür liegt, schränkt das tagtäglich ein. Mal nachgefragt: ist das hier in der Nachbarschaft gar kein Thema?" |
+
+### Bezahlbarer Wohnraum & Bauen {.unnumbered}
+
+- **Anekdote:** „In meinem Freundeskreis suchen gerade mehrere verzweifelt eine bezahlbare Wohnung im Kiez – manche müssen sogar wegziehen, obwohl sie hier verwurzelt sind."
+- **Norm:** „Wer hier lebt, arbeitet und sich engagiert, sollte sich das Wohnen im eigenen Kiez auch leisten können."
+- **Fakt:** „Berlin braucht bis 2030 mindestens 220.000 zusätzliche Wohnungen. Für Mitte haben wir zum Beispiel rund 2.000 zusätzliche Wohnungen auf den Weg gebracht." *(Zahlen vor Druck final prüfen)*
+
+| Gegenargument | Mögliche Reaktion |
+|---|---|
+| „Neubau bringt nur teure Luxuswohnungen." | "Genau das wollen wir verhindern. Ich kann mir meine Miete selbst nur gerade so leisten und habe absolut nichts davon, wenn hier Penthouse-Wohnungen entstehen. Unser Ziel ist, Wohnungen für die breite Mehrheit zu schaffen, damit die Mietpreise nicht mehr so stark steigen." |
+| "Bauen zerstört doch die Grünflächen, die ihr schützen wollt." | "Also mir ist ehrlich beides wichtig. Haben Sie ein Beispiel?" |
+
+# Abschluss und Abfrage
+
+Am Ende jedes Gesprächs erheben wir ein paar Daten, um zu lernen, welche Gesprächsführung wirkt. Die App zeigt Dir an, in welchem **Modus** abgefragt wird:
+
+- **Anonym (Urne):** Du reißt die Nummer vom Fragebogen ab, überreichst ihn der Person und bittest sie, ihn auszufüllen. Während die Person die Fragen beantwortet, trägst du die Nummer in der App ein. Am Schluss faltet und wirft die Person den Fragebogen in die mitgeführte **Urne**. Bitte **nicht hineinschauen** – so bleibt die Antwort frei von sozialer Erwünschtheit. 
+- **Offen (direkt):** Du stellst der Person die Fragen **direkt** und trägst die Antworten in die App ein.
+
+In beiden Fällen beantwortet die Person dieselben kurzen Fragen:
+
+1. **Wahlwahrscheinlichkeit** für Bündnis 90/Die Grünen bei den Berliner Wahlen 2026
+2. **Responsivität:** „Die Grünen interessieren sich dafür, was Menschen wie mir wichtig ist."
+3. **Wunsch-Koalition** nach der Wahl
+4. (kurz) Wie das **Gespräch** gefallen hat
+
+Sobald die Tür geschlossen ist, trägst Du außerdem **Deine eigene Einschätzung** in die App ein – zum Beispiel Stimmung/Tonfall des Gesprächs, die vermutete Position der Person und eine grobe Einschätzung von Altersgruppe und Geschlecht.
+
+# Skript-Beispiele
+
+## Nicht-deliberatives Skript {.unnumbered}
+
+| Phase | Inhalt |
+|-------|--------|
+| **Vorstellen** | „Hallo, mein Name ist ____ und ich bin von den Grünen Berlin-Mitte." |
+| **Offen zuhören** | „Wir hören uns gerade in der Nachbarschaft um: Gibt es etwas, das Ihnen hier im Kiez gerade besonders am Herzen liegt?" → aktiv zuhören (2–3 Nachfragen / paraphrasieren) |
+| **Thema + Position + Flyer** | „Ein Thema, auf das wir uns hier besonders konzentrieren, ist [THEMA]. [THEMEN-PITCH]. Hier ist auch eine Karte mit unserer Position dazu." *(Flyer überreichen)* |
+| **Abfrage** | je nach App-Anzeige: Mini-Fragebogen + Urne **oder** die Fragen direkt stellen |
+| **Verabschieden** | „Vielen Dank für Ihre Zeit, einen schönen Tag noch!“ |
+
+*Hinweis: Beginnt die Person hier zu diskutieren, nimm es kurz und freundlich auf („Das kann ich gut nachvollziehen"), baue es aber nicht zu einem Argumenteaustausch aus – Position steht, dann zur Abfrage.*
+
+## Deliberatives Skript {.unnumbered}
+
+:::{.callout-tip}
+Ein gutes deliberatives Gespräch ist ein **echter Austausch**. Du lernst die Position deines Gegenübers durch aktives Zuhören kennen und nutzt die Gelegenheit, Deine Position zu begründen. Versuch dabei, die Argumente deines Gegenübers nicht anzugreifen, sondern deinen eigenen Standpunkt möglichst klar zu machen. Auch - und gerade - wenn Du das Gegenargument nicht teilst.
+:::
+
+| Phase | Inhalt |
+|-------|--------|
+| **Vorstellen** | „Hallo, mein Name ist ____ und ich bin von den Grünen Berlin-Mitte." |
+| **Offen zuhören** | „Wir hören uns gerade in der Nachbarschaft um: Gibt es etwas, das Ihnen hier im Kiez gerade besonders am Herzen liegt?" → aktiv zuhören (2–3 Nachfragen / paraphrasieren) |
+| **Thema + Position + Flyer** | „Ein Thema, auf das wir uns hier besonders konzentrieren, ist [THEMA]. [THEMEN-PITCH]. Hier ist auch eine Karte mit unserer Position dazu." *(Flyer überreichen)* |
+| **Argumente austauschen** | „Mir ist das persönlich wichtig, weil … [Anekdote / Norm / Fakt]. Wie sehen Sie das?" → Sichtweise erfragen, auf Gegenargumente inhaltlich eingehen **und** weiter zuhören; bei Einigkeit persönliche Begründungen austauschen. Ziel: beide verstehen die Position des anderen. |
+| **Abfrage** | je nach App-Anzeige: Mini-Fragebogen + Urne **oder** die Fragen direkt stellen |
+| **Verabschieden** | „Vielen Dank für das Gespräch und Ihre Zeit, einen schönen Tag noch!“ |
+
+# FAQ {.unnumbered}
+
+| Frage | Antwort |
+|---|---|
+| *Was ist der Unterschied zwischen den beiden Varianten* | Beide starten gleich (zuhören, Position nennen, Flyer). Nur die deliberative Variante ergänzt den Argumenteaustausch. Damit die Studie funktioniert, halte Dich bitte **genau** an die in der App angezeigte Variante. |
+| *Die Person diskutiert im nicht-deliberativen Skript – was tun?* | Kurz und freundlich aufnehmen („Das kann ich nachvollziehen"), aber **nicht** zu einer Debatte ausbauen. Position steht, dann zur Abfrage übergehen. |
+| *Was, wenn ich nach meiner Meinung oder der Parteiposition gefragt werde?* | **Nicht-deliberativ:** knapp bei der genannten Position bleiben, nicht einsteigen, ggf. auf Flyer oder eine Veranstaltung verweisen. **Deliberativ:** das ist ausdrücklich erwünscht – begründe die Position und geh auf Gegenargumente ein. |
+| *Was mache ich mit Fragebogen und Urne?* | **Anonyme Variante:** Zettel überreichen, ausfüllen lassen, die Person wirft ihn selbst in die Urne – bitte nicht hineinschauen. **Offene Variante:** Fragen selbst stellen und in die App eintragen. |
+| *Erheben wir personenbezogene Daten der Wähler:innen?* | Nein. Die Fragebögen sind anonym. Der QR-Code auf dem Fragebogen dient dazu, dass wir die Fragebögen später euren in der App erfassten Daten zuordnen können. Wir können einzelne Einträge aber niemals einem spezifischen Haushalt oder gar einer spezifischen Person zuordnen. |
+| *Wie komme ich ins Haus?* | Fang mit dem Klingeln unten an. „Hallo, wir hören uns in der Nachbarschaft um, könnten Sie uns einmal ins Haus lassen?" klappt meist gut. Geh dann direkt zu der Person, bei der Ihr geklingelt habt. |
+| *Wie arbeite ich mich im Haus vor?* | Nach dem ersten Gespräch nach oben gehen und sich nach unten vorarbeiten. Wenn Ihr Euch aufteilt: eine Person von oben, eine von unten – wo Ihr Euch trefft, seid Ihr fertig. |
+| *Wie verteile ich die Flyer?* | Die Themen-Flyer unterstützen das Gespräch. Überreiche den passenden Flyer beim Setzen des Themas (Schritt „Thema + Position + Flyer"). |
+| *Wann beende ich die Dateneingabe?* | Am **Ende Deiner Schicht** und **bei jedem Blockwechsel**. Den Block kann man nur am Anfang der Dateneingabe festlegen – schließe sie also ab und starte neu, bevor Ihr in ein neues Gebiet geht. |
+| *Was, wenn die Person menschenfeindliche Dinge sagt?* | Das muss man sich nicht antun. Auch wenn aufmerksames, nicht-urteilendes Zuhören wichtig ist, gibt es Grenzen. In dem Fall einfach das Gespräch freundlich beenden. |
+| *Was, wenn das Gespräch nicht enden will?* | Dann hast Du ganze Arbeit geleistet. Sag z. B. „Tausend Dank für Ihre Offenheit, wir müssen jetzt weiter" und verweise auf eine Bürgersprechstunde. Brich aber nicht zu früh ab, solange noch Erzähldrang besteht. |
+| *Wodurch ist der Haustürwahlkampf rechtlich abgesichert?* | Der Haustürwahlkampf ist durch das Demokratieprinzip (Art. 20 GG) und das Recht auf freie Meinungsbildung (Teil der Meinungsfreiheit, Art. 5 GG) abgesichert. |
+
+Wenn weitere Fragen aufkommen, zögere nicht, mich (**Anton Könneke**) unter 0157 88122549 oder [a.konneke@lse.ac.uk](mailto:a.konneke@lse.ac.uk) zu kontaktieren – dann ergänze ich das FAQ. Bei Fragen zum Haustürwahlkampf selbst wende Dich an Dein Wahlkreis-/Kreisvorstands-Team von B90/Grüne Berlin-Mitte. *(Ansprechperson und Kontakt vor Druck eintragen.)*
