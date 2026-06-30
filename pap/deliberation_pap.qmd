@@ -8,7 +8,7 @@ author:
       phone: +49 157 88122549
       url: https://www.antonkoenneke.de
       affiliations:
-        - name: London School of Economics and Political Science
+        - name: London School of Economics 
           department: Government
           address: Houghton Street
           city: London
@@ -23,7 +23,7 @@ format:
       - right=1.25in
     latex-max-runs: 4
     template-partials:
-      - before-body.tex
+      - ../partials/academic/before-body.tex
     fig-pos: 'H'
     tbl-pos: 'H'
     include-in-header:
@@ -33,18 +33,16 @@ format:
           \usepackage{caption}
 toc: true
 toc-depth: 2
-bibliography: ../../phd.bib
+bibliography: /Users/anton/Library/CloudStorage/OneDrive-LondonSchoolofEconomics/PhD/phd.bib
 # global chunk options
 execute:
   echo: false
   warning: false
   message: false
-# abstract: 
+abstract: | 
+  This is the pre-analysis plan for a doorstep experiment testing the effects of deliberative interactions on diffuse and specific supports. In cooperation with a political party, the experiment randomises whether doorstep interactions are deliberative or non-deliberative. In the non-deliberative condition, canvassers listen to voters' concerns and use active listening strategies after which they pitch the party's policy position on a given issue. In the deliberative condition, they additionally discuss this issue with the voter, put forward their own arguments for the party's position and respond to counterarguments. At the end of the conversation, voters are handed a physical mini-questionnaire measuring propensity to vote for the party, evaluation of party responsiveness, coalition preference, and liking of the interaction. I cross-randomise whether outcomes are measured anonymously and via a small ballot box or through the canvasser asking face-to-face to gauge social desirability bias. Deliberative interactions are expected to increase PTV, evaluations of party responsiveness, and liking of the interaction. They are also expected to improve the accuracy of canvassers' PTV guesses. Mode is expected to shift levels of the DV but not the treatment effect. 
+
 ---
-
-# Core Idea
-
-This is the pre-analysis plan for a doorstep experiment testing the effects of deliberative interactions on diffuse and specific supports. In cooperation with a political party, the experiment randomises whether doorstep interactions are deliberative or non-deliberative. In the non-deliberative condition, canvassers listen to voters' concerns and use active listening strategies after which they pitch the party's policy position on a given issue. In the deliberative condition, they additionally discuss this issue with the voter, put forward arguments for the parties position and respond to counterarguments. At the end of the conversation, voters' are handed a physical condition-specific mini-questionnaire with three questions measuring propensity to vote for the party, evaluation of general party responsiveness, and coalition preference. The questionnaire is designed to be completed anonymously and is collected via a small ballot box carried by the canvassers. 
 
 # Theoretical Background
 
@@ -56,31 +54,33 @@ This is the pre-analysis plan for a doorstep experiment testing the effects of d
 - Do deliberative conversations lead to more positive evaluations of the party and a higher PTV to vote for it?
 
 
-## Representation Perspective
+## Representation Perspective
 
 
+# Dependent Variables
+
+Which dependent variables are measured depends partly on the measurement mode. For an overview of the main dependent variables, see the @tbl-dv-voter. 
+
+| Variable Label | Question Text | Response Scale | Mode | Respondent |
+|---|-----------|----|---|---|
+| PTV | "How likely are you to vote for [party] in the next election?" | 1-5 scale | Both | Voter|
+| Party responsiveness | "What would you say, to what extend do the Greens care about the opinions of people like you?"" | 1-5 scale | both |Voter|
+| Coalition Preference | "Which coalition would you prefer to govern Berlin after the next election?" | 1-5 scale | both |Voter|
+| Liking | "How did you like this conversation?" | 1-5 scale | anonymous only | Voter |
+: Dependent Variables Collected from Respondent {#tbl-dv-voter}
+
+In addition to the dependent variables collected from voters, canvassers collect some additional variables and guess voters responses to the PTV question. For an overview of these variables, see @tbl-dv-canvasser.
+
+| Variable Label | Question Text | Response Scale | Mode | Respondent |
+|---|-----------|----|---|---|
+| Liking | "How did you like this conversation?" | 1-5 scale | Both | Canvasser |
+| Topics | "Which topics did the voter mention" | Item battery | Both | Canvasser |
+| Duration | NA | Timer | Both | Canvasser |
+| PTV guess | What do you think, how likely is the person you just talked to vote for [party] in the Berlin elections? | Timer | Both | Canvasser |
+: Dependent Variables Collected from Canvasser {#tbl-dv-canvasser}
 
 
-# Key challenges
-- Deliberation in a homogenous in-group setting may often defeat the purpose of deliberation.
+# Compliance and Survey Flow
 
-
-# Extensions
-- Canvasser recorded data
-- Link canvasser data to ballot (number on ballot/QR code)
-
-# Variables
-
-## Answered by Canvasser
-- Tone
-- Guessed PTV
-- Topics
-
-## Answered by Voter
-- PTV
-- General Party Responsiveness
-- Coalition Preference?
-
-## Mediators?
-- Liking
-- Agreement 
+- What's an NA? 
+- Door open vs. conversation happened

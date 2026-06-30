@@ -43,15 +43,17 @@
     \end{center}
 
     $if(by-author)$
-    % ---- Authors: bold name, lightweight inline affiliation + email ----
+    % ---- Authors: bold name (+ symbol footnote for email), lightweight inline affiliation ----
     \begingroup
     \raggedright\setlength{\parindent}{0pt}
+    \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
     $for(by-author)$%
     {\large\bfseries $it.name.literal$\strut}%
+    $if(it.email)$\footnote{\href{mailto:$it.email$}{$it.email$}}$endif$%
     $if(it.affiliations)$\enspace{\small\textemdash\enspace{}$for(it.affiliations)$$it.name$$if(it.department)$, $it.department$$endif$$sep$; $endfor$}$endif$%
-    $if(it.email)$\enspace{\small\textemdash\enspace\href{mailto:$it.email$}{$it.email$}}$endif$%
     $sep$\par\vspace{0.35em}$endfor$\par
     \endgroup
+    \setcounter{footnote}{0}%
     $else$$if(author)$
                 \noindent$for(author)$\textbf{$author$}$sep$, $endfor$\par
             $endif$$endif$
