@@ -26,36 +26,62 @@ header-includes:
     - \AtBeginDocument{\AtBeginEnvironment{CSLReferences}{\small}}
     - \usepackage{hyperref}
     - \hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+    - \usepackage{amssymb}
+    - \usepackage{tcolorbox}
+    - \tcbset{colback=white, colframe=black!55, boxrule=0.5pt, sharp corners, left=8pt, right=8pt, top=6pt, bottom=6pt, before skip=8pt, after skip=8pt}
+    - \newcommand{\ckbox}{\ensuremath{\Box}}
+    - \newcommand{\fragebox}[1]{\begin{tcolorbox}#1\end{tcolorbox}}
+    - "\\newcommand{\\likertrow}[2]{\\begin{tabular}{@{}l c c c c c l@{}}#1 & \\ckbox\\,1 & \\ckbox\\,2 & \\ckbox\\,3 & \\ckbox\\,4 & \\ckbox\\,5 & #2\\end{tabular}}"
 ---
 
 # Kernidee
 
-Dieses Feldexperiment testet, ob deliberative Gespräche an der Tür wirksamer sind als reines aktives Zuhören plus Positionsmitteilung. Im Hausbesuchswahlkampf von Bündnis 90/Die Grünen in Wahlkreis 7 (Berlin-Mitte) zur Abgeordnetenhauswahl 2026 wird pro Gespräch zufällig entschieden, ob die Canvasserin oder der Canvasser non-deliberativ oder deliberativ vorgeht. Am Ende erhalten die Bewohner\*innen einen kurzen, anonymen Fragebogen, den sie selbst in eine kleine Wahlurne werfen, die die Canvasser\*innen mitführen.
+Wie können wir besonders wirksame Haustürgespräche führen? Die Ergebnisse der vergangenen zwei Haustürstudien in Berlin Mitte haben gezeigt, dass Zuhören offene, respektvolle Gespräche ermöglicht. Allerdings stellt sich die Frage, ob Zuhören allein strategisch und normativ ausreizt, was wir von Haustürgesprächen erwarten können. Wähler:innen erwarten von Parteien zurecht, dass sie ihre Positionen vertreten und begründen. Repräsentation ist keine Einbahnstraße, Austausch und beidseitiges Lernen ist das ideale Ergebnis einer Haustürinteraktion.
 
-# Ablauf an der Tür
-
-Canvasser\*innen werden in beiden Skripten geschult und wenden während einer Session beide an; welches Skript an welcher Tür zum Einsatz kommt, entscheidet der Zufall. Nach dem Gespräch trägt die Canvasser\*in kurze eigene Einschätzungen ein (Tonfall, vermutete Themen); die Bewohner\*innen beantworten selbst und anonym drei Fragen — Wahlabsicht, Einschätzung der Responsivität der Partei, Koalitionspräferenz — und werfen den Zettel direkt in die mitgeführte Box.
+Daher testet dieses Feldexperiment, ob *deliberative Gespräche* an der Tür wirksamer sind als aktives Zuhören allein. In deliberativen Gesprächen folgt einem Zuhörblock ein Austausch von Argumenten zu einem von den Wahlkämpfer:innen vorgegebenen Thema. Am Ende der Gespräche fragen wir die Bewohner:innen nach ihrer Wahlabsicht und ihrer Einschätzung der Responsivität der Partei und können so die Wirkung der beiden Gesprächsvarianten vergleichen.
 
 # Die zwei Gesprächsvarianten
 
 Beide Skripte folgen derselben Grundstruktur und unterscheiden sich erst im letzten Schritt:
 
-1. Begrüßung, Partei wird genannt.
-2. Die Canvasser\*in fragt nach dem für die Person wichtigsten Thema und hört aktiv zu — Nachfragen, Paraphrasieren, keine Wertung.
-3. Die Canvasser\*in bringt ein Thema und die Position der Partei dazu ein.
+1. Begrüßung
+2. Zuhörgespräch zu Themen der Wähler:in
+3. Canvasser nennt Thema und überreicht Postkarte/Flyer mit Position der Partei
+4. [Nur deliberativ:] Austausch von Argumenten zu diesem Thema
 
-**Non-deliberativ:** Die Position wird mitgeteilt und kurz begründet. Reagiert die Person mit Zustimmung oder Widerspruch, hört die Canvasser\*in zu, geht aber inhaltlich nicht weiter darauf ein.
+# Austausch von Argumenten
+In den deliberativen Gesprächen nennt die Wahlkämpfer:in das Thema und begründet die Wichtigkeit des Themas. Dieser Grund kann eine persönliche *Anekdote*/Erfahrung ("Ich halte es im Sommer in meiner Dachgeschosswohnung kaum mehr aus"), ein *normatives Argument* ("wir sollten unseren Nachfahren einen lebenswerten Planeten hinterlassen") oder ein *Fakt* ("jedes Jahr sterben zehntausende Menschen in Deutschland an den Folgen von Hitze") sein. 
 
-**Deliberativ:** Die Position wird ausführlicher begründet. Bringt die Person ein Gegenargument vor, nimmt die Canvasser\*in es auf, antwortet inhaltlich und führt das Argument fort — bis ein echter Austausch entsteht oder die Person das Thema von sich aus abschließt.
+Daraufhin wird die Wähler:in nach Ihrer Sichtweise und ihren Argumenten gefragt. Bringt die Person ein Gegenargument vor, nimmt die Canvasser\*in es auf, antwortet inhaltlich. In diesem Fall werden sowohl die typischen Zuhörstrategien angewandt, als auch inhaltliche Argumente bemüht. 
 
-In beiden Fällen endet das Gespräch mit Dank und der Bitte, den Fragebogen auszufüllen.
+Für den (wahrscheinlich häufigeren) Fall, dass die beiden Gesprächspartner:innen sich in der Sache einig sind, konzentriert sich das Gespräch auf die persönlichen Erfahrungen und individuellen Begründungen der Position sowohl der Canvasser:in als auch der Wähler:in. Dabei ist das übergeordnete Ziel, dass am Ende des Gesprächs beide Seiten die Position der anderen Seite nachvollziehen können. Es geht also nicht nur darum zu verstehen, sondern auch darum, sich verständlich zu machen.
 
-# Warum sollte das funktionieren?
+# Ablauf an der Tür
 
-Die Frage dahinter: Reicht es, dass die Partei zuhört und ihre Position mitteilt, oder muss sie sich auch auf den Widerspruch der Wähler\*innen einlassen, damit Vertrauen und Wahlabsicht steigen?
+Canvasser\*innen werden in beiden Skripten geschult und wenden während einer Session beide an; welches Skript an welcher Tür zum Einsatz kommt, entscheidet der Zufall. Nach dem Gespräch trägt die Canvasser\*in kurze eigene Einschätzungen ein (Tonfall, vermutete Themen); die Bewohner\*innen beantworten selbst und anonym drei Fragen — Wahlabsicht, Einschätzung der Responsivität der Partei, Koalitionspräferenz — und werfen den Zettel direkt in die mitgeführte Urne.
 
-Ein zentraler Befund der Persuasionsforschung ist, dass politische Information weitgehend unabhängig davon überzeugt, wer sie vorträgt. Wenn allein der Inhalt zählt, sollte es für die Wirkung der Parteibotschaft keinen Unterschied machen, ob sie unwidersprochen bleibt oder diskutiert wird — beide Skripte vermitteln ja dieselbe Position. Die deliberative Theorie behauptet das Gegenteil: Erst der echte, wechselseitige Austausch von Argumenten soll Menschen tatsächlich bewegen, nicht die bloße Konfrontation mit Information.
+Es gibt vier Szenarien:
 
-Deliberation setzt an zwei Stellen an. Erstens bei der Aufmerksamkeit: Wer merkt, dass der eigene Einwand tatsächlich aufgenommen und beantwortet wird, hört der Gegenseite eher weiter zu, statt innerlich abzuschalten. Zweitens bei der Bereitschaft, sich bewegen zu lassen: Wenn jemand auf das eigene Argument eingeht, fühlt man sich eher verpflichtet, im Gegenzug offen für dessen Argument zu sein. Reines Zuhören ohne inhaltliche Erwiderung kann diesen zweiten Mechanismus nicht auslösen, weil dort gar nichts erwidert wird — und genau das deckt sich mit einer früheren Studie mit der Partei zur Bundestagswahl 2025: reines, nicht-erwiderndes Zuhören zeigte im Schnitt keinen Effekt auf das Wahlergebnis.
+| | **Deliberativ** | **Nicht-deliberativ** |
+| - | --- | --- |
+| **Anonym** | Deliberative Unterhaltung + anonymer Fragebogen (Urne) | Nicht-deliberative Unterhaltung, + anonymer Fragebogen (Urne) |
+| **Offen** | Deliberative Unterhaltung + Direktabfrage | Nicht-deliberative Unterhaltung + Direktabfrage |
 
-Eine Einschränkung bleibt: Deliberation wirkt in der Theorie am stärksten zwischen Menschen mit unterschiedlichen Ausgangspositionen — bei ohnehin überzeugten Anhänger\*innen bleibt wenig Raum für Meinungsänderung. Der Mehrwert der deliberativen Variante dürfte sich daher vor allem bei unentschlossenen oder kritischen Wähler\*innen zeigen.
+# Fragebogen
+
+In beiden Fällen endet das Gespräch mit Dank und der Bitte, den Fragebogen auszufüllen. Wir randomisieren, ob dies anonym oder offen geschieht. In der offenen Variante fragt die Wahlkämpfer:in die Fragen direkt ab, in der anonymen Variante füllt die Person einen Mini-Fragebogen aus, der in eine kleine Urnen-artige Box geworfen wird, die die Wahlkämpfer:innen mitführen. So stellen wir sicher, dass die Antwort nicht von sozialer Erwünschtheit beeinflusst wird. 
+
+---
+
+*Fragebogen Entwurf:*
+
+![Fragebogen](questionnaire.png){width=80%}
+
+
+---
+
+Um die Daten aus dem Fragebogen mit den Daten aus der App zu verknüpfen, ist auf den Fragebögen eine abtrennbare, fünfstellige Nummer aufgedruckt, die einem individuellen, unten-links auf dem Fragebogen aufgedruckten QR-Code zugeordnet werden kann. Die Wahlkämpfer:in trennt diese Nummer ab und trägt sie in der App ein, bevor die Person den Fragebogen ausfüllt. So stellen wir sicher, dass die Antworten gegenüber den Wahlkämpfer:innen anonym bleiben, wir aber im Nachhinein dennoch die Antworten mit den Gesprächsnotizen verknüpfen können.
+
+Die Fragebögen werden dann gefaltet und in die Urne geworfen. Die Wahlkämpfer:in darf **nicht** hineinschauen, um die Anonymität der Antworten zu gewährleisten.
+
+![[Urnen](https://www.amazon.de/-/en/Donation-Lockable-Transparent-Contests-Business/dp/B0FZKCNMXV/ref=sr_1_60?crid=1Y5GH5W19JP34&dib=eyJ2IjoiMSJ9.xjMDrEzL4IJSofyfgaSX0hHQmQcgFIiRCp_1GTlP-3sfw6rcDOrNjROrnIRklOB7_HSd06ZnoRBvdYLTY_pIcA0N3vGxs2dCLRQtXpQE3OY22-PSLnnmTHDXUmPBTPB60etGWLuu7G9sJPzNnrNz7uSJ9cm5QJj6WnKeFa1R0_nlem462VRJEC0W0mcoc995j6-ev8_UXqboj__IChz8V3PyMr2yGuiNKAgyv08vIzUqQVFqQyWzdGKL05dohJF6A6_fuufImVxFkdBH_BkWsJ83ddHn4BWZHF2FM08tj5E.xiQ6BtNEf74EmSvpKNtLtd8-RJvglhIOq-6bXjbLLNQ&dib_tag=se&keywords=wahlurne&qid=1782753934&sprefix=wahlurne%2Caps%2C116&sr=8-60&th=1)](urnen.png){width=50%}

@@ -1,0 +1,131 @@
+% !TEX program = xelatex
+% Diese Datei MUSS mit XeLaTeX (oder LuaLaTeX) kompiliert werden — nicht mit
+% pdfLaTeX. Grund: fontspec + polyglossia (s. u.) verlangen XeTeX/LuaTeX.
+\documentclass[10pt]{article}
+
+% --- Page: A5, with a 1.5cm top stub reserved for the perforated ballot-number band ---
+\usepackage[paper=a5paper, top=24mm, bottom=22mm, left=11mm, right=11mm]{geometry}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
+\usepackage{amssymb}      % math symbols
+\usepackage{tcolorbox}    % boxed questions
+\usepackage{array}        % ragged-right p{} columns
+\usepackage{setspace}
+\setstretch{1.0}
+\usepackage{eso-pic}      % page-anchored background layer (fiducials, perforation, QR)
+\usepackage{tikz}
+\usepackage{qrcode}
+
+\pagestyle{empty}
+
+% 5-digit ballot number for this print run; starts with 5, links the slip to the canvasser record (see PAP "Extensions")
+\newcommand{\ballotnumber}{50001}
+\newcommand{\ballotband}{\ballotnumber\quad--\quad\ballotnumber\quad--\quad\ballotnumber}
+
+\tcbset{colback=white, colframe=black!55, boxrule=0.4pt, sharp corners,
+        left=7pt, right=7pt, top=3pt, bottom=3pt, before skip=5pt, after skip=5pt}
+\newcommand{\fragebox}[1]{\begin{tcolorbox}#1\end{tcolorbox}}
+
+% Checkbox: a drawn square, a bit larger than the old math \Box, vertically centred on the
+% text line (via \raisebox) so the adjacent number sits on the SAME line, not as a subscript.
+\newcommand{\boxsize}{3.6mm}
+\newcommand{\ckbox}{\raisebox{-0.2em}{\tikz{\draw[line width=0.5pt] (0,0) rectangle (\boxsize,\boxsize);}}}
+
+% A 5-point Likert row: endpoint labels ABOVE the scale, in narrow wrapping columns tied to
+% the extreme boxes (so they never sit above the 2nd / 2nd-last number); then the checkbox row.
+\newcommand{\likertrow}[2]{%
+  \par\vspace{8pt}
+  \noindent
+  \parbox[b]{0.30\linewidth}{\raggedright\small #1}%
+  \hfill
+  \parbox[b]{0.30\linewidth}{\raggedleft\small #2}%
+  \par\vspace{2pt}
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}ccccc}
+    \ckbox~1 & \ckbox~2 & \ckbox~3 & \ckbox~4 & \ckbox~5
+  \end{tabular*}%
+}
+
+% --- Background layer: corner fiducials, perforation line, ballot-number band, QR code ---
+% All four fiducials sit BELOW the perforation line, i.e. in the part of the page that
+% remains once the top stub (with the ballot-number band) is torn off.
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % OCR/OMR registration fiducials: 5mm filled squares
+    % -- bottom corners: 3mm inset from the physical corner
+    \fill[black] ([xshift=3mm,yshift=3mm]current page.south west) rectangle ++(5mm,5mm);
+    \fill[black] ([xshift=-8mm,yshift=3mm]current page.south east) rectangle ++(5mm,5mm);
+    % -- top corners: moved down so they sit 3mm below the perforation line, not in the stub
+    \fill[black] ([xshift=3mm,yshift=-18mm]current page.north west) rectangle ++(5mm,-5mm);
+    \fill[black] ([xshift=-8mm,yshift=-18mm]current page.north east) rectangle ++(5mm,-5mm);
+
+    % Perforation: dashed line 15mm below the top edge, full page width
+    \draw[dashed, thick] ([yshift=-15mm]current page.north west) -- ([yshift=-15mm]current page.north east);
+
+    % Ballot-number band, repeated, centered in the top stub
+    \node at ([yshift=-7.5mm]current page.north) {\large\ballotband};
+
+    % Fold line: marks the MIDDLE of the sheet that remains after the numbered perforation
+    % strip is torn off. Remaining sheet spans 15mm..210mm -> midpoint at 112.5mm from top.
+    % It is placed so it falls in the gap between question 2 and question 3 (not through a box).
+    \draw[dashed, line width=0.5pt] ([yshift=-112.5mm]current page.north west) -- ([yshift=-112.5mm]current page.north east);
+    \node[fill=white, inner sep=3pt] at ([yshift=-112.5mm]current page.north) {\small\itshape hier falten};
+
+    % QR code, bottom-left, clear of the fiducial square
+    \node[anchor=south west, inner sep=0pt] at ([xshift=12mm,yshift=10mm]current page.south west) {\qrcode[height=1.4cm]{\ballotnumber}};
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries Was denken Sie\dots?}\\[1.5mm]
+    {\normalsize Ihre Antworten sind völlig anonym und lassen sich nicht zu Ihnen zurückverfolgen.}
+\end{center}
+
+\vspace{9mm}
+
+\fragebox{
+    \textbf{1.} Wie wahrscheinlich ist es, dass Sie Bündnis~90/Die~Grünen bei den Berliner Wahlen 2026 wählen werden?
+
+    \likertrow{Sehr\\unwahrscheinlich}{Sehr\\wahrscheinlich}
+}
+
+\fragebox{
+    \textbf{2.} Was würden Sie sagen, wie sehr interessieren sich die Grünen für die Meinung von Menschen wie Ihnen?
+
+    \likertrow{Interessieren sich\\überhaupt nicht}{Interessieren sich\\sehr stark}
+}
+
+% --- Lücke für die Faltlinie ---
+% Die sichtbare Faltlinie wird in der Hintergrundebene exakt bei 112,5mm gezeichnet
+% (Mitte des Blatts nach Abtrennen des Nummern-Streifens). Diese Lücke sorgt nur dafür,
+% dass zwischen Frage 2 und Frage 3 genug Freiraum bleibt, damit keine Box die Linie kreuzt.
+\vspace{20mm}
+
+\fragebox{
+    \textbf{3.} Welche Koalition würden Sie sich nach der Wahl in Berlin wünschen?
+
+    \vspace{4pt}
+    \setlength{\tabcolsep}{2pt}%
+    \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.43\linewidth} >{\raggedright\arraybackslash}p{0.55\linewidth}@{}}
+        \ckbox~,,GroKo`` \mbox{\footnotesize(CDU, SPD)}           & \ckbox~,,Rot-Rot-Grün`` \mbox{\footnotesize(Grüne, Linke und SPD)} \\[4pt]
+        \ckbox~,,Kenia`` \mbox{\footnotesize(CDU, Grüne und SPD)} & \ckbox~,,Schwarz-Grün`` \mbox{\footnotesize(CDU und Grüne)}        \\[4pt]
+        \ckbox~Andere: \makebox[2.2cm]{\hrulefill}               & \ckbox~Weiß ich nicht                                             \\
+    \end{tabular}
+}
+
+\fragebox{
+    \textbf{4.} Wie hat Ihnen das Haustürgespräch gefallen?
+
+    \likertrow{Sehr schlecht}{Sehr gut}
+}
+
+\vspace{3mm}
+\begin{center}
+    {\small Bitte falten Sie den Fragebogen in der Mitte und werfen Sie ihn in die Urne.}
+\end{center}
+
+\end{document}
