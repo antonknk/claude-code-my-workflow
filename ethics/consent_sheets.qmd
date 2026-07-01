@@ -1,0 +1,112 @@
+---
+title: "Doorstep Deliberation"
+subtitle: "Consent Sheets"
+format: pdf
+---
+
+# Main Consent Sheet
+
+Canvassers have to consent to the following before every canvassing session.
+
+## German Version
+Herzlich Willkommen… 
+… zur Web-App der Haustürkampagne für den Wahlkreis 7 in Berlin-Mitte. Hier kannst Du ganz einfach Informationen zu den geklopften Türen und Gesprächen eintragen. Dein Standort wird nicht gespeichert und wir erheben keine persönlichen Daten der Wähler:innen. Damit wir Deine Informationen zuordnen können, fragen wir Dich gleich nach Deinem Namen und Mailadresse. Diese Daten werden gespeichert und können von Anton Könneke (London School of Economics/Department of Government), der unsere Kampagne wissenschaftlich begleitet, eingesehen werden. Sie werden dem Kreisvorstand anonymisiert zur Verfügung gestellt.
+
+Muss ich teilnehmen? 
+Nein. Du musst die App nicht benutzen, aber es würde uns bei der Auswertung sehr helfen.
+
+Wer verwaltet die App? 
+Die App wird von Anton (LSE) verwaltet. Bei Fragen kannst Du Dich gern an Anton (a.konneke@lse.ac.uk) oder Timur für den Kreisvorstand (timur.ohloff@gruene-mitte.de) wenden.
+
+Für welche Zwecke werden meine Daten genutzt?
+Die Ergebnisse dieser Umfrage helfen dem Kreisverband B90/GRÜNE Berlin-Mitte, mehr über die politischen Einstellungen der Menschen im Bezirk zu erfahren. Die Umfrage wird außerdem von Anton als Bestandteil einer wissenschaftlichen Publikation zum Thema politische Repräsentation ausgewertet.
+
+Wie kann ich aus der Studie aussteigen? 
+Wenn Du Deine Einwilligung zu einem späteren Zeitpunkt zurückziehen willst, kannst Du Deine Daten bis zum 15.02.2026 löschen lassen. Schick dazu einfach eine E-Mail mit einer formlosen Löschaufforderung an Anton. Du musst keinen Grund angeben.
+
+Sind meine Daten anonym? 
+Die erhobenen Daten werden so vertraulich wie möglich behandelt. Nur Anton und der Kreisvorstand haben Zugang. Die Daten werden anonymisiert - Dein Name und alles andere, was Dich identifizieren könnte, werden nicht in Berichten oder Veröffentlichungen, die aus der Studie hervorgehen, verwendet. Dem Kreisvorstand wird lediglich eine anonymisierte Version der Daten zur Verfügung gestellt.
+
+- [ ] I consent to the above
+
+--- 
+
+An einigen Haustüren nutzen wir eine Urne und Mini-Fragebögen, um die Einstellungen des Gegenübers zu erheben. Es ist wichtig, dass die Person an der Haustür sich darauf verlassen kann, dass Ihre Antworten geheim abgeben und gesammelt werden. 
+
+- [ ] Ich verpflichte mich, die Urne mit den anonymen Fragebögen zu keinem Zeitpunkt zu öffnen oder zu beschädigen und nicht zu versuchen, die Antworten der Bewohner:innen einzusehen, zu fotografieren oder einer bestimmten Person zuzuordnen.
+
+## Translation
+
+Welcome…
+… to the web app for the door-to-door campaign in constituency 7 in Berlin-Mitte. Here you can easily enter information about the doors you've knocked on and the conversations you've had. Your location is not stored, and we do not collect any personal data about the voters. So that we can attribute your entries to you, we'll ask you shortly for your name and email address. This data is stored and can be viewed by Anton Könneke (London School of Economics/Department of Government), who is providing academic support for our campaign. It will be made available to the district executive in anonymised form.
+
+Do I have to take part?
+No. You don't have to use the app, but it would help us a lot with the analysis.
+
+Who manages the app?
+The app is managed by Anton (LSE). If you have any questions, feel free to contact Anton (a.konneke@lse.ac.uk) or Timur for the district executive (timur.ohloff@gruene-mitte.de).
+
+What will my data be used for?
+The results of this survey help the B90/GRÜNE Berlin-Mitte district association learn more about the political attitudes of people in the district. The survey will also be analysed by Anton as part of an academic publication on the topic of political representation.
+
+How can I withdraw from the study?
+If you want to withdraw your consent at a later point, you can have your data deleted up until 15/02/2026. Just send an email with an informal deletion request to Anton. You don't have to give a reason.
+
+Is my data anonymous?
+The data collected will be treated as confidentially as possible. Only Anton and the district executive have access. The data will be anonymised — your name and anything else that could identify you will not be used in any reports or publications arising from the study. Only an anonymised version of the data will be made available to the district executive.
+
+- [ ] I consent to the above
+
+---
+
+At some doors we use a ballot box and mini questionnaires to record the attitudes of the person we speak to. It is important that the person at the door can rely on their answers being submitted and collected in confidence.
+
+- [ ] I undertake never to open or damage the box containing the anonymous questionnaires at any time, and not to attempt to view or photograph residents' answers or to attribute them to any particular person.
+
+# Canvasser Baseline and Post-Campaign Consent Sheet
+
+## German Version
+
+Herzlich Willkommen…
+… zur Mitgliederbefragung in Berlin-Mitte. Vielen Dank für Deine Teilnahme! Bevor unsere Haustürkampagne startet, bitten wir Dich um einige Angaben. Das ermöglicht es uns, die Gespräche an den Haustüren gezielter auszuwerten.
+Die Umfrage dauert in etwa 10 Minuten.
+
+Muss ich teilnehmen?
+Nein. Die Teilnahme an der Befragung ist freiwillig.
+
+Wer führt die Umfrage durch?
+Die Umfrage wird von Anton Könneke (London School of Economics/Department of Government) verwaltet. Bei Fragen kannst Du Dich gern an Anton (a.konneke@lse.ac.uk) oder Timur für den Vorstand (timur.ohloff@gruene-mitte.de) wenden.
+
+Für welche Zwecke werden meine Daten genutzt?
+Die Ergebnisse dieser Umfrage helfen dem Kreisverband B90/GRÜNE Berlin-Mitte künftige Haustürwahlkämpfe zu optimieren. Die Umfrage wird außerdem von Anton Könneke als Bestandteil einer wissenschaftlichen Publikation zum Thema politische Repräsentation ausgewertet.
+
+Wie kann ich aus der Studie aussteigen?
+Wenn Du Deine Einwilligung zu einem späteren Zeitpunkt zurückziehen willst, kannst Du Deine Daten bis zum 15.02.2026 löschen lassen. Schick dazu einfach eine Mail mit einer formlosen Löschaufforderung an Anton Könneke. Du musst keinen Grund angeben.
+
+Sind meine Daten anonym?
+Die erhobenen Daten werden so vertraulich wie möglich behandelt. Nur Anton Könneke hat Zugang. Die Daten werden anonymisiert - Dein Name und alles andere, was Dich identifizieren könnte, werden nicht in Berichten oder Veröffentlichungen, die aus der Studie hervorgehen, verwendet. Dem Kreisvorstand wird nur eine anonymisierte Version der Daten zugänglich gemacht.
+
+- [ ] Ich stimme zu
+
+## Translation
+
+Welcome…
+… to the member survey in Berlin-Mitte. Thank you for taking part! Before our door-to-door campaign starts, we'd like to ask you a few questions. This allows us to analyse the doorstep conversations in a more targeted way.
+The survey takes about 10 minutes.
+
+Do I have to take part?
+No. Participation in the survey is voluntary.
+
+Who is conducting the survey?
+The survey is managed by Anton Könneke (London School of Economics/Department of Government). If you have any questions, feel free to contact Anton (a.konneke@lse.ac.uk) or Timur for the executive (timur.ohloff@gruene-mitte.de).
+
+What will my data be used for?
+The results of this survey help the B90/GRÜNE Berlin-Mitte district association optimise future door-to-door campaigns. The survey will also be analysed by Anton Könneke as part of an academic publication on the topic of political representation.
+
+How can I withdraw from the study?
+If you want to withdraw your consent at a later point, you can have your data deleted up until 15/02/2026. Just send an email with an informal deletion request to Anton Könneke. You don't have to give a reason.
+
+Is my data anonymous?
+The data collected will be treated as confidentially as possible. Only Anton Könneke has access. The data will be anonymised — your name and anything else that could identify you will not be used in any reports or publications arising from the study. Only an anonymised version of the data will be made available to the district executive.
+
+- [ ] I consent
